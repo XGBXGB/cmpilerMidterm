@@ -37,19 +37,25 @@ perform_op2 returns [int value]: n1=perform_op2 op=mul_div n2=INT_LIT
 									
 									if($op.text.equalsIgnoreCase("*")){
 										$value = $n1.value * Integer.parseInt($n2.text);
-									} else{
+									} else if($op.text.equalsIgnoreCase("/")){
 										$value = $n1.value / Integer.parseInt($n2.text);
+									} else {
+										$value = $n1.value % Integer.parseInt($n2.text);
 									}
 								}
 							    | n=INT_LIT 
 							    {
 							    	$value=Integer.parseInt($n.text);
+							    }
+							    | '(' c=perform_op ')'
+							    {
+								$value = $c.value;
 							    };
 							    
 
 
 add_sub: '+' | '-';
-mul_div: '*' | '/';
+mul_div: '*' | '/' | '%';
 
 
 // Lexer Rules
