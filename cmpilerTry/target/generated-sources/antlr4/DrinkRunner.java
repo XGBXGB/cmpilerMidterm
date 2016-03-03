@@ -54,6 +54,10 @@ public class DrinkRunner {
 	            		{
 	            			System.out.println(e.getMessage());
 	            		}
+	            		else if(e instanceof ArithmeticException)
+	            		{
+	            			System.out.println("cause: "+e.getMessage());
+	            		}
 	            	}
 	            }   
 
