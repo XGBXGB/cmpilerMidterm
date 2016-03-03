@@ -82,8 +82,8 @@ public class DrinkParser extends Parser {
 		public int value;
 		public Perform_opContext n1;
 		public Perform_op2Context n;
-		public Add_subContext op;
 		public Perform_op2Context n2;
+		public Add_subContext op;
 		public Perform_op2Context perform_op2() {
 			return getRuleContext(Perform_op2Context.class,0);
 		}
@@ -128,38 +128,62 @@ public class DrinkParser extends Parser {
 			((Perform_opContext)_localctx).value =  ((Perform_opContext)_localctx).n.value;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(19);
+			setState(23);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					{
-					_localctx = new Perform_opContext(_parentctx, _parentState);
-					_localctx.n1 = _prevctx;
-					_localctx.n1 = _prevctx;
-					pushNewRecursionContext(_localctx, _startState, RULE_perform_op);
-					setState(12);
-					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(13);
-					((Perform_opContext)_localctx).op = add_sub();
-					setState(14);
-					((Perform_opContext)_localctx).n2 = perform_op2(0);
-					 
-					          							   		if((((Perform_opContext)_localctx).op!=null?_input.getText(((Perform_opContext)_localctx).op.start,((Perform_opContext)_localctx).op.stop):null).equalsIgnoreCase("+")){
-					          										((Perform_opContext)_localctx).value =  ((Perform_opContext)_localctx).n1.value + ((Perform_opContext)_localctx).n2.value;
-					          									} else{
-					          										((Perform_opContext)_localctx).value =  ((Perform_opContext)_localctx).n1.value - ((Perform_opContext)_localctx).n2.value;
-					          									}
-					          							   
+					setState(21);
+					_errHandler.sync(this);
+					switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
+					case 1:
+						{
+						_localctx = new Perform_opContext(_parentctx, _parentState);
+						_localctx.n1 = _prevctx;
+						_localctx.n1 = _prevctx;
+						pushNewRecursionContext(_localctx, _startState, RULE_perform_op);
+						setState(12);
+						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+						setState(13);
+						((Perform_opContext)_localctx).n2 = perform_op2(0);
+						 
+						          								
+						          									((Perform_opContext)_localctx).value =  ((Perform_opContext)_localctx).n1.value + ((Perform_opContext)_localctx).n2.value;
+						          										
+						          							   
+						}
+						break;
+					case 2:
+						{
+						_localctx = new Perform_opContext(_parentctx, _parentState);
+						_localctx.n1 = _prevctx;
+						_localctx.n1 = _prevctx;
+						pushNewRecursionContext(_localctx, _startState, RULE_perform_op);
+						setState(16);
+						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+						setState(17);
+						((Perform_opContext)_localctx).op = add_sub();
+						setState(18);
+						((Perform_opContext)_localctx).n2 = perform_op2(0);
+
+						          							 		if((((Perform_opContext)_localctx).op!=null?_input.getText(((Perform_opContext)_localctx).op.start,((Perform_opContext)_localctx).op.stop):null).equalsIgnoreCase("+")){
+						          											((Perform_opContext)_localctx).value =  ((Perform_opContext)_localctx).n1.value + ((Perform_opContext)_localctx).n2.value;
+						          										} else{
+						          											((Perform_opContext)_localctx).value =  ((Perform_opContext)_localctx).n1.value - ((Perform_opContext)_localctx).n2.value;
+						          										}
+						          									
+						          							 	
+						}
+						break;
 					}
 					} 
 				}
-				setState(21);
+				setState(25);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			}
 			}
 		}
@@ -217,16 +241,16 @@ public class DrinkParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(23);
+			setState(27);
 			((Perform_op2Context)_localctx).n = match(INT_LIT);
 
 										    	((Perform_op2Context)_localctx).value = Integer.parseInt((((Perform_op2Context)_localctx).n!=null?((Perform_op2Context)_localctx).n.getText():null));
 										    
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(33);
+			setState(37);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
@@ -237,11 +261,11 @@ public class DrinkParser extends Parser {
 					_localctx.n1 = _prevctx;
 					_localctx.n1 = _prevctx;
 					pushNewRecursionContext(_localctx, _startState, RULE_perform_op2);
-					setState(26);
+					setState(30);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(27);
+					setState(31);
 					((Perform_op2Context)_localctx).op = mul_div();
-					setState(28);
+					setState(32);
 					((Perform_op2Context)_localctx).n2 = match(INT_LIT);
 
 					          									
@@ -254,9 +278,9 @@ public class DrinkParser extends Parser {
 					}
 					} 
 				}
-				setState(35);
+				setState(39);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
 			}
 			}
 		}
@@ -293,7 +317,7 @@ public class DrinkParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(36);
+			setState(40);
 			_la = _input.LA(1);
 			if ( !(_la==T__0 || _la==T__1) ) {
 			_errHandler.recoverInline(this);
@@ -335,7 +359,7 @@ public class DrinkParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(38);
+			setState(42);
 			_la = _input.LA(1);
 			if ( !(_la==T__2 || _la==T__3) ) {
 			_errHandler.recoverInline(this);
@@ -367,30 +391,33 @@ public class DrinkParser extends Parser {
 	private boolean perform_op_sempred(Perform_opContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
+			return precpred(_ctx, 3);
+		case 1:
 			return precpred(_ctx, 2);
 		}
 		return true;
 	}
 	private boolean perform_op2_sempred(Perform_op2Context _localctx, int predIndex) {
 		switch (predIndex) {
-		case 1:
+		case 2:
 			return precpred(_ctx, 2);
 		}
 		return true;
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\b+\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\7\2\24\n\2\f\2"+
-		"\16\2\27\13\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3\"\n\3\f\3\16\3%"+
-		"\13\3\3\4\3\4\3\5\3\5\3\5\2\4\2\4\6\2\4\6\b\2\4\3\2\3\4\3\2\5\6(\2\n\3"+
-		"\2\2\2\4\30\3\2\2\2\6&\3\2\2\2\b(\3\2\2\2\n\13\b\2\1\2\13\f\5\4\3\2\f"+
-		"\r\b\2\1\2\r\25\3\2\2\2\16\17\f\4\2\2\17\20\5\6\4\2\20\21\5\4\3\2\21\22"+
-		"\b\2\1\2\22\24\3\2\2\2\23\16\3\2\2\2\24\27\3\2\2\2\25\23\3\2\2\2\25\26"+
-		"\3\2\2\2\26\3\3\2\2\2\27\25\3\2\2\2\30\31\b\3\1\2\31\32\7\7\2\2\32\33"+
-		"\b\3\1\2\33#\3\2\2\2\34\35\f\4\2\2\35\36\5\b\5\2\36\37\7\7\2\2\37 \b\3"+
-		"\1\2 \"\3\2\2\2!\34\3\2\2\2\"%\3\2\2\2#!\3\2\2\2#$\3\2\2\2$\5\3\2\2\2"+
-		"%#\3\2\2\2&\'\t\2\2\2\'\7\3\2\2\2()\t\3\2\2)\t\3\2\2\2\4\25#";
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\b/\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2"+
+		"\7\2\30\n\2\f\2\16\2\33\13\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3&"+
+		"\n\3\f\3\16\3)\13\3\3\4\3\4\3\5\3\5\3\5\2\4\2\4\6\2\4\6\b\2\4\3\2\3\4"+
+		"\3\2\5\6-\2\n\3\2\2\2\4\34\3\2\2\2\6*\3\2\2\2\b,\3\2\2\2\n\13\b\2\1\2"+
+		"\13\f\5\4\3\2\f\r\b\2\1\2\r\31\3\2\2\2\16\17\f\5\2\2\17\20\5\4\3\2\20"+
+		"\21\b\2\1\2\21\30\3\2\2\2\22\23\f\4\2\2\23\24\5\6\4\2\24\25\5\4\3\2\25"+
+		"\26\b\2\1\2\26\30\3\2\2\2\27\16\3\2\2\2\27\22\3\2\2\2\30\33\3\2\2\2\31"+
+		"\27\3\2\2\2\31\32\3\2\2\2\32\3\3\2\2\2\33\31\3\2\2\2\34\35\b\3\1\2\35"+
+		"\36\7\7\2\2\36\37\b\3\1\2\37\'\3\2\2\2 !\f\4\2\2!\"\5\b\5\2\"#\7\7\2\2"+
+		"#$\b\3\1\2$&\3\2\2\2% \3\2\2\2&)\3\2\2\2\'%\3\2\2\2\'(\3\2\2\2(\5\3\2"+
+		"\2\2)\'\3\2\2\2*+\t\2\2\2+\7\3\2\2\2,-\t\3\2\2-\t\3\2\2\2\5\27\31\'";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

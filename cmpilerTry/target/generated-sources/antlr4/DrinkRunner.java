@@ -7,9 +7,12 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 public class DrinkRunner {
 	
+	static DrinkParser parser;
+	static DrinkLexer lexer;
+	
 	public static void main(String[] args)
 	{
-		String fileName = "C:\\Users\\user\\workspace\\cmpilerMidterms\\target/generated-sources/antlr4\\testingthis.txt";
+		String fileName = "C:\\Users\\user\\workspace\\cmpilerTry2\\target/generated-sources/antlr4\\testingthis.txt";
 		String line = "";
 		 try
 		 {
@@ -22,20 +25,36 @@ public class DrinkRunner {
 	                new BufferedReader(fileReader);
 
 	            while((line = bufferedReader.readLine()) != null) {
-	                System.out.println(line);
-	                ANTLRInputStream input = new ANTLRInputStream(line);
-	        		DrinkLexer lexer = new DrinkLexer(input);
-	        		 
-	        	    // Get a list of matched tokens
-	        	    CommonTokenStream tokens = new CommonTokenStream(lexer);
-	        	 
-	        	    // Pass the tokens to the parser
-	        	    DrinkParser parser = new DrinkParser(tokens);
-	        	 
-	        	    // Specify our entry point
-	        	    //ParseTree tree = parser.perform_op();
-	        	    System.out.println(parser.perform_op().value);
-	        	    // Walk it and attach our listener
+	            	
+	            	try
+	            	{
+		                System.out.println(line);
+		                ANTLRInputStream input = new ANTLRInputStream(line);
+		        		lexer = new DrinkLexer(input);
+		        		lexer.removeErrorListeners();
+		        	    // Get a list of matched tokens
+		        	    CommonTokenStream tokens = new CommonTokenStream(lexer);
+		        	 
+		        	    // Pass the tokens to the parser
+		        	    parser = new DrinkParser(tokens);
+		        	    parser.setErrorHandler(new BailErrorStrategy());
+		        	    parser.removeErrorListeners();
+		        	    // Specify our entry point
+		        	    //ParseTree tree = parser.perform_op();
+		        	    System.out.println("Answer for above: " + parser.perform_op().value);
+		        	    // Walk it and attach our listener
+	        	    }
+	            	catch(Exception e)
+	            	{
+	            		if(e.getCause() instanceof RecognitionException)
+	            		{
+	            			System.out.println("cause: "+e.getCause());
+	            		}
+	            		else if(e instanceof RuntimeException)
+	            		{
+	            			System.out.println(e.getMessage());
+	            		}
+	            	}
 	            }   
 
 	            // Always close files.
