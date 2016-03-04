@@ -21,7 +21,14 @@ perform_op returns [int value] : n1=perform_op n2=perform_op2
 							   n1=perform_op op=add_sub n2= perform_op2
 							 	{
 							 		if($op.text.equalsIgnoreCase("+")){
+										long i;
+										i = $n1.value + $n2.value;
+										if(i > 2147483647){
+											throw new ArithmeticException("Value out of range for integer");
+										}
+										else{
 											$value = $n1.value + $n2.value;
+										}
 										} else{
 											$value = $n1.value - $n2.value;
 										}
