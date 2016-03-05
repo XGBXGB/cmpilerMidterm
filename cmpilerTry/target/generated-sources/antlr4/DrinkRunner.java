@@ -41,22 +41,26 @@ public class DrinkRunner {
 		        	    parser.removeErrorListeners();
 		        	    // Specify our entry point
 		        	    //ParseTree tree = parser.perform_op();
-		        	    System.out.println("Answer for above: " + parser.perform_op().value);
+		        	    System.out.println("Answer for above: " + parser.perform_op().value +"\n");
 		        	    // Walk it and attach our listener
 	        	    }
 	            	catch(Exception e)
 	            	{
 	            		if(e.getCause() instanceof RecognitionException)
 	            		{
-	            			System.out.println("cause: "+e.getCause());
+	            			//System.out.println("cause: "+e.getCause() + "\n");
+	            			System.out.println("Syntax Error! Unable to compute for the answer.\n");
 	            		}
 	            		else if(e instanceof RuntimeException)
 	            		{
-	            			System.out.println(e.getMessage());
+	            			//System.out.println(e.getMessage());
+	            			System.out.println("Lexical Error! Unable to compute for the answer.\n");
+
 	            		}
 	            		else if(e instanceof ArithmeticException)
 	            		{
-	            			System.out.println("cause: "+e.getMessage());
+	            			//System.out.println("cause: "+e.getMessage() + "\n");
+	            			System.out.println("Arithmetic Error! Unable to compute for the answer.\n");
 	            		}
 	            	}
 	            }   

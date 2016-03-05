@@ -7,7 +7,8 @@ grammar Drink;
  	@Override
  	public void recover(LexerNoViableAltException e){
  		String text = _input.getText(Interval.of(_tokenStartCharIndex,_input.index()));
- 		throw new RuntimeException("Syntax error at position "+_tokenStartCharPositionInLine+" '"+text+"'");
+   /*throw new RuntimeException("Syntax error at position "+_tokenStartCharPositionInLine+" '"+text+"'");*/
+ 		throw new RuntimeException("Syntax error!");
  	}	
  }
  							
