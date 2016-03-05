@@ -17,21 +17,28 @@ perform_op returns [int value] :
 							   { 
 								
 									$value = $n1.value + $n2.value;
-										
+									if($n1.value > 0 && $n2.value > 0 && $value < 0){
+										throw new ArithmeticException("Value out of range for integer");
+									}
+									if($n1.value < 0 && $n2.value < 0 && $value > 0){
+										throw new ArithmeticException("Value out of range for integer");
+									}
 							   }
 							   | 
 							   n1=perform_op op=add_sub n2= perform_op2
 							 	{
 							 		if($op.text.equalsIgnoreCase("+")){
-										long i;
-										i = $n1.value + $n2.value;
-										if(i > 2147483647){
+										$value = $n1.value + $n2.value;
+										if($n1.value > 0 && $n2.value > 0 && $value < 0){
 											throw new ArithmeticException("Value out of range for integer");
 										}
-										else{
-											$value = $n1.value + $n2.value;
+										if($n1.value < 0 && $n2.value < 0 && $value > 0){
+											throw new ArithmeticException("Value out of range for integer");
 										}
 										} else{
+										if($n1.value < $n2.value && $n2.value > 0 && $value > 0){
+											throw new ArithmeticException("Value out of range for integer");
+										}
 											$value = $n1.value - $n2.value;
 										}
 									
@@ -46,6 +53,18 @@ perform_op2 returns [int value]: n1=perform_op2 op=mul_div n2=perform_op3
 								{
 									if($op.text.equalsIgnoreCase("*")){
 										$value = $n1.value * $n2.value;
+										if($n1.value > 0 && $n2.value > 0 && $value < 0){
+											throw new ArithmeticException("Value out of range for integer");
+										}
+										if($n1.value < 0 && $n2.value < 0 && $value < 0){
+											throw new ArithmeticException("Value out of range for integer");
+										}
+										if($n1.value > 0 && $n2.value < 0 && $value > 0){
+											throw new ArithmeticException("Value out of range for integer");
+										}
+										if($n1.value < 0 && $n2.value > 0 && $value > 0){
+											throw new ArithmeticException("Value out of range for integer");
+										}
 									} else if($op.text.equalsIgnoreCase("/")){
 										$value = $n1.value / $n2.value;
 									} else {
