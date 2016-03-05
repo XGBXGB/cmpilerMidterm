@@ -12,7 +12,7 @@ public class DrinkRunner {
 	
 	public static void main(String[] args)
 	{
-		String fileName = "C:\\Users\\user\\workspace\\cmpilerTry2\\target/generated-sources/antlr4\\testingthis.txt";
+		String fileName = "C:\\Users\\user\\workspace\\cmpilerTry\\target/generated-sources/antlr4\\testingthis.txt";
 		String line = "";
 		 try
 		 {

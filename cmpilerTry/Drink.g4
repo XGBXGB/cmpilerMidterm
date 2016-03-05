@@ -10,8 +10,9 @@ grammar Drink;
  		throw new RuntimeException("Syntax error at position "+_tokenStartCharPositionInLine+" '"+text+"'");
  	}	
  }
- 
-perform_op returns [int value] : n1=perform_op n2=perform_op2 
+ 							
+perform_op returns [int value] :    
+								n1=perform_op n2=perform_op2 
 							   { 
 								
 									$value = $n1.value + $n2.value;
@@ -35,31 +36,40 @@ perform_op returns [int value] : n1=perform_op n2=perform_op2
 									
 							 	}
 							  |
-							   n=perform_op2 {$value = $n.value;};
+							   n=perform_op2 {$value = $n.value;}
+							  ;
 							   
 							   
 							   
-perform_op2 returns [int value]: n1=perform_op2 op=mul_div n2=INT_LIT 
+perform_op2 returns [int value]: n1=perform_op2 op=mul_div n2=perform_op3 
 								{
-									
 									if($op.text.equalsIgnoreCase("*")){
-										$value = $n1.value * Integer.parseInt($n2.text);
+										$value = $n1.value * $n2.value;
 									} else if($op.text.equalsIgnoreCase("/")){
-										$value = $n1.value / Integer.parseInt($n2.text);
+										$value = $n1.value / $n2.value;
 									} else {
-										$value = $n1.value % Integer.parseInt($n2.text);
+										$value = $n1.value % $n2.value;
 									}
+									
 								}
+								| w=perform_op3
+									{
+										$value = $w.value;
+									}
+							    ;
+
+perform_op3 returns [int value]:
+								'(' c=perform_op ')'
+							    {
+									$value = $c.value;
+							    }
+								
 							    | n=INT_LIT 
 							    {
 							    	$value=Integer.parseInt($n.text);
 							    }
-							    | '(' c=perform_op ')'
-							    {
-								$value = $c.value;
-							    };
-							    
 
+								;
 
 add_sub: '+' | '-';
 mul_div: '*' | '/' | '%';

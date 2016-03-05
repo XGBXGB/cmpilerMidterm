@@ -39,6 +39,18 @@ public class DrinkBaseListener implements DrinkListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPerform_op3(DrinkParser.Perform_op3Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPerform_op3(DrinkParser.Perform_op3Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAdd_sub(DrinkParser.Add_subContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -27,6 +27,16 @@ public interface DrinkListener extends ParseTreeListener {
 	 */
 	void exitPerform_op2(DrinkParser.Perform_op2Context ctx);
 	/**
+	 * Enter a parse tree produced by {@link DrinkParser#perform_op3}.
+	 * @param ctx the parse tree
+	 */
+	void enterPerform_op3(DrinkParser.Perform_op3Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DrinkParser#perform_op3}.
+	 * @param ctx the parse tree
+	 */
+	void exitPerform_op3(DrinkParser.Perform_op3Context ctx);
+	/**
 	 * Enter a parse tree produced by {@link DrinkParser#add_sub}.
 	 * @param ctx the parse tree
 	 */
