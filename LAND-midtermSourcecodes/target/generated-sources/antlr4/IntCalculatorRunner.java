@@ -19,8 +19,27 @@ public class IntCalculatorRunner {
 		lexer = null;
 	}
 	
+	public static boolean isInteger(String s) {
+	      boolean isValidInteger = false;
+	      try
+	      {
+	         Integer.parseInt(s);
+	 
+	         // s is a valid integer
+	 
+	         isValidInteger = true;
+	      }
+	      catch (NumberFormatException ex)
+	      {
+	         // s is not an integer
+	      }
+	 
+	      return isValidInteger;
+	   }
+	
 	public void startProgram()
 	{
+		//String fileName = "C:\\Users\\user\\Desktop\\LAND-JAR\\input.txt";
 		String fileName = "input.txt";
 		String line = "";
 		 try
@@ -28,15 +47,14 @@ public class IntCalculatorRunner {
 	            // FileReader reads text files in the default encoding.
 	            /*FileReader fileReader = 
 	                new FileReader(fileName);
-	             */
+	             
 	            // Always wrap FileReader in BufferedReader.
-	            /*BufferedReader bufferedReader = 
+	            BufferedReader bufferedReader = 
 	                new BufferedReader(fileReader);
 	             */
 	            
 			 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
-			         //this.getClass().getClassLoader().getResourceAsStream("../../../../../../../../../../../../../../input.txt")));
-					 this.getClass().getClassLoader().getResourceAsStream("input.txt")));
+			    	 this.getClass().getClassLoader().getResourceAsStream("input.txt")));
 	            while((line = bufferedReader.readLine()) != null) {
 	            	
 	            	try

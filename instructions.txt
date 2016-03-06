@@ -1,0 +1,23 @@
+These are the instructions on how to run LAND's Midterm activity as well as check the sourcecodes.
+NOTES: The containing folder of this text file contains two more folders namely LAND-JAR and LAND-midtermsourcecodes.
+LAND-midtermsourcecodes contains all the source codes used to create LAND.jar. LAND-JAR contains the runnable jar file for this activity
+plus the input.txt used to test our program.
+You must be on atleast Java SE 1.8 and JDK 8 to be able to run this program (latest).
+
+To run LAND.jar, follow the instructions below:
+
+OPTIONAL *
+* Copy the folder LAND-JAR (The folder containing LAND.jar and input.txt) to your desktop. This would make it easier for you to go
+to the folder in the command prompt and then run the jar file.
+
+INSTRUCTIONS
+1.) Replace input.txt in the LAND-JAR folder with the proper input.txt that will be used for testing.
+2.) Open your Command Prompt (cmd).
+3.) In the command prompt, change the file path to LAND-JAR (go to the LAND-JAR directory). If you placed the folder on your desktop, the file path should look
+	like C:>Users>[your user name]>Desktop>LAND-JAR> in the command prompt.
+4.) type in the following to run LAND.jar in the command prompt:
+	java -jar LAND.jar
+5.) The program should run and you will get the answers for each of the expressions!
+
+MEMBERS:
+Cote, Christian Gabriel M. , De Jesus, Paolo Miguel A. and Erive, Winona Louise D.

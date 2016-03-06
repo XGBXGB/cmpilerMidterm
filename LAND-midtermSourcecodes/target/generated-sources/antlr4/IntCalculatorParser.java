@@ -151,7 +151,8 @@ public class IntCalculatorParser extends Parser {
 						setState(15);
 						((Perform_opContext)_localctx).n2 = perform_op2(0);
 						 
-						          								
+						          								if((((Perform_opContext)_localctx).n2!=null?_input.getText(((Perform_opContext)_localctx).n2.start,((Perform_opContext)_localctx).n2.stop):null).startsWith("+") || (((Perform_opContext)_localctx).n2!=null?_input.getText(((Perform_opContext)_localctx).n2.start,((Perform_opContext)_localctx).n2.stop):null).startsWith("-"))
+						          								{
 						          									((Perform_opContext)_localctx).value =  ((Perform_opContext)_localctx).n1.value + ((Perform_opContext)_localctx).n2.value;
 						          									if(((Perform_opContext)_localctx).n1.value > 0 && ((Perform_opContext)_localctx).n2.value > 0 && _localctx.value < 0){
 						          										throw new ArithmeticException("Value out of range for integer");
@@ -159,6 +160,7 @@ public class IntCalculatorParser extends Parser {
 						          									if(((Perform_opContext)_localctx).n1.value < 0 && ((Perform_opContext)_localctx).n2.value < 0 && _localctx.value > 0){
 						          										throw new ArithmeticException("Value out of range for integer");
 						          									}
+						          								} else throw new RuntimeException("Syntax Error! Unable to compute for the answer.\n");
 						          							   
 						}
 						break;
