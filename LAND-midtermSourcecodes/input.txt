@@ -1,4 +1,4 @@
 float Main(){
 	float Wakoko : 5!
-	scan(Wakoko)!
+	scan("W")!
 }

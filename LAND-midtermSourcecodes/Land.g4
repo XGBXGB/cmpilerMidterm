@@ -33,9 +33,13 @@ data_type returns [String s]: INT_DATA_TYPE {$s = $INT_DATA_TYPE.text;}
 							| STRING_DATA_TYPE {$s = $STRING_DATA_TYPE.text;}
 							| CHAR_DATA_TYPE {$s = $CHAR_DATA_TYPE.text;};	
 literal returns [Object o]: digit_literal 
-										{
-											$o = $digit_literal.o;
-										} | characters_literal;
+							{
+								$o = $digit_literal.o;
+							} 
+							| characters_literal
+							{
+								$o = $characters_literal.o;
+							} ;
 digit_literal returns [Object o]: INT_LIT 
 								{
 									$o=Integer.parseInt($INT_LIT.text);
@@ -44,7 +48,14 @@ digit_literal returns [Object o]: INT_LIT
 								{
 									$o=Float.parseFloat($FLOAT_LIT.text);
 								} ;
-characters_literal: STRING_LIT | CHAR_LIT;
+characters_literal returns [Object o]: STRING_LIT
+								{
+									$o = $STRING_LIT.text.replace("'", "");
+								} 
+							 	| CHAR_LIT
+							 	{
+							 		$o = $CHAR_LIT.text.replace("\"", "");
+							 	};
 return_type: data_type | VOID_DATA_TYPE;
  	
 //Constant declaration
@@ -69,6 +80,8 @@ assignment[String dataType]: var ASSIGNMENT_OPERATOR expression
 									memory.put($var.s, new Integer((int)$expression.o));
 								}else if($dataType.equals("int")){
 									memory.put($var.s, new Float((float)$expression.o));
+								}else if($dataType.equals("char")){
+									memory.put($var.s, new String((String)$expression.o));
 								}else if($dataType.equals("unknown type")){
 									if(memory.get($var.s)==null){
 										/*throw exception*/
@@ -195,24 +208,23 @@ cond_op: NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR | GREATER_THAN_OPERATOR | LES
 
 //Expression
 expression returns[Object o, int type]: IDENTIFIER
-											{
-												$type=1;
-												$o = $IDENTIFIER.text;
-											}
- 
-											| literal 
-											{
-												$type = 2;
-												$o = $literal.o;
-											}
-											| function_call 
-											| perform_op
-											{
-												$o=$perform_op.value;
-												$type = 3;
-											} 
-											| assignment["unknown type"] 
-											| /*epsilon*/;
+										{
+											$type=1;
+											$o = $IDENTIFIER.text;
+										}
+										| literal 
+										{
+											$type = 2;
+											$o = $literal.o;
+										}
+										| function_call 
+										| perform_op
+										{
+											$o=$perform_op.value;
+											$type = 3;
+										} 
+										| assignment["unknown type"] 
+										| /*epsilon*/;
 more_expressions: COMMA_TOKEN expression more_expressions | /*epsilon*/;
 
 //Code
@@ -221,6 +233,8 @@ code_block: variable_declaration code_block | function_declaration code_block | 
 printing: 'scan' OPEN_PARENTHESIS expression CLOSE_PARENTHESIS TERMINATOR_TOKEN 
 		{	if($expression.type == 1){
 				System.out.println(memory.get((String)$expression.o));
+			}else if($expression.type == 2){
+				System.out.println($expression.o);
 			}
 			
 		}; 
@@ -247,16 +261,16 @@ printing: 'scan' OPEN_PARENTHESIS expression CLOSE_PARENTHESIS TERMINATOR_TOKEN
 
 //Literals
 INT_LIT: (('+'|'-')?('0'..'9')+){System.out.println("INT HERE");};
-FLOAT_LIT: (('+'|'-')?('0'..'9')*'.'?('0'..'9')+){System.out.println("Float HERE");};//
-STRING_LIT: '\''('A'..'Z''a'..'z''0'..'9')*'\''{System.out.println("String HERE");};
-CHAR_LIT: '\"'('A'..'Z''a'..'z''0'..'9')'\"';
+FLOAT_LIT: (('+'|'-')?('0'..'9')*'.'?('0'..'9')+){System.out.println("Float HERE");};
+STRING_LIT: '\''(('A'..'Z')|('a'..'z')|('0'..'9'))*'\''{System.out.println("String HERE");};
+CHAR_LIT: '"'(('A'..'Z')|('a'..'z')|('0'..'9'))'"';
 IDENTIFIER: ('A'..'Z')('a'..'z')*;
 
 //Data types
 INT_DATA_TYPE: 'float';
 FLOAT_DATA_TYPE: 'int';
 STRING_DATA_TYPE: 'char';
-CHAR_DATA_TYPE: 'string';
+CHAR_DATA_TYPE: 'String';
 VOID_DATA_TYPE: 'full';
 
 //Loops
