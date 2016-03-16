@@ -1,2 +1,4 @@
 float Main(){
+	float Wakoko!
+	dont{ }thame(5)!
 }

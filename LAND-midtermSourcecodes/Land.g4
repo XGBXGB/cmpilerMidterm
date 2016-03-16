@@ -33,7 +33,7 @@ constant_declaration: CONSTANT_TOKEN IDENTIFIER literal TERMINATOR_TOKEN;
 //Variable declaration/initialization
 var: IDENTIFIER | array;
 variable_declaration: data_type var more_variable_declaration | data_type assignment_declaration more_variable_declaration;
-more_variable_declaration: COMMA_TOKEN var more_variable_declaration | COMMA_TOKEN assignment_declaration more_variable_declaration | /*epsilon*/;
+more_variable_declaration: COMMA_TOKEN var more_variable_declaration | COMMA_TOKEN assignment_declaration more_variable_declaration | TERMINATOR_TOKEN;
 
 //Arrays
 array: IDENTIFIER OPEN_BRACKET expression CLOSE_BRACKET;
@@ -48,7 +48,7 @@ assignment_line: var ASSIGNMENT_OPERATOR expression TERMINATOR_TOKEN;
 function_declaration: return_type IDENTIFIER OPEN_PARENTHESIS function_declaration_parameters_type CLOSE_PARENTHESIS OPEN_BRACE code_block CLOSE_BRACE;
 function_declaration_parameters_type: function_declaration_parameters | /*epsilon*/;
 function_declaration_parameters: return_type IDENTIFIER function_declaration_more_parameters;
-function_declaration_more_parameters: COMMA_TOKEN function_declaration_parameters function_declaration_more_parameters | /*epsilon*/;
+function_declaration_more_parameters: COMMA_TOKEN function_declaration_parameters function_declaration_more_parameters | TERMINATOR_TOKEN;
 
 //Function call
 function_call: IDENTIFIER OPEN_PARENTHESIS function_call_parameters_type CLOSE_PARENTHESIS;
@@ -155,19 +155,11 @@ cond_op: NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR | GREATER_THAN_OPERATOR | LES
 
 
 //Expression
-expression: IDENTIFIER | literal | function_call | perform_op | assignment | /*epsilon*/;
+expression: IDENTIFIER | literal {System.out.println("litera HERE");}| function_call | perform_op | assignment | /*epsilon*/;
 more_expressions: COMMA_TOKEN expression more_expressions | /*epsilon*/;
 
 //Code
-code_block: variable_declaration code_block 
-| assignment_line code_block 
-| function_declaration code_block 
-| function_call_line code_block 
-| conditional code_block 
-| wloop code_block 
-| floop code_block 
-| dloop code_block 
-| /*epsilon*/;
+code_block: variable_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block |  {System.out.println("CRAPSILON");};
 
 /*
  * PARSER PARSER PARSER PARSER PARSER PARSER PARSER RULES RULES RULES RULES RULES RULES RULES
@@ -191,11 +183,11 @@ code_block: variable_declaration code_block
  */
 
 //Literals
-INT_LIT: (('+'|'-')?('0'..'9')+);
-FLOAT_LIT: (('+'|'-')?('0'..'9')*.?('0'..'9')+);//
-STRING_LIT: '\''('A'..'Z''a'..'z''0'..'9')*'\'';
+INT_LIT: (('+'|'-')?('0'..'9')+){System.out.println("INT HERE");};
+FLOAT_LIT: (('+'|'-')?('0'..'9')*'.'?('0'..'9')+){System.out.println("Float HERE");};//
+STRING_LIT: '\''('A'..'Z''a'..'z''0'..'9')*'\''{System.out.println("String HERE");};
 CHAR_LIT: '\"'('A'..'Z''a'..'z''0'..'9')'\"';
-IDENTIFIER: ('A'..'Z')('A'..'Z''a'..'z''0'..'9''_')*;
+IDENTIFIER: ('A'..'Z')('a'..'z')*;
 
 //Data types
 INT_DATA_TYPE: 'float';
