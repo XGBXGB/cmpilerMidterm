@@ -1,4 +1,4 @@
 float Main(){
-	float Wakoko!
-	dont{ }thame(5)!
+	float Wakoko : 5!
+	scan(Wakoko)!
 }

@@ -1,4 +1,7 @@
 // Generated from Land.g4 by ANTLR 4.5.2
+
+ 	import java.util.HashMap;
+ 
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -366,4 +369,14 @@ public interface LandListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCode_block(LandParser.Code_blockContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LandParser#printing}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrinting(LandParser.PrintingContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LandParser#printing}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrinting(LandParser.PrintingContext ctx);
 }

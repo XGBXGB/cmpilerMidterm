@@ -1,5 +1,8 @@
 // Generated from Land.g4 by ANTLR 4.5.2
 
+ 	import java.util.HashMap;
+ 
+
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -442,6 +445,18 @@ public class LandBaseListener implements LandListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCode_block(LandParser.Code_blockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPrinting(LandParser.PrintingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPrinting(LandParser.PrintingContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

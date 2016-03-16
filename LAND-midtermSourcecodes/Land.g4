@@ -9,6 +9,13 @@ grammar Land;
  * PARSER PARSER PARSER PARSER PARSER PARSER PARSER RULES RULES RULES RULES RULES RULES RULES
  * PARSER PARSER PARSER PARSER PARSER PARSER PARSER RULES RULES RULES RULES RULES RULES RULES
  */
+ @parser::header{
+ 	import java.util.HashMap;
+ }
+ 
+ @parser::members{
+ 	HashMap memory = new HashMap();
+ }
  
  @lexer::members{
  	@Override
@@ -21,9 +28,22 @@ grammar Land;
  }
  
  //Data types and literals
-data_type: INT_DATA_TYPE | FLOAT_DATA_TYPE | STRING_DATA_TYPE | CHAR_DATA_TYPE;	
-literal: digit_literal | characters_literal;
-digit_literal: INT_LIT | FLOAT_LIT;
+data_type returns [String s]: INT_DATA_TYPE {$s = $INT_DATA_TYPE.text;}
+							| FLOAT_DATA_TYPE {$s = $FLOAT_DATA_TYPE.text;}
+							| STRING_DATA_TYPE {$s = $STRING_DATA_TYPE.text;}
+							| CHAR_DATA_TYPE {$s = $CHAR_DATA_TYPE.text;};	
+literal returns [Object o]: digit_literal 
+										{
+											$o = $digit_literal.o;
+										} | characters_literal;
+digit_literal returns [Object o]: INT_LIT 
+								{
+									$o=Integer.parseInt($INT_LIT.text);
+								} 
+								| FLOAT_LIT 
+								{
+									$o=Float.parseFloat($FLOAT_LIT.text);
+								} ;
 characters_literal: STRING_LIT | CHAR_LIT;
 return_type: data_type | VOID_DATA_TYPE;
  	
@@ -31,17 +51,36 @@ return_type: data_type | VOID_DATA_TYPE;
 constant_declaration: CONSTANT_TOKEN IDENTIFIER literal TERMINATOR_TOKEN;
 
 //Variable declaration/initialization
-var: IDENTIFIER | array;
-variable_declaration: data_type var more_variable_declaration | data_type assignment_declaration more_variable_declaration;
-more_variable_declaration: COMMA_TOKEN var more_variable_declaration | COMMA_TOKEN assignment_declaration more_variable_declaration | TERMINATOR_TOKEN;
+var returns [String s]: IDENTIFIER {$s = $IDENTIFIER.text;}| array;
+variable_declaration: data_type var more_variable_declaration[$data_type.s]
+					| data_type assignment_declaration[$data_type.s] more_variable_declaration[$data_type.s];
+more_variable_declaration[String dataType]: COMMA_TOKEN var more_variable_declaration[$dataType] | COMMA_TOKEN assignment_declaration[$dataType] more_variable_declaration[$dataType] | TERMINATOR_TOKEN;
 
 //Arrays
 array: IDENTIFIER OPEN_BRACKET expression CLOSE_BRACKET;
 
 //Assignment statement
-assignment_declaration: assignment | assignment_array;
+assignment_declaration[String dataType]: assignment[$dataType] | assignment_array;
 assignment_array: array ASSIGNMENT_OPERATOR OPEN_BRACE expression more_expressions CLOSE_BRACE;
-assignment: var ASSIGNMENT_OPERATOR expression;
+assignment[String dataType]: var ASSIGNMENT_OPERATOR expression
+							{
+								if($dataType.equals("float")){
+									//todo if expression instanceof int else throw
+									memory.put($var.s, new Integer((int)$expression.o));
+								}else if($dataType.equals("int")){
+									memory.put($var.s, new Float((float)$expression.o));
+								}else if($dataType.equals("unknown type")){
+									if(memory.get($var.s)==null){
+										/*throw exception*/
+									}else{
+										if(memory.get($var.s) instanceof Integer){
+											memory.put($var.s, new Integer((int)$expression.o));
+										}else{
+											memory.put($var.s, new Float((float)$expression.o));
+										} 
+									}
+								}
+							};
 assignment_line: var ASSIGNMENT_OPERATOR expression TERMINATOR_TOKEN;
 
 //Function declaration
@@ -155,12 +194,36 @@ cond_op: NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR | GREATER_THAN_OPERATOR | LES
 
 
 //Expression
-expression: IDENTIFIER | literal {System.out.println("litera HERE");}| function_call | perform_op | assignment | /*epsilon*/;
+expression returns[Object o, int type]: IDENTIFIER
+											{
+												$type=1;
+												$o = $IDENTIFIER.text;
+											}
+ 
+											| literal 
+											{
+												$type = 2;
+												$o = $literal.o;
+											}
+											| function_call 
+											| perform_op
+											{
+												$o=$perform_op.value;
+												$type = 3;
+											} 
+											| assignment["unknown type"] 
+											| /*epsilon*/;
 more_expressions: COMMA_TOKEN expression more_expressions | /*epsilon*/;
 
 //Code
-code_block: variable_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block |  {System.out.println("CRAPSILON");};
+code_block: variable_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block | printing |  {System.out.println("CRAPSILON");};
 
+printing: 'scan' OPEN_PARENTHESIS expression CLOSE_PARENTHESIS TERMINATOR_TOKEN 
+		{	if($expression.type == 1){
+				System.out.println(memory.get((String)$expression.o));
+			}
+			
+		}; 
 /*
  * PARSER PARSER PARSER PARSER PARSER PARSER PARSER RULES RULES RULES RULES RULES RULES RULES
  * PARSER PARSER PARSER PARSER PARSER PARSER PARSER RULES RULES RULES RULES RULES RULES RULES
