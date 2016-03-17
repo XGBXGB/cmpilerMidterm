@@ -1,4 +1,15 @@
+float Func(float Cote)
+{
+	float Winona!
+	Cote: 7-3!
+	
+}
+
 float Main(){
-	float Wakoko : 5!
-	scan("W")!
+	
+		float Paolo!
+		Paolo:10!
+		Paolo : Func(Paolo)!
+		float Printdis : 5+5!
+		scan(Printdis)!
 }

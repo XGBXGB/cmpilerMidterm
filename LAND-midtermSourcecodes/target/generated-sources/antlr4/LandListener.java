@@ -379,4 +379,14 @@ public interface LandListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrinting(LandParser.PrintingContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LandParser#return_line}.
+	 * @param ctx the parse tree
+	 */
+	void enterReturn_line(LandParser.Return_lineContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LandParser#return_line}.
+	 * @param ctx the parse tree
+	 */
+	void exitReturn_line(LandParser.Return_lineContext ctx);
 }

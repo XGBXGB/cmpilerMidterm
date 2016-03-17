@@ -457,6 +457,18 @@ public class LandBaseListener implements LandListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPrinting(LandParser.PrintingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterReturn_line(LandParser.Return_lineContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitReturn_line(LandParser.Return_lineContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

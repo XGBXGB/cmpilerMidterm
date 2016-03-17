@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Font;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -5,7 +7,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Arrays;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+
+import org.stringtemplate.*;
+import org.antlr.runtime.RuleReturnScope;
+import org.antlr.runtime.tree.CommonTree;
+import org.antlr.runtime.tree.CommonTreeNodeStream;
+import org.antlr.runtime.tree.DOTTreeGenerator;
+import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 public class LandRunner {
@@ -91,11 +106,46 @@ public class LandRunner {
     	    
     	    //parser.removeErrorListeners();
     	    parser.addParseListener(new FunctionsListener());
-    	    parser.code_block();
-    	    // Specify our entry point
-    	    //ParseTree tree = parser.perform_op();
-    	    //System.out.println("Answer for above: " + parser.perform_op().value +"\n");
-    	    // Walk it and attach our listener
+    	    
+    	     
+    
+    	    ParseTree tree = parser.code_block(); 
+
+            //show AST in console
+            System.out.println("AST in Console: "+tree.toStringTree(parser));
+
+            //show AST in GUI
+            UIManager.put("nimbusBase", new Color(3, 130, 40));
+            UIManager.put("nimbusBlueGrey", new Color(117, 65, 32));
+            try {
+                for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+                }
+            } catch (Exception e) {
+                // If Nimbus is not available, you can set the GUI to another look and feel.
+            }
+            
+            JFrame frame = new JFrame("LAND Abstract Syntax Tree");
+            
+            JPanel panel = new JPanel();
+            JScrollPane scrollPane = new JScrollPane(panel);
+            TreeViewer treeView = new TreeViewer(Arrays.asList(
+                    parser.getRuleNames()),tree);
+            treeView.setFont(new Font("Calibri", Font.BOLD, 10));
+            treeView.setBorderColor(new Color(3, 130, 20));
+            treeView.setBoxColor(new Color(3, 175, 40));
+            treeView.setScale(1.7);//scale a little
+            
+            panel.add(treeView);
+            frame.add(scrollPane);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(700,500);
+            frame.setVisible(true);
+    	    
+    	    
 	    }
     	catch(Exception e)
     	{
@@ -130,6 +180,10 @@ public class LandRunner {
 	{
 		LandRunner program = new LandRunner();
 			program.startProgram();
+			Object o = true;
+			if(o instanceof Boolean){
+				
+			}
 	}
 	
 }

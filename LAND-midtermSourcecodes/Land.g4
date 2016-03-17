@@ -56,7 +56,7 @@ characters_literal returns [Object o]: STRING_LIT
 							 	{
 							 		$o = $CHAR_LIT.text.replace("\"", "");
 							 	};
-return_type: data_type | VOID_DATA_TYPE;
+return_type returns [String returnType]: data_type {$returnType = $data_type.s;}| VOID_DATA_TYPE {$returnType = "full";};
  	
 //Constant declaration
 constant_declaration: CONSTANT_TOKEN IDENTIFIER literal TERMINATOR_TOKEN;
@@ -94,13 +94,24 @@ assignment[String dataType]: var ASSIGNMENT_OPERATOR expression
 									}
 								}
 							};
-assignment_line: var ASSIGNMENT_OPERATOR expression TERMINATOR_TOKEN;
+assignment_line: var ASSIGNMENT_OPERATOR expression TERMINATOR_TOKEN
+				{
+					if(memory.get($var.s)==null){
+							/*throw exception*/
+					}else{
+						if(memory.get($var.s) instanceof Integer){
+							memory.put($var.s, new Integer((int)$expression.o));
+						}else{
+							memory.put($var.s, new Float((float)$expression.o));
+						} 
+					}		
+				};
 
 //Function declaration
-function_declaration: return_type IDENTIFIER OPEN_PARENTHESIS function_declaration_parameters_type CLOSE_PARENTHESIS OPEN_BRACE code_block CLOSE_BRACE;
+function_declaration: return_type IDENTIFIER OPEN_PARENTHESIS function_declaration_parameters_type CLOSE_PARENTHESIS OPEN_BRACE code_block return_line[$return_type.returnType] CLOSE_BRACE;
 function_declaration_parameters_type: function_declaration_parameters | /*epsilon*/;
 function_declaration_parameters: return_type IDENTIFIER function_declaration_more_parameters;
-function_declaration_more_parameters: COMMA_TOKEN function_declaration_parameters function_declaration_more_parameters | TERMINATOR_TOKEN;
+function_declaration_more_parameters: COMMA_TOKEN function_declaration_parameters function_declaration_more_parameters | /*epsilon */;
 
 //Function call
 function_call: IDENTIFIER OPEN_PARENTHESIS function_call_parameters_type CLOSE_PARENTHESIS;
@@ -113,7 +124,11 @@ conditional: IF_TOKEN OPEN_PARENTHESIS expression CLOSE_PARENTHESIS OPEN_BRACE c
 conditional_continue: ELSE_TOKEN conditional | ELSE_TOKEN OPEN_BRACE code_block CLOSE_BRACE;
 
 //Event-controlled loop
-wloop: WHILE_TOKEN OPEN_PARENTHESIS expression CLOSE_PARENTHESIS OPEN_BRACE code_block CLOSE_BRACE;
+wloop: WHILE_TOKEN OPEN_PARENTHESIS expression CLOSE_PARENTHESIS OPEN_BRACE code_block CLOSE_BRACE
+	  //{
+	 //	if($expression.o instanceof Integer)
+	 // }
+	 ;
 
 //Repeat-until loop
 dloop: DO_TOKEN OPEN_BRACE code_block CLOSE_BRACE WHILE_TOKEN OPEN_PARENTHESIS expression CLOSE_PARENTHESIS TERMINATOR_TOKEN;
@@ -207,10 +222,10 @@ cond_op: NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR | GREATER_THAN_OPERATOR | LES
 
 
 //Expression
-expression returns[Object o, int type]: IDENTIFIER
+expression returns[Object o, int type]: var
 										{
 											$type=1;
-											$o = $IDENTIFIER.text;
+											$o = $var.s;
 										}
 										| literal 
 										{
@@ -218,7 +233,7 @@ expression returns[Object o, int type]: IDENTIFIER
 											$o = $literal.o;
 										}
 										| function_call 
-										| perform_op
+										| perform_op 
 										{
 											$o=$perform_op.value;
 											$type = 3;
@@ -228,7 +243,7 @@ expression returns[Object o, int type]: IDENTIFIER
 more_expressions: COMMA_TOKEN expression more_expressions | /*epsilon*/;
 
 //Code
-code_block: variable_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block | printing |  {System.out.println("CRAPSILON");};
+code_block: variable_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block | printing code_block|  {System.out.println("CRAPSILON");};
 
 printing: 'scan' OPEN_PARENTHESIS expression CLOSE_PARENTHESIS TERMINATOR_TOKEN 
 		{	if($expression.type == 1){
@@ -238,6 +253,13 @@ printing: 'scan' OPEN_PARENTHESIS expression CLOSE_PARENTHESIS TERMINATOR_TOKEN
 			}
 			
 		}; 
+return_line[String s]: RETURN_TOKEN expression TERMINATOR_TOKEN 
+					 {
+					 	if($s.equals("full")){
+					 		//throw exception
+					 	}
+					 }
+					 | /*epsilon*/;
 /*
  * PARSER PARSER PARSER PARSER PARSER PARSER PARSER RULES RULES RULES RULES RULES RULES RULES
  * PARSER PARSER PARSER PARSER PARSER PARSER PARSER RULES RULES RULES RULES RULES RULES RULES
