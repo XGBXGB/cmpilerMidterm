@@ -135,9 +135,16 @@ public class LandRunner {
             TreeViewer treeView = new TreeViewer(Arrays.asList(
                     parser.getRuleNames()),tree);
             treeView.setFont(new Font("Calibri", Font.BOLD, 10));
-            treeView.setBorderColor(new Color(3, 130, 20));
-            treeView.setBoxColor(new Color(3, 175, 40));
+            
+            
+            treeView.setBorderColor(new Color(3, 220, 40));
+            treeView.setBoxColor(new Color(3, 255, 76));
+             
+            //treeView.setBorderColor(new Color(3, 130, 20));
+            //treeView.setBoxColor(new Color(3, 175, 40));
+            
             treeView.setScale(1.7);//scale a little
+            
             
             panel.add(treeView);
             frame.add(scrollPane);
