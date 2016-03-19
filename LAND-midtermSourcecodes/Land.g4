@@ -121,7 +121,7 @@ function_call_line: function_call TERMINATOR_TOKEN;
 
 //Conditional
 conditional: IF_TOKEN OPEN_PARENTHESIS expression CLOSE_PARENTHESIS OPEN_BRACE code_block CLOSE_BRACE conditional_continue;
-conditional_continue: ELSE_TOKEN conditional | ELSE_TOKEN OPEN_BRACE code_block CLOSE_BRACE;
+conditional_continue: ELSE_TOKEN conditional | ELSE_TOKEN OPEN_BRACE code_block CLOSE_BRACE | ;
 
 //Event-controlled loop
 wloop: WHILE_TOKEN OPEN_PARENTHESIS expression CLOSE_PARENTHESIS OPEN_BRACE code_block CLOSE_BRACE
