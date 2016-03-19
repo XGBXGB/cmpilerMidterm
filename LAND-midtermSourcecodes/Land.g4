@@ -222,22 +222,22 @@ cond_op: NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR | GREATER_THAN_OPERATOR | LES
 
 
 //Expression
-expression returns[Object o, int type]: var
+expression returns[Object o, int type]:  perform_op 
 										{
-											$type=1;
-											$o = $var.s;
-										}
+											$o=$perform_op.value;
+											$type = 1;
+										} 
 										| literal 
 										{
 											$type = 2;
 											$o = $literal.o;
 										}
 										| function_call 
-										| perform_op 
+										| var
 										{
-											$o=$perform_op.value;
-											$type = 3;
-										} 
+											$type=3;
+											$o = $var.s;
+										}
 										| assignment["unknown type"] 
 										| /*epsilon*/;
 more_expressions: COMMA_TOKEN expression more_expressions | /*epsilon*/;
