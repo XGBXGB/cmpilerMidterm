@@ -292,7 +292,7 @@ IDENTIFIER: ('A'..'Z')('a'..'z')*;
 INT_DATA_TYPE: 'float';
 FLOAT_DATA_TYPE: 'int';
 STRING_DATA_TYPE: 'char';
-CHAR_DATA_TYPE: 'String';
+CHAR_DATA_TYPE: 'string';
 VOID_DATA_TYPE: 'full';
 
 //Loops
