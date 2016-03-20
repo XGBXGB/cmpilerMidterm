@@ -138,7 +138,7 @@ floop: FOR_TOKEN OPEN_PARENTHESIS expression TERMINATOR_TOKEN expression TERMINA
 
 
 //Perform operation	rules					
-perform_op returns [int value] : n1=perform_op n2=perform_op2 
+perform_op returns [Object value] : n1=perform_op n2=perform_op2 
 							   { 
 								if($n2.text.startsWith("+") || $n2.text.startsWith("-"))
 								{
@@ -213,6 +213,26 @@ perform_op3 returns [int value]:'(' c=perform_op ')'
 							    | n=INT_LIT 
 							    {
 							    	$value=Integer.parseInt($n.text);
+							    }
+							    | n1=FLOAT_LIT
+							    {
+							    	$value=Float.parseFloat($n1.text);
+							    }
+							    | n2=STRING_LIT
+							    {
+							    	
+							    }
+							    | n3=CHAR_LIT
+							    {
+							    	
+							    }
+							    | n4=IDENTIFIER
+							    {
+							    	
+							    }
+							    | n5=function_call
+							    {
+							    	
 							    }
 
 								;
