@@ -1,7 +1,7 @@
 float Func(float Cote)
 {
 	float Winona!
-	Cote: 7-3!
+	Cote: 7+3!
 	
 }
 
@@ -9,7 +9,6 @@ float Main(){
 	
 		float Paolo!
 		Paolo:10!
-		Paolo : Func(Paolo)!
-		float Printdis : 5+5!
-		scan(Printdis)!
+		Paolo: Func(Paolo) + 5!
+		scan(Paolo)!
 }

@@ -48,7 +48,7 @@ public class LandLexer extends Lexer {
 
 	private static final String[] _LITERAL_NAMES = {
 		null, "'scan'", null, null, null, null, null, "'float'", "'int'", "'char'", 
-		"'String'", "'full'", "'from'", "'thame'", "'dont'", "'then'", "'anne'", 
+		"'string'", "'full'", "'from'", "'thame'", "'dont'", "'then'", "'anne'", 
 		"'borrow'", "'*/'", "':'", "'-'", "'+'", "'/'", "'*'", "'%'", "'--'", 
 		"'++'", "'&&'", "'||'", "';'", "'::'", "';:'", "':<'", "':>'", "'<'", 
 		"'>'", "'something'", "'changing'", null, "'!'", "'('", "')'", "'{'", 
@@ -226,7 +226,7 @@ public class LandLexer extends Lexer {
 		"\u009e\7c\2\2\u009e\u009f\7v\2\2\u009f\20\3\2\2\2\u00a0\u00a1\7k\2\2\u00a1"+
 		"\u00a2\7p\2\2\u00a2\u00a3\7v\2\2\u00a3\22\3\2\2\2\u00a4\u00a5\7e\2\2\u00a5"+
 		"\u00a6\7j\2\2\u00a6\u00a7\7c\2\2\u00a7\u00a8\7t\2\2\u00a8\24\3\2\2\2\u00a9"+
-		"\u00aa\7U\2\2\u00aa\u00ab\7v\2\2\u00ab\u00ac\7t\2\2\u00ac\u00ad\7k\2\2"+
+		"\u00aa\7u\2\2\u00aa\u00ab\7v\2\2\u00ab\u00ac\7t\2\2\u00ac\u00ad\7k\2\2"+
 		"\u00ad\u00ae\7p\2\2\u00ae\u00af\7i\2\2\u00af\26\3\2\2\2\u00b0\u00b1\7"+
 		"h\2\2\u00b1\u00b2\7w\2\2\u00b2\u00b3\7n\2\2\u00b3\u00b4\7n\2\2\u00b4\30"+
 		"\3\2\2\2\u00b5\u00b6\7h\2\2\u00b6\u00b7\7t\2\2\u00b7\u00b8\7q\2\2\u00b8"+

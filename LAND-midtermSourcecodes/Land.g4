@@ -139,48 +139,80 @@ floop: FOR_TOKEN OPEN_PARENTHESIS expression TERMINATOR_TOKEN expression TERMINA
 
 //Perform operation	rules					
 perform_op returns [Object value] : n1=perform_op n2=perform_op2 
-							   { 
-								if($n2.text.startsWith("+") || $n2.text.startsWith("-"))
+							   { System.out.println("n1n2: "+$n1.text+" "+$n2.text);
+								/*if($n2.text.startsWith("+") || $n2.text.startsWith("-"))
 								{
-									$value = $n1.value + $n2.value;
-									if($n1.value > 0 && $n2.value > 0 && $value < 0){
+									if($n1.value instanceof Float || $n2.value instanceof Float)
+										$value = (float)$n1.value + (float)$n2.value;
+									else
+										$value = (int)$n1.value + (int)$n2.value;*/
+									/*if($n1.value > 0 && $n2.value > 0 && $value < 0){
 										throw new ArithmeticException("Value out of range for integer");
+									}else{
+										$value = (int)$n1.value + (int)$n2.value;
 									}
 									if($n1.value < 0 && $n2.value < 0 && $value > 0){
 										throw new ArithmeticException("Value out of range for integer");
-									}
-								} else throw new RuntimeException("Syntax Error! Unable to compute for the answer.\n");
+									}*/
+								/*} else throw new RuntimeException("Syntax Error! Unable to compute for the answer.\n");*/
 							   }
 							   | 
 							   n1=perform_op op=add_sub n2= perform_op2
-							 	{
+							 	{System.out.println("n1addsubn2: "+$n1.text+" "+$n2.text);
+							 		/*System.out.println($n1.text+" WENT HERE +++--- "+$n2.text);
 							 		if($op.text.equalsIgnoreCase("+")){
-										$value = $n1.value + $n2.value;
-										if($n1.value > 0 && $n2.value > 0 && $value < 0){
-											throw new ArithmeticException("Value out of range for integer");
+							 			if($n1.value instanceof Float || $n2.value instanceof Float){
+											$value = (float)$n1.value + (float)$n2.value;*/
+											/*if($n1.value > 0 && $n2.value > 0 && $value < 0){
+												throw new ArithmeticException("Value out of range for integer");
+											}
+											if($n1.value < 0 && $n2.value < 0 && $value > 0){
+												throw new ArithmeticException("Value out of range for integer");
+											}
+											} else{
+											if($n1.value < $n2.value && $n2.value > 0 && $value > 0){
+												throw new ArithmeticException("Value out of range for integer");
+											}*/
+											
+										/*}else{
+											$value = (int)$n1.value + (int)$n2.value;*/
+											/*if($n1.value > 0 && $n2.value > 0 && $value < 0){
+												throw new ArithmeticException("Value out of range for integer");
+											}
+											if($n1.value < 0 && $n2.value < 0 && $value > 0){
+												throw new ArithmeticException("Value out of range for integer");
+											}
+											} else{
+											if($n1.value < $n2.value && $n2.value > 0 && $value > 0){
+												throw new ArithmeticException("Value out of range for integer");
+											}*/
+											
+									/* }
+									}else{
+										if($n1.value instanceof Float || $n2.value instanceof Float){
+											$value = (float)$n1.value - (float)$n2.value;
+										}else{
+											$value = (int)$n1.value - (int)$n2.value;
 										}
-										if($n1.value < 0 && $n2.value < 0 && $value > 0){
-											throw new ArithmeticException("Value out of range for integer");
-										}
-										} else{
-										if($n1.value < $n2.value && $n2.value > 0 && $value > 0){
-											throw new ArithmeticException("Value out of range for integer");
-										}
-											$value = $n1.value - $n2.value;
-										}
+									}
 									
-							 	}
+							 	*/}
 							  |
-							   n=perform_op2 {$value = $n.value;}
+							   n=perform_op2 {/*$value = $n.value;*/}
 							  ;
 							   
 							   
 							   
-perform_op2 returns [int value]: n1=perform_op2 op=mul_div n2=perform_op3 
+perform_op2 returns [Object value]: n1=perform_op2 op=mul_div n2=perform_op3
 								{
-									if($op.text.equalsIgnoreCase("*")){
-										$value = $n1.value * $n2.value;
-										if($n1.value > 0 && $n2.value > 0 && $value < 0){
+									/*if($op.text.equalsIgnoreCase("*")){
+										if($n1.value instanceof Float || $n2.value instanceof Float){
+											$value = (float)$n1.value * (float)$n2.value;
+										}
+										else{
+											$value = (int)$n1.value * (int)$n2.value;
+										}*/
+										/*if($n1.value > 0 && $n2.value > 0 && $value < 0){
 											throw new ArithmeticException("Value out of range for integer");
 										}
 										if($n1.value < 0 && $n2.value < 0 && $value < 0){
@@ -191,51 +223,50 @@ perform_op2 returns [int value]: n1=perform_op2 op=mul_div n2=perform_op3
 										}
 										if($n1.value < 0 && $n2.value > 0 && $value > 0){
 											throw new ArithmeticException("Value out of range for integer");
+										}*/
+									/*} else if($op.text.equalsIgnoreCase("/")){
+											if($n1.value instanceof Float || $n2.value instanceof Float){
+											$value = (float)$n1.value / (float)$n2.value;
 										}
-									} else if($op.text.equalsIgnoreCase("/")){
-											$value = $n1.value / $n2.value;
+										else{
+											$value = (int)$n1.value / (int)$n2.value;
+										}
 									} else {
-										$value = $n1.value % $n2.value;
+										if($n1.value instanceof Float || $n2.value instanceof Float){
+											$value = (float)$n1.value % (float)$n2.value;
+										}
+										else{
+											$value = (int)$n1.value % (int)$n2.value;
+										}
 									}
 									
-								}
+								 */}
 								| w=perform_op3
 									{
-										$value = $w.value;
-									}
-							    ;
+										/*$value = $w.value;*/
+									};
+							    
 
-perform_op3 returns [int value]:'(' c=perform_op ')'
+perform_op3 returns [Object value]:'(' c=perform_op ')'
 							    {
-									$value = $c.value;
+									/*$value = $c.value;*/
+							    }|n5=function_call
+							    {
+							    	
 							    }
 								
-							    | n=INT_LIT 
-							    {
-							    	$value=Integer.parseInt($n.text);
-							    }
 							    | n1=FLOAT_LIT
 							    {
-							    	$value=Float.parseFloat($n1.text);
+							    	/*$value=Float.parseFloat($n1.text);*/
 							    }
-							    | n2=STRING_LIT
+							    | n2=INT_LIT
 							    {
-							    	
-							    }
-							    | n3=CHAR_LIT
-							    {
-							    	
 							    }
 							    | n4=IDENTIFIER
 							    {
-							    	
-							    }
-							    | n5=function_call
-							    {
-							    	
-							    }
-
-								;
+							    	/*$value = memory.get($n4.text);*/
+							    };
+							    
 add_sub: ADDITION_OPERATOR | SUBTRACTION_OPERATOR;
 mul_div: MULTIPLICATION_OPERATOR | DIVISION_OPERATOR | MODULUS_OPERATOR;
 cond_op: NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR | GREATER_THAN_OPERATOR | LESS_THAN_OPERATOR | GREATER_THAN_EQUAL_TO_OPERATOR | LESS_THAN_EQUAL_TO_OPERATOR;
@@ -244,19 +275,19 @@ cond_op: NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR | GREATER_THAN_OPERATOR | LES
 //Expression
 expression returns[Object o, int type]:  perform_op 
 										{
-											$o=$perform_op.value;
-											$type = 1;
+										/*	$o=$perform_op.value;
+											$type = 1;*/
 										} 
 										| literal 
 										{
-											$type = 2;
-											$o = $literal.o;
+											/*$type = 2;
+											$o = $literal.o;*/
 										}
 										| function_call 
 										| var
 										{
-											$type=3;
-											$o = $var.s;
+											/*$type=3;
+											$o = memory.get($var.s);*/
 										}
 										| assignment["unknown type"] 
 										| /*epsilon*/;
@@ -266,11 +297,14 @@ more_expressions: COMMA_TOKEN expression more_expressions | /*epsilon*/;
 code_block: variable_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block | printing code_block|  {System.out.println("CRAPSILON");};
 
 printing: 'scan' OPEN_PARENTHESIS expression CLOSE_PARENTHESIS TERMINATOR_TOKEN 
-		{	if($expression.type == 1){
+		{	/*System.out.println("type: "+$expression.type);
+			if($expression.type == 3){
+			System.out.println("FUCKING WEW");
 				System.out.println(memory.get((String)$expression.o));
+				System.out.println("FUCKING WEW");
 			}else if($expression.type == 2){
 				System.out.println($expression.o);
-			}
+			}*/
 			
 		}; 
 return_line[String s]: RETURN_TOKEN expression TERMINATOR_TOKEN 
