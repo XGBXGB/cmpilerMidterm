@@ -1756,10 +1756,13 @@ public class LandParser extends Parser {
 
 	public static class Perform_opContext extends ParserRuleContext {
 		public Object value;
-		public TerminalNode NOT_OPERATOR() { return getToken(LandParser.NOT_OPERATOR, 0); }
 		public Perform_op2Context perform_op2() {
 			return getRuleContext(Perform_op2Context.class,0);
 		}
+		public Perform_opContext perform_op() {
+			return getRuleContext(Perform_opContext.class,0);
+		}
+		public TerminalNode OR_OPERATOR() { return getToken(LandParser.OR_OPERATOR, 0); }
 		public Perform_opContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1775,32 +1778,49 @@ public class LandParser extends Parser {
 	}
 
 	public final Perform_opContext perform_op() throws RecognitionException {
-		Perform_opContext _localctx = new Perform_opContext(_ctx, getState());
-		enterRule(_localctx, 54, RULE_perform_op);
+		return perform_op(0);
+	}
+
+	private Perform_opContext perform_op(int _p) throws RecognitionException {
+		ParserRuleContext _parentctx = _ctx;
+		int _parentState = getState();
+		Perform_opContext _localctx = new Perform_opContext(_ctx, _parentState);
+		Perform_opContext _prevctx = _localctx;
+		int _startState = 54;
+		enterRecursionRule(_localctx, 54, RULE_perform_op, _p);
 		try {
-			setState(271);
-			switch (_input.LA(1)) {
-			case NOT_OPERATOR:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(268);
-				match(NOT_OPERATOR);
-				setState(269);
-				perform_op2(0);
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			{
+			setState(269);
+			perform_op2(0);
+			}
+			_ctx.stop = _input.LT(-1);
+			setState(276);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,13,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					if ( _parseListeners!=null ) triggerExitRuleEvent();
+					_prevctx = _localctx;
+					{
+					{
+					_localctx = new Perform_opContext(_parentctx, _parentState);
+					pushNewRecursionContext(_localctx, _startState, RULE_perform_op);
+					setState(271);
+					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+					setState(272);
+					match(OR_OPERATOR);
+					setState(273);
+					perform_op2(0);
+					}
+					} 
 				}
-				break;
-			case INT_LIT:
-			case FLOAT_LIT:
-			case IDENTIFIER:
-			case OPEN_PARENTHESIS:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(270);
-				perform_op2(0);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+				setState(278);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,13,_ctx);
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -1809,7 +1829,7 @@ public class LandParser extends Parser {
 			_errHandler.recover(this, re);
 		}
 		finally {
-			exitRule();
+			unrollRecursionContexts(_parentctx);
 		}
 		return _localctx;
 	}
@@ -1822,7 +1842,7 @@ public class LandParser extends Parser {
 		public Perform_op2Context perform_op2() {
 			return getRuleContext(Perform_op2Context.class,0);
 		}
-		public TerminalNode OR_OPERATOR() { return getToken(LandParser.OR_OPERATOR, 0); }
+		public TerminalNode AND_OPERATOR() { return getToken(LandParser.AND_OPERATOR, 0); }
 		public Perform_op2Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1853,11 +1873,11 @@ public class LandParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(274);
-			perform_op3(0);
+			setState(280);
+			perform_op3();
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(281);
+			setState(287);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,14,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -1868,16 +1888,16 @@ public class LandParser extends Parser {
 					{
 					_localctx = new Perform_op2Context(_parentctx, _parentState);
 					pushNewRecursionContext(_localctx, _startState, RULE_perform_op2);
-					setState(276);
+					setState(282);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(277);
-					match(OR_OPERATOR);
-					setState(278);
-					perform_op3(0);
+					setState(283);
+					match(AND_OPERATOR);
+					setState(284);
+					perform_op3();
 					}
 					} 
 				}
-				setState(283);
+				setState(289);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,14,_ctx);
 			}
@@ -1896,13 +1916,13 @@ public class LandParser extends Parser {
 
 	public static class Perform_op3Context extends ParserRuleContext {
 		public Object value;
-		public Perform_op4Context perform_op4() {
-			return getRuleContext(Perform_op4Context.class,0);
-		}
+		public TerminalNode NOT_OPERATOR() { return getToken(LandParser.NOT_OPERATOR, 0); }
 		public Perform_op3Context perform_op3() {
 			return getRuleContext(Perform_op3Context.class,0);
 		}
-		public TerminalNode AND_OPERATOR() { return getToken(LandParser.AND_OPERATOR, 0); }
+		public Perform_op4Context perform_op4() {
+			return getRuleContext(Perform_op4Context.class,0);
+		}
 		public Perform_op3Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1918,49 +1938,32 @@ public class LandParser extends Parser {
 	}
 
 	public final Perform_op3Context perform_op3() throws RecognitionException {
-		return perform_op3(0);
-	}
-
-	private Perform_op3Context perform_op3(int _p) throws RecognitionException {
-		ParserRuleContext _parentctx = _ctx;
-		int _parentState = getState();
-		Perform_op3Context _localctx = new Perform_op3Context(_ctx, _parentState);
-		Perform_op3Context _prevctx = _localctx;
-		int _startState = 58;
-		enterRecursionRule(_localctx, 58, RULE_perform_op3, _p);
+		Perform_op3Context _localctx = new Perform_op3Context(_ctx, getState());
+		enterRule(_localctx, 58, RULE_perform_op3);
 		try {
-			int _alt;
-			enterOuterAlt(_localctx, 1);
-			{
-			{
-			setState(285);
-			perform_op4(0);
-			}
-			_ctx.stop = _input.LT(-1);
-			setState(292);
-			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1 ) {
-					if ( _parseListeners!=null ) triggerExitRuleEvent();
-					_prevctx = _localctx;
-					{
-					{
-					_localctx = new Perform_op3Context(_parentctx, _parentState);
-					pushNewRecursionContext(_localctx, _startState, RULE_perform_op3);
-					setState(287);
-					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(288);
-					match(AND_OPERATOR);
-					setState(289);
-					perform_op4(0);
-					}
-					} 
+			setState(293);
+			switch (_input.LA(1)) {
+			case NOT_OPERATOR:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(290);
+				match(NOT_OPERATOR);
+				setState(291);
+				perform_op3();
 				}
-				setState(294);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
-			}
+				break;
+			case INT_LIT:
+			case FLOAT_LIT:
+			case IDENTIFIER:
+			case OPEN_PARENTHESIS:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(292);
+				perform_op4(0);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1969,7 +1972,7 @@ public class LandParser extends Parser {
 			_errHandler.recover(this, re);
 		}
 		finally {
-			unrollRecursionContexts(_parentctx);
+			exitRule();
 		}
 		return _localctx;
 	}
@@ -2390,7 +2393,7 @@ public class LandParser extends Parser {
 				setState(339);
 				match(OPEN_PARENTHESIS);
 				setState(340);
-				((Perform_op7Context)_localctx).c = perform_op();
+				((Perform_op7Context)_localctx).c = perform_op(0);
 				setState(341);
 				match(CLOSE_PARENTHESIS);
 
@@ -2633,7 +2636,7 @@ public class LandParser extends Parser {
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(361);
-				((ExpressionContext)_localctx).perform_op = perform_op();
+				((ExpressionContext)_localctx).perform_op = perform_op(0);
 
 														/*	((ExpressionContext)_localctx).o = ((ExpressionContext)_localctx).perform_op.value;
 															((ExpressionContext)_localctx).type =  1;*/
@@ -3034,10 +3037,10 @@ public class LandParser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
+		case 27:
+			return perform_op_sempred((Perform_opContext)_localctx, predIndex);
 		case 28:
 			return perform_op2_sempred((Perform_op2Context)_localctx, predIndex);
-		case 29:
-			return perform_op3_sempred((Perform_op3Context)_localctx, predIndex);
 		case 30:
 			return perform_op4_sempred((Perform_op4Context)_localctx, predIndex);
 		case 31:
@@ -3047,14 +3050,14 @@ public class LandParser extends Parser {
 		}
 		return true;
 	}
-	private boolean perform_op2_sempred(Perform_op2Context _localctx, int predIndex) {
+	private boolean perform_op_sempred(Perform_opContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
 			return precpred(_ctx, 2);
 		}
 		return true;
 	}
-	private boolean perform_op3_sempred(Perform_op3Context _localctx, int predIndex) {
+	private boolean perform_op2_sempred(Perform_op2Context _localctx, int predIndex) {
 		switch (predIndex) {
 		case 1:
 			return precpred(_ctx, 2);
@@ -3105,16 +3108,16 @@ public class LandParser extends Parser {
 		"\3\31\3\31\3\31\3\31\3\31\3\31\5\31\u00ef\n\31\3\32\3\32\3\32\3\32\3\32"+
 		"\3\32\3\32\3\32\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\34"+
 		"\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\35\3\35\3\35"+
-		"\5\35\u0112\n\35\3\36\3\36\3\36\3\36\3\36\3\36\7\36\u011a\n\36\f\36\16"+
-		"\36\u011d\13\36\3\37\3\37\3\37\3\37\3\37\3\37\7\37\u0125\n\37\f\37\16"+
-		"\37\u0128\13\37\3 \3 \3 \3 \3 \3 \3 \7 \u0131\n \f \16 \u0134\13 \3!\3"+
-		"!\3!\3!\3!\3!\3!\3!\3!\3!\3!\3!\3!\7!\u0143\n!\f!\16!\u0146\13!\3\"\3"+
-		"\"\3\"\3\"\3\"\3\"\3\"\3\"\3\"\7\"\u0151\n\"\f\"\16\"\u0154\13\"\3#\3"+
-		"#\3#\3#\3#\3#\3#\3#\3#\3#\3#\3#\3#\3#\5#\u0164\n#\3$\3$\3%\3%\3&\3&\3"+
-		"\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\5\'\u0178\n\'\3(\3(\3("+
-		"\3(\3(\5(\u017f\n(\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)"+
-		"\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\5)\u019d\n)\3*\3*\3*\3*\3*\3*\3*\3+"+
-		"\3+\3+\3+\3+\3+\5+\u01ac\n+\3+\2\7:<>@B,\2\4\6\b\n\f\16\20\22\24\26\30"+
+		"\3\35\3\35\3\35\7\35\u0115\n\35\f\35\16\35\u0118\13\35\3\36\3\36\3\36"+
+		"\3\36\3\36\3\36\7\36\u0120\n\36\f\36\16\36\u0123\13\36\3\37\3\37\3\37"+
+		"\5\37\u0128\n\37\3 \3 \3 \3 \3 \3 \3 \7 \u0131\n \f \16 \u0134\13 \3!"+
+		"\3!\3!\3!\3!\3!\3!\3!\3!\3!\3!\3!\3!\7!\u0143\n!\f!\16!\u0146\13!\3\""+
+		"\3\"\3\"\3\"\3\"\3\"\3\"\3\"\3\"\7\"\u0151\n\"\f\"\16\"\u0154\13\"\3#"+
+		"\3#\3#\3#\3#\3#\3#\3#\3#\3#\3#\3#\3#\3#\5#\u0164\n#\3$\3$\3%\3%\3&\3&"+
+		"\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\5\'\u0178\n\'\3(\3(\3"+
+		"(\3(\3(\5(\u017f\n(\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3"+
+		")\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\3)\5)\u019d\n)\3*\3*\3*\3*\3*\3*\3*\3"+
+		"+\3+\3+\3+\3+\3+\5+\u01ac\n+\3+\2\78:>@B,\2\4\6\b\n\f\16\20\22\24\26\30"+
 		"\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNPRT\2\5\3\2\26\27\3\2\30\32"+
 		"\3\2 %\u01af\2^\3\2\2\2\4f\3\2\2\2\6l\3\2\2\2\br\3\2\2\2\ny\3\2\2\2\f"+
 		"{\3\2\2\2\16\u0083\3\2\2\2\20\u008d\3\2\2\2\22\u0098\3\2\2\2\24\u009a"+
@@ -3122,7 +3125,7 @@ public class LandParser extends Parser {
 		"\2\2\2\36\u00b5\3\2\2\2 \u00c1\3\2\2\2\"\u00c3\3\2\2\2$\u00cc\3\2\2\2"+
 		"&\u00ce\3\2\2\2(\u00d5\3\2\2\2*\u00d7\3\2\2\2,\u00da\3\2\2\2.\u00dd\3"+
 		"\2\2\2\60\u00ee\3\2\2\2\62\u00f0\3\2\2\2\64\u00f8\3\2\2\2\66\u0102\3\2"+
-		"\2\28\u0111\3\2\2\2:\u0113\3\2\2\2<\u011e\3\2\2\2>\u0129\3\2\2\2@\u0135"+
+		"\2\28\u010e\3\2\2\2:\u0119\3\2\2\2<\u0127\3\2\2\2>\u0129\3\2\2\2@\u0135"+
 		"\3\2\2\2B\u0147\3\2\2\2D\u0163\3\2\2\2F\u0165\3\2\2\2H\u0167\3\2\2\2J"+
 		"\u0169\3\2\2\2L\u0177\3\2\2\2N\u017e\3\2\2\2P\u019c\3\2\2\2R\u019e\3\2"+
 		"\2\2T\u01ab\3\2\2\2VW\7\t\2\2W_\b\2\1\2XY\7\n\2\2Y_\b\2\1\2Z[\7\13\2\2"+
@@ -3174,15 +3177,15 @@ public class LandParser extends Parser {
 		"\u0104\7*\2\2\u0104\u0105\5L\'\2\u0105\u0106\7)\2\2\u0106\u0107\5L\'\2"+
 		"\u0107\u0108\7)\2\2\u0108\u0109\5L\'\2\u0109\u010a\7+\2\2\u010a\u010b"+
 		"\7,\2\2\u010b\u010c\5P)\2\u010c\u010d\7-\2\2\u010d\67\3\2\2\2\u010e\u010f"+
-		"\7\37\2\2\u010f\u0112\5:\36\2\u0110\u0112\5:\36\2\u0111\u010e\3\2\2\2"+
-		"\u0111\u0110\3\2\2\2\u01129\3\2\2\2\u0113\u0114\b\36\1\2\u0114\u0115\5"+
-		"<\37\2\u0115\u011b\3\2\2\2\u0116\u0117\f\4\2\2\u0117\u0118\7\36\2\2\u0118"+
-		"\u011a\5<\37\2\u0119\u0116\3\2\2\2\u011a\u011d\3\2\2\2\u011b\u0119\3\2"+
-		"\2\2\u011b\u011c\3\2\2\2\u011c;\3\2\2\2\u011d\u011b\3\2\2\2\u011e\u011f"+
-		"\b\37\1\2\u011f\u0120\5> \2\u0120\u0126\3\2\2\2\u0121\u0122\f\4\2\2\u0122"+
-		"\u0123\7\35\2\2\u0123\u0125\5> \2\u0124\u0121\3\2\2\2\u0125\u0128\3\2"+
-		"\2\2\u0126\u0124\3\2\2\2\u0126\u0127\3\2\2\2\u0127=\3\2\2\2\u0128\u0126"+
-		"\3\2\2\2\u0129\u012a\b \1\2\u012a\u012b\5@!\2\u012b\u0132\3\2\2\2\u012c"+
+		"\b\35\1\2\u010f\u0110\5:\36\2\u0110\u0116\3\2\2\2\u0111\u0112\f\4\2\2"+
+		"\u0112\u0113\7\36\2\2\u0113\u0115\5:\36\2\u0114\u0111\3\2\2\2\u0115\u0118"+
+		"\3\2\2\2\u0116\u0114\3\2\2\2\u0116\u0117\3\2\2\2\u01179\3\2\2\2\u0118"+
+		"\u0116\3\2\2\2\u0119\u011a\b\36\1\2\u011a\u011b\5<\37\2\u011b\u0121\3"+
+		"\2\2\2\u011c\u011d\f\4\2\2\u011d\u011e\7\35\2\2\u011e\u0120\5<\37\2\u011f"+
+		"\u011c\3\2\2\2\u0120\u0123\3\2\2\2\u0121\u011f\3\2\2\2\u0121\u0122\3\2"+
+		"\2\2\u0122;\3\2\2\2\u0123\u0121\3\2\2\2\u0124\u0125\7\37\2\2\u0125\u0128"+
+		"\5<\37\2\u0126\u0128\5> \2\u0127\u0124\3\2\2\2\u0127\u0126\3\2\2\2\u0128"+
+		"=\3\2\2\2\u0129\u012a\b \1\2\u012a\u012b\5@!\2\u012b\u0132\3\2\2\2\u012c"+
 		"\u012d\f\4\2\2\u012d\u012e\5J&\2\u012e\u012f\5@!\2\u012f\u0131\3\2\2\2"+
 		"\u0130\u012c\3\2\2\2\u0131\u0134\3\2\2\2\u0132\u0130\3\2\2\2\u0132\u0133"+
 		"\3\2\2\2\u0133?\3\2\2\2\u0134\u0132\3\2\2\2\u0135\u0136\b!\1\2\u0136\u0137"+
@@ -3225,7 +3228,7 @@ public class LandParser extends Parser {
 		"\u01a4S\3\2\2\2\u01a5\u01a6\7\23\2\2\u01a6\u01a7\5L\'\2\u01a7\u01a8\7"+
 		")\2\2\u01a8\u01a9\b+\1\2\u01a9\u01ac\3\2\2\2\u01aa\u01ac\3\2\2\2\u01ab"+
 		"\u01a5\3\2\2\2\u01ab\u01aa\3\2\2\2\u01acU\3\2\2\2\33^flry\u0083\u008d"+
-		"\u0098\u00a1\u00c1\u00cc\u00d5\u00ee\u0111\u011b\u0126\u0132\u0142\u0144"+
+		"\u0098\u00a1\u00c1\u00cc\u00d5\u00ee\u0116\u0121\u0127\u0132\u0142\u0144"+
 		"\u0152\u0163\u0177\u017e\u019c\u01ab";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());

@@ -136,11 +136,13 @@ floop: FOR_TOKEN OPEN_PARENTHESIS expression TERMINATOR_TOKEN expression TERMINA
 
 
 //Perform operation	rules	
-perform_op returns [Object value]: NOT_OPERATOR perform_op2 | perform_op2;
 
-perform_op2 returns [Object value]: perform_op2 OR_OPERATOR perform_op3 | perform_op3;
 
-perform_op3 returns [Object value]: perform_op3 AND_OPERATOR perform_op4 | perform_op4;
+perform_op returns [Object value]: perform_op OR_OPERATOR perform_op2 | perform_op2;
+
+perform_op2 returns [Object value]: perform_op2 AND_OPERATOR perform_op3 | perform_op3;
+
+perform_op3 returns [Object value]: NOT_OPERATOR perform_op3 | perform_op4;
 
 perform_op4 returns [Object value]: perform_op4 cond_op perform_op5 | perform_op5;
 				
