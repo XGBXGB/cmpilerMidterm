@@ -912,7 +912,7 @@ public class LandParser extends Parser {
 			setState(162);
 			((AssignmentContext)_localctx).expression = expression();
 
-											if(_localctx.dataType.equals("float")){
+											/*if(_localctx.dataType.equals("float")){
 												//todo if expression instanceof int else throw
 												memory.put(((AssignmentContext)_localctx).var.s, new Integer((int)((AssignmentContext)_localctx).expression.o));
 											}else if(_localctx.dataType.equals("int")){
@@ -921,7 +921,6 @@ public class LandParser extends Parser {
 												memory.put(((AssignmentContext)_localctx).var.s, new String((String)((AssignmentContext)_localctx).expression.o));
 											}else if(_localctx.dataType.equals("unknown type")){
 												if(memory.get(((AssignmentContext)_localctx).var.s)==null){
-													/*throw exception*/
 												}else{
 													if(memory.get(((AssignmentContext)_localctx).var.s) instanceof Integer){
 														memory.put(((AssignmentContext)_localctx).var.s, new Integer((int)((AssignmentContext)_localctx).expression.o));
@@ -930,7 +929,7 @@ public class LandParser extends Parser {
 													} 
 												}
 											}
-										
+										*/
 			}
 		}
 		catch (RecognitionException re) {
@@ -984,8 +983,7 @@ public class LandParser extends Parser {
 			setState(168);
 			match(TERMINATOR_TOKEN);
 
-								if(memory.get(((Assignment_lineContext)_localctx).var.s)==null){
-										/*throw exception*/
+							/*	if(memory.get(((Assignment_lineContext)_localctx).var.s)==null){
 								}else{
 									if(memory.get(((Assignment_lineContext)_localctx).var.s) instanceof Integer){
 										memory.put(((Assignment_lineContext)_localctx).var.s, new Integer((int)((Assignment_lineContext)_localctx).expression.o));
@@ -993,7 +991,7 @@ public class LandParser extends Parser {
 										memory.put(((Assignment_lineContext)_localctx).var.s, new Float((float)((Assignment_lineContext)_localctx).expression.o));
 									} 
 								}		
-							
+							*/
 			}
 		}
 		catch (RecognitionException re) {

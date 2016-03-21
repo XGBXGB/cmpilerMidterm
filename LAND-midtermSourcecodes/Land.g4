@@ -75,7 +75,7 @@ assignment_declaration[String dataType]: assignment[$dataType] | assignment_arra
 assignment_array: array ASSIGNMENT_OPERATOR OPEN_BRACE expression more_expressions CLOSE_BRACE;
 assignment[String dataType]: var ASSIGNMENT_OPERATOR expression
 							{
-								if($dataType.equals("float")){
+								/*if($dataType.equals("float")){
 									//todo if expression instanceof int else throw
 									memory.put($var.s, new Integer((int)$expression.o));
 								}else if($dataType.equals("int")){
@@ -84,7 +84,6 @@ assignment[String dataType]: var ASSIGNMENT_OPERATOR expression
 									memory.put($var.s, new String((String)$expression.o));
 								}else if($dataType.equals("unknown type")){
 									if(memory.get($var.s)==null){
-										/*throw exception*/
 									}else{
 										if(memory.get($var.s) instanceof Integer){
 											memory.put($var.s, new Integer((int)$expression.o));
@@ -93,11 +92,10 @@ assignment[String dataType]: var ASSIGNMENT_OPERATOR expression
 										} 
 									}
 								}
-							};
+							*/};
 assignment_line: var ASSIGNMENT_OPERATOR expression TERMINATOR_TOKEN
 				{
-					if(memory.get($var.s)==null){
-							/*throw exception*/
+				/*	if(memory.get($var.s)==null){
 					}else{
 						if(memory.get($var.s) instanceof Integer){
 							memory.put($var.s, new Integer((int)$expression.o));
@@ -105,7 +103,7 @@ assignment_line: var ASSIGNMENT_OPERATOR expression TERMINATOR_TOKEN
 							memory.put($var.s, new Float((float)$expression.o));
 						} 
 					}		
-				};
+				*/};
 
 //Function declaration
 function_declaration: return_type IDENTIFIER OPEN_PARENTHESIS function_declaration_parameters_type CLOSE_PARENTHESIS OPEN_BRACE code_block return_line[$return_type.returnType] CLOSE_BRACE;

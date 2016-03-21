@@ -7,8 +7,9 @@ float Func(float Cote)
 
 float Main(){
 	
-		float Paolo!
-		Paolo:10!
-		Paolo: Func(Paolo) + 5!
-		scan(Paolo)!
+
+float Num!
+float Num: 10!
+float Num:10.2!
+
 }
