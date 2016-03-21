@@ -348,7 +348,7 @@ INT_LIT: (('+'|'-')?('0'..'9')+){System.out.println("INT HERE");};
 FLOAT_LIT: (('+'|'-')?('0'..'9')*'.'?('0'..'9')+){System.out.println("Float HERE");};
 STRING_LIT: '\''(('A'..'Z')|('a'..'z')|('0'..'9'))*'\''{System.out.println("String HERE");};
 CHAR_LIT: '"'(('A'..'Z')|('a'..'z')|('0'..'9'))'"';
-IDENTIFIER: ('A'..'Z')('a'..'z')*;
+IDENTIFIER: ('A'..'Z')(('A'..'Z')|('a'..'z')|('0'..'9'))*;
 
 //Data types
 INT_DATA_TYPE: 'float';

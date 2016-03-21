@@ -1,15 +1,24 @@
 float Func(float Cote)
 {
 	float Winona!
-	Cote: 7+3!
+	Cote: Winona+3!
 	
 }
 
 float Main(){
-	
 
-int Num: 10!
-then(; ((1+5*2)>3) && (6>3)){}
+int XGB7!
+int Winona[10-3]!
+XGB7:2!
+float Paolo[XGB7+1]!
+float x!
+
+Winona[9]: 55!
+
+for(x:0!x<10!x+1)
+{
+	scan(x)!
+}
 
 
 }

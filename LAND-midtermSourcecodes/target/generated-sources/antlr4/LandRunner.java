@@ -54,7 +54,7 @@ public class LandRunner {
 	
 	public void startProgram()
 	{
-		String fileName = "C:\\Users\\kewpe\\eclipse_workspace\\cmpilerMidterm\\input.txt";
+		String fileName = "C:\\Users\\user\\workspace\\cmpiler\\input.txt";
 		//String fileName = "input.txt";
 		String content = "";
 		String line = "";
@@ -96,16 +96,16 @@ public class LandRunner {
             System.out.println("Content: "+content);
             ANTLRInputStream input = new ANTLRInputStream(content);
     		lexer = new LandLexer(input);
-    		//lexer.removeErrorListeners();
+    		lexer.removeErrorListeners();
     	    // Get a list of matched tokens
     	    CommonTokenStream tokens = new CommonTokenStream(lexer);
     	 
     	    // Pass the tokens to the parser
     	    parser = new LandParser(tokens);
-    	    //parser.setErrorHandler(new BailErrorStrategy());
+    	    parser.setErrorHandler(new BailErrorStrategy());
     	    
-    	    //parser.removeErrorListeners();
-    	    parser.addParseListener(new FunctionsListener());
+    	    parser.removeErrorListeners();
+    	    //parser.addParseListener(new FunctionsListener());
     	    
     	     
     
