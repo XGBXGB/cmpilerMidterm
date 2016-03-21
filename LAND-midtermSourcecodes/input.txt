@@ -8,8 +8,16 @@ float Func(float Cote)
 float Main(){
 	
 
-float Num!
-float Num: 10!
-float Num:10.2!
+
+then(Num){}
+then(Num){}anne{}
+then(Num - 3){}anne then(Num){}
+
+then(0){}anne then(Num){}anne then(Num + 57){}
+thame(Num ;: 3){}
+thame(Num :: 1){}
+thame(Num :< 23){}
+thame(Num :> 7){}
+
 
 }

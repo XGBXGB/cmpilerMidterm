@@ -135,8 +135,16 @@ dloop: DO_TOKEN OPEN_BRACE code_block CLOSE_BRACE WHILE_TOKEN OPEN_PARENTHESIS e
 floop: FOR_TOKEN OPEN_PARENTHESIS expression TERMINATOR_TOKEN expression TERMINATOR_TOKEN expression CLOSE_PARENTHESIS OPEN_BRACE code_block CLOSE_BRACE;
 
 
-//Perform operation	rules					
-perform_op returns [Object value] : n1=perform_op n2=perform_op2 
+//Perform operation	rules	
+perform_op returns [Object value]: NOT_OPERATOR perform_op2 | perform_op2;
+
+perform_op2 returns [Object value]: perform_op2 OR_OPERATOR perform_op3 | perform_op3;
+
+perform_op3 returns [Object value]: perform_op3 AND_OPERATOR perform_op4 | perform_op4;
+
+perform_op4 returns [Object value]: perform_op4 cond_op perform_op5 | perform_op5;
+				
+perform_op5 returns [Object value] : n1=perform_op5 n2=perform_op6
 							   { System.out.println("n1n2: "+$n1.text+" "+$n2.text);
 								/*if($n2.text.startsWith("+") || $n2.text.startsWith("-"))
 								{
@@ -155,7 +163,7 @@ perform_op returns [Object value] : n1=perform_op n2=perform_op2
 								/*} else throw new RuntimeException("Syntax Error! Unable to compute for the answer.\n");*/
 							   }
 							   | 
-							   n1=perform_op op=add_sub n2= perform_op2
+							   n1=perform_op5 op=add_sub n2= perform_op6
 							 	{System.out.println("n1addsubn2: "+$n1.text+" "+$n2.text);
 							 		/*System.out.println($n1.text+" WENT HERE +++--- "+$n2.text);
 							 		if($op.text.equalsIgnoreCase("+")){
@@ -196,12 +204,12 @@ perform_op returns [Object value] : n1=perform_op n2=perform_op2
 									
 							 	*/}
 							  |
-							   n=perform_op2 {/*$value = $n.value;*/}
+							   n=perform_op6 {/*$value = $n.value;*/}
 							  ;
 							   
 							   
 							   
-perform_op2 returns [Object value]: n1=perform_op2 op=mul_div n2=perform_op3
+perform_op6 returns [Object value]: n1=perform_op6 op=mul_div n2=perform_op7
 								{
 									/*if($op.text.equalsIgnoreCase("*")){
 										if($n1.value instanceof Float || $n2.value instanceof Float){
@@ -239,13 +247,13 @@ perform_op2 returns [Object value]: n1=perform_op2 op=mul_div n2=perform_op3
 									}
 									
 								 */}
-								| w=perform_op3
+								| w=perform_op7
 									{
 										/*$value = $w.value;*/
 									};
 							    
 
-perform_op3 returns [Object value]:'(' c=perform_op ')'
+perform_op7 returns [Object value]:'(' c=perform_op ')'
 							    {
 									/*$value = $c.value;*/
 							    }|n5=function_call

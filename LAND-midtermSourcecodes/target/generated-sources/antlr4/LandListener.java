@@ -310,6 +310,46 @@ public interface LandListener extends ParseTreeListener {
 	 */
 	void exitPerform_op3(LandParser.Perform_op3Context ctx);
 	/**
+	 * Enter a parse tree produced by {@link LandParser#perform_op4}.
+	 * @param ctx the parse tree
+	 */
+	void enterPerform_op4(LandParser.Perform_op4Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link LandParser#perform_op4}.
+	 * @param ctx the parse tree
+	 */
+	void exitPerform_op4(LandParser.Perform_op4Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link LandParser#perform_op5}.
+	 * @param ctx the parse tree
+	 */
+	void enterPerform_op5(LandParser.Perform_op5Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link LandParser#perform_op5}.
+	 * @param ctx the parse tree
+	 */
+	void exitPerform_op5(LandParser.Perform_op5Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link LandParser#perform_op6}.
+	 * @param ctx the parse tree
+	 */
+	void enterPerform_op6(LandParser.Perform_op6Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link LandParser#perform_op6}.
+	 * @param ctx the parse tree
+	 */
+	void exitPerform_op6(LandParser.Perform_op6Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link LandParser#perform_op7}.
+	 * @param ctx the parse tree
+	 */
+	void enterPerform_op7(LandParser.Perform_op7Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link LandParser#perform_op7}.
+	 * @param ctx the parse tree
+	 */
+	void exitPerform_op7(LandParser.Perform_op7Context ctx);
+	/**
 	 * Enter a parse tree produced by {@link LandParser#add_sub}.
 	 * @param ctx the parse tree
 	 */
