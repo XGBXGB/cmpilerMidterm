@@ -5,7 +5,7 @@ float Func(float Cote)
 	
 }
 
-float Main(){
+bioas Main(){
 
 int XGB7!
 int Winona[10-3]!

@@ -23,7 +23,7 @@ grammar Land;
  		String text = _input.getText(Interval.of(_tokenStartCharIndex,_input.index()));
    /*throw new RuntimeException("Syntax error at position "+_tokenStartCharPositionInLine+" '"+text+"'");*/
  		/*throw new RuntimeException("Syntax error! Unable to compute for the answer.");*/
- 		throw new RuntimeException("Lexical error! Unable to compute for the answer.\n");
+ 		throw new RuntimeException("Lexical error! Unable to compute for the answer.\n"+text);
  	}	
  }
  
@@ -147,7 +147,7 @@ perform_op3 returns [Object value]: NOT_OPERATOR perform_op3 | perform_op4;
 perform_op4 returns [Object value]: perform_op4 cond_op perform_op5 | perform_op5;
 				
 perform_op5 returns [Object value] : n1=perform_op5 n2=perform_op6
-							   { System.out.println("n1n2: "+$n1.text+" "+$n2.text);
+							   { 
 								/*if($n2.text.startsWith("+") || $n2.text.startsWith("-"))
 								{
 									if($n1.value instanceof Float || $n2.value instanceof Float)
@@ -166,7 +166,7 @@ perform_op5 returns [Object value] : n1=perform_op5 n2=perform_op6
 							   }
 							   | 
 							   n1=perform_op5 op=add_sub n2= perform_op6
-							 	{System.out.println("n1addsubn2: "+$n1.text+" "+$n2.text);
+							 	{
 							 		/*System.out.println($n1.text+" WENT HERE +++--- "+$n2.text);
 							 		if($op.text.equalsIgnoreCase("+")){
 							 			if($n1.value instanceof Float || $n2.value instanceof Float){
@@ -302,7 +302,7 @@ expression returns[Object o, int type]:  perform_op
 more_expressions: COMMA_TOKEN expression more_expressions | /*epsilon*/;
 
 //Code
-code_block: variable_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block | printing code_block|  {System.out.println("CRAPSILON");};
+code_block: variable_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block | printing code_block|  {};
 
 printing: 'scan' OPEN_PARENTHESIS expression CLOSE_PARENTHESIS TERMINATOR_TOKEN 
 		{	/*System.out.println("type: "+$expression.type);
@@ -344,9 +344,9 @@ return_line[String s]: RETURN_TOKEN expression TERMINATOR_TOKEN
  */
 
 //Literals
-INT_LIT: (('+'|'-')?('0'..'9')+){System.out.println("INT HERE");};
-FLOAT_LIT: (('+'|'-')?('0'..'9')*'.'?('0'..'9')+){System.out.println("Float HERE");};
-STRING_LIT: '\''(('A'..'Z')|('a'..'z')|('0'..'9'))*'\''{System.out.println("String HERE");};
+INT_LIT: (('+'|'-')?('0'..'9')+){};
+FLOAT_LIT: (('+'|'-')?('0'..'9')*'.'?('0'..'9')+){};
+STRING_LIT: '\''(('A'..'Z')|('a'..'z')|('0'..'9'))*'\''{};
 CHAR_LIT: '"'(('A'..'Z')|('a'..'z')|('0'..'9'))'"';
 IDENTIFIER: ('A'..'Z')(('A'..'Z')|('a'..'z')|('0'..'9'))*;
 

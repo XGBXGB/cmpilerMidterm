@@ -106,7 +106,7 @@ public class LandLexer extends Lexer {
 	 		String text = _input.getText(Interval.of(_tokenStartCharIndex,_input.index()));
 	   /*throw new RuntimeException("Syntax error at position "+_tokenStartCharPositionInLine+" '"+text+"'");*/
 	 		/*throw new RuntimeException("Syntax error! Unable to compute for the answer.");*/
-	 		throw new RuntimeException("Lexical error! Unable to compute for the answer.\n");
+	 		throw new RuntimeException("Lexical error! Unable to compute for the answer.\n"+text);
 	 	}	
 	 
 
@@ -147,21 +147,18 @@ public class LandLexer extends Lexer {
 	private void INT_LIT_action(RuleContext _localctx, int actionIndex) {
 		switch (actionIndex) {
 		case 0:
-			System.out.println("INT HERE");
 			break;
 		}
 	}
 	private void FLOAT_LIT_action(RuleContext _localctx, int actionIndex) {
 		switch (actionIndex) {
 		case 1:
-			System.out.println("Float HERE");
 			break;
 		}
 	}
 	private void STRING_LIT_action(RuleContext _localctx, int actionIndex) {
 		switch (actionIndex) {
 		case 2:
-			System.out.println("String HERE");
 			break;
 		}
 	}

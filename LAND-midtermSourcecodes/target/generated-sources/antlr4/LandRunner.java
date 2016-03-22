@@ -22,6 +22,7 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.DOTTreeGenerator;
 import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.Interval;
 import org.antlr.v4.runtime.tree.*;
 public class LandRunner {
 	
@@ -54,7 +55,7 @@ public class LandRunner {
 	
 	public void startProgram()
 	{
-		String fileName = "C:\\Users\\user\\workspace\\cmpiler\\input.txt";
+		String fileName = "C:\\Users\\kewpe\\eclipse_workspace\\cmpilerMidterm\\input.txt";
 		//String fileName = "input.txt";
 		String content = "";
 		String line = "";
@@ -93,18 +94,18 @@ public class LandRunner {
 		try
     	{
     		
-            System.out.println("Content: "+content);
+            //System.out.println("Content: "+content);
             ANTLRInputStream input = new ANTLRInputStream(content);
     		lexer = new LandLexer(input);
-    		lexer.removeErrorListeners();
+    		//lexer.removeErrorListeners();
     	    // Get a list of matched tokens
     	    CommonTokenStream tokens = new CommonTokenStream(lexer);
     	 
     	    // Pass the tokens to the parser
     	    parser = new LandParser(tokens);
-    	    parser.setErrorHandler(new BailErrorStrategy());
+    	    //parser.setErrorHandler(new BailErrorStrategy());
     	    
-    	    parser.removeErrorListeners();
+    	    //parser.removeErrorListeners();
     	    //parser.addParseListener(new FunctionsListener());
     	    
     	     
@@ -156,12 +157,15 @@ public class LandRunner {
 	    }
     	catch(Exception e)
     	{
-    		System.out.println("er");
     		e.printStackTrace();
     		/*if(e.getCause() instanceof RecognitionException)
     		{
     			//System.out.println("cause: "+e.getCause() + "\n");
-    			System.out.println("Syntax Error! Unable to compute for the answer.\n");
+    			Token offender = parser.getCurrentToken();
+    			int errorline = offender.getLine();
+    			int charPos = offender.getCharPositionInLine();
+    			System.out.println("Syntax Error! Unable to compute for the answer.\nat line"+errorline+":"+charPos
+    					+" '"+offender.getInputStream().getText(Interval.of(offender.getStartIndex(), offender.getStopIndex()))+"'");
     		}
     		else if(e instanceof ArithmeticException)
     		{

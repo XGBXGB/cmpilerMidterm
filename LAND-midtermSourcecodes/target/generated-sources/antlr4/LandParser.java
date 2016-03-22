@@ -2130,7 +2130,7 @@ public class LandParser extends Parser {
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
 						setState(312);
 						((Perform_op5Context)_localctx).n2 = perform_op6(0);
-						 System.out.println("n1n2: "+(((Perform_op5Context)_localctx).n1!=null?_input.getText(((Perform_op5Context)_localctx).n1.start,((Perform_op5Context)_localctx).n1.stop):null)+" "+(((Perform_op5Context)_localctx).n2!=null?_input.getText(((Perform_op5Context)_localctx).n2.start,((Perform_op5Context)_localctx).n2.stop):null));
+						 
 						          								/*if((((Perform_op5Context)_localctx).n2!=null?_input.getText(((Perform_op5Context)_localctx).n2.start,((Perform_op5Context)_localctx).n2.stop):null).startsWith("+") || (((Perform_op5Context)_localctx).n2!=null?_input.getText(((Perform_op5Context)_localctx).n2.start,((Perform_op5Context)_localctx).n2.stop):null).startsWith("-"))
 						          								{
 						          									if(((Perform_op5Context)_localctx).n1.value instanceof Float || ((Perform_op5Context)_localctx).n2.value instanceof Float)
@@ -2161,7 +2161,7 @@ public class LandParser extends Parser {
 						((Perform_op5Context)_localctx).op = add_sub();
 						setState(317);
 						((Perform_op5Context)_localctx).n2 = perform_op6(0);
-						System.out.println("n1addsubn2: "+(((Perform_op5Context)_localctx).n1!=null?_input.getText(((Perform_op5Context)_localctx).n1.start,((Perform_op5Context)_localctx).n1.stop):null)+" "+(((Perform_op5Context)_localctx).n2!=null?_input.getText(((Perform_op5Context)_localctx).n2.start,((Perform_op5Context)_localctx).n2.stop):null));
+
 						          							 		/*System.out.println((((Perform_op5Context)_localctx).n1!=null?_input.getText(((Perform_op5Context)_localctx).n1.start,((Perform_op5Context)_localctx).n1.stop):null)+" WENT HERE +++--- "+(((Perform_op5Context)_localctx).n2!=null?_input.getText(((Perform_op5Context)_localctx).n2.start,((Perform_op5Context)_localctx).n2.stop):null));
 						          							 		if((((Perform_op5Context)_localctx).op!=null?_input.getText(((Perform_op5Context)_localctx).op.start,((Perform_op5Context)_localctx).op.stop):null).equalsIgnoreCase("+")){
 						          							 			if(((Perform_op5Context)_localctx).n1.value instanceof Float || ((Perform_op5Context)_localctx).n2.value instanceof Float){
@@ -2893,7 +2893,6 @@ public class LandParser extends Parser {
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				System.out.println("CRAPSILON");
 				}
 				break;
 			}
