@@ -1,0 +1,23 @@
+float Func(float Cote)
+{
+	float Winona!
+	Cote: Winona+3!
+	
+}
+float Main(){
+
+int XGB7!
+int Winona[10-3]!
+XGB7:2!
+float Paolo[XGB7+1]!
+float X!
+
+Winona[9]: 55!
+
+from(X:0!X<10!x+1)
+{
+	scan(x)!
+}
+
+
+}
