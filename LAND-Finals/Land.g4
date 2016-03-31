@@ -50,7 +50,9 @@ constant_declaration: CONSTANT_TOKEN IDENTIFIER literal TERMINATOR_TOKEN;
 var returns [String s]: IDENTIFIER #varIdentifier | array #arrayIdentifier;
 variable_declaration: data_type var more_variable_declaration[$data_type.s] #variableDeclarationAlone
 					| data_type assignment_declaration[$data_type.s] more_variable_declaration[$data_type.s] #variableDeclarationWithAssignment;
-more_variable_declaration[String dataType]: COMMA_TOKEN var more_variable_declaration[$dataType] | COMMA_TOKEN assignment_declaration[$dataType] more_variable_declaration[$dataType] | TERMINATOR_TOKEN;
+more_variable_declaration[String dataType]: COMMA_TOKEN var more_variable_declaration[$dataType] #moreVarableDec1
+											| COMMA_TOKEN assignment_declaration[$dataType] more_variable_declaration[$dataType] #moreVarableDec2
+											| TERMINATOR_TOKEN #MoreVarableDec3;
 
 //Arrays
 array: IDENTIFIER OPEN_BRACKET expression CLOSE_BRACKET;

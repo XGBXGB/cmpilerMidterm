@@ -731,6 +731,44 @@ public class LandParser extends Parser {
 
 	public static class More_variable_declarationContext extends ParserRuleContext {
 		public String dataType;
+		public More_variable_declarationContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
+		public More_variable_declarationContext(ParserRuleContext parent, int invokingState, String dataType) {
+			super(parent, invokingState);
+			this.dataType = dataType;
+		}
+		@Override public int getRuleIndex() { return RULE_more_variable_declaration; }
+	 
+		public More_variable_declarationContext() { }
+		public void copyFrom(More_variable_declarationContext ctx) {
+			super.copyFrom(ctx);
+			this.dataType = ctx.dataType;
+		}
+	}
+	public static class MoreVarableDec3Context extends More_variable_declarationContext {
+		public TerminalNode TERMINATOR_TOKEN() { return getToken(LandParser.TERMINATOR_TOKEN, 0); }
+		public MoreVarableDec3Context(More_variable_declarationContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof LandVisitor ) return ((LandVisitor<? extends T>)visitor).visitMoreVarableDec3(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class MoreVarableDec2Context extends More_variable_declarationContext {
+		public TerminalNode COMMA_TOKEN() { return getToken(LandParser.COMMA_TOKEN, 0); }
+		public Assignment_declarationContext assignment_declaration() {
+			return getRuleContext(Assignment_declarationContext.class,0);
+		}
+		public More_variable_declarationContext more_variable_declaration() {
+			return getRuleContext(More_variable_declarationContext.class,0);
+		}
+		public MoreVarableDec2Context(More_variable_declarationContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof LandVisitor ) return ((LandVisitor<? extends T>)visitor).visitMoreVarableDec2(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class MoreVarableDec1Context extends More_variable_declarationContext {
 		public TerminalNode COMMA_TOKEN() { return getToken(LandParser.COMMA_TOKEN, 0); }
 		public VarContext var() {
 			return getRuleContext(VarContext.class,0);
@@ -738,19 +776,10 @@ public class LandParser extends Parser {
 		public More_variable_declarationContext more_variable_declaration() {
 			return getRuleContext(More_variable_declarationContext.class,0);
 		}
-		public Assignment_declarationContext assignment_declaration() {
-			return getRuleContext(Assignment_declarationContext.class,0);
-		}
-		public TerminalNode TERMINATOR_TOKEN() { return getToken(LandParser.TERMINATOR_TOKEN, 0); }
-		public More_variable_declarationContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
-		public More_variable_declarationContext(ParserRuleContext parent, int invokingState, String dataType) {
-			super(parent, invokingState);
-			this.dataType = dataType;
-		}
-		@Override public int getRuleIndex() { return RULE_more_variable_declaration; }
+		public MoreVarableDec1Context(More_variable_declarationContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LandVisitor ) return ((LandVisitor<? extends T>)visitor).visitMore_variable_declaration(this);
+			if ( visitor instanceof LandVisitor ) return ((LandVisitor<? extends T>)visitor).visitMoreVarableDec1(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -763,6 +792,7 @@ public class LandParser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
+				_localctx = new MoreVarableDec1Context(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(125);
@@ -774,6 +804,7 @@ public class LandParser extends Parser {
 				}
 				break;
 			case 2:
+				_localctx = new MoreVarableDec2Context(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(129);
@@ -785,6 +816,7 @@ public class LandParser extends Parser {
 				}
 				break;
 			case 3:
+				_localctx = new MoreVarableDec3Context(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(133);

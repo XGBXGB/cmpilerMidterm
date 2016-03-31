@@ -124,7 +124,7 @@ public class LandBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVariableDeclarationAlone(LandParser.VariableDeclarationAloneContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVariableDeclarationAlone(LandParser.VariableDeclarationAloneContext ctx) { return visitChildren(ctx);}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -138,7 +138,21 @@ public class LandBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMore_variable_declaration(LandParser.More_variable_declarationContext ctx) { return visitChildren(ctx); }
+	@Override public T visitMoreVarableDec1(LandParser.MoreVarableDec1Context ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitMoreVarableDec2(LandParser.MoreVarableDec2Context ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitMoreVarableDec3(LandParser.MoreVarableDec3Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

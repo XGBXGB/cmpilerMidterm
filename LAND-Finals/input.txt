@@ -1,0 +1,10 @@
+
+float Main(){
+	float I!
+	I:3!
+	
+	scan('wew')!
+	
+	borrow I!
+	
+}

@@ -131,11 +131,26 @@ public interface LandVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitVariableDeclarationWithAssignment(LandParser.VariableDeclarationWithAssignmentContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LandParser#more_variable_declaration}.
+	 * Visit a parse tree produced by the {@code moreVarableDec1}
+	 * labeled alternative in {@link LandParser#more_variable_declaration}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMore_variable_declaration(LandParser.More_variable_declarationContext ctx);
+	T visitMoreVarableDec1(LandParser.MoreVarableDec1Context ctx);
+	/**
+	 * Visit a parse tree produced by the {@code moreVarableDec2}
+	 * labeled alternative in {@link LandParser#more_variable_declaration}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMoreVarableDec2(LandParser.MoreVarableDec2Context ctx);
+	/**
+	 * Visit a parse tree produced by the {@code MoreVarableDec3}
+	 * labeled alternative in {@link LandParser#more_variable_declaration}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMoreVarableDec3(LandParser.MoreVarableDec3Context ctx);
 	/**
 	 * Visit a parse tree produced by {@link LandParser#array}.
 	 * @param ctx the parse tree
