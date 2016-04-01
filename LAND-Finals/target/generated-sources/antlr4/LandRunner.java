@@ -57,7 +57,7 @@ public class LandRunner {
 	
 	public void startProgram()
 	{
-		String fileName = "C:\\Users\\kewpe\\eclipse_workspace\\cmpilerMidterm\\input.txt";
+		String fileName = "C:\\Users\\kewpe\\eclipse_workspace\\cmpilerFinal\\input.txt";
 		//String fileName = "input.txt";
 		String content = "";
 		String line = "";

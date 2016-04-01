@@ -1,10 +1,20 @@
 
 float Main(){
 	float I!
+	float A!
 	I:3!
+	A:5!
 	
 	scan('wew')!
+	scan(A)!
 	
+	thame(I:>6){
+		scan(I)!
+		
+		I: I+1!
+	}
+	
+	scan('nyehey')!
 	borrow I!
 	
 }

@@ -124,7 +124,7 @@ public class LandBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVariableDeclarationAlone(LandParser.VariableDeclarationAloneContext ctx) { return visitChildren(ctx);}
+	@Override public T visitVariableDeclarationAlone(LandParser.VariableDeclarationAloneContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -31,10 +31,10 @@ grammar Land;
  }
  
  //Data types and literals
-data_type returns [String s]: INT_DATA_TYPE #intDatatype
-							| FLOAT_DATA_TYPE #floatDataType
-							| STRING_DATA_TYPE #stringDatatype
-							| CHAR_DATA_TYPE #charDataType;	
+data_type returns [String s] : INT_DATA_TYPE #intDatatype
+		| FLOAT_DATA_TYPE #floatDataType
+		| STRING_DATA_TYPE #stringDatatype
+		| CHAR_DATA_TYPE #charDataType;	
 literal returns [Object o]: digit_literal #digitLiteral
 							| characters_literal #charactersLiteral;
 digit_literal returns [Object o]: INT_LIT #intLiteral
