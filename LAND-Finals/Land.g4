@@ -58,11 +58,10 @@ more_variable_declaration[String dataType]: COMMA_TOKEN var more_variable_declar
 array: IDENTIFIER OPEN_BRACKET expression CLOSE_BRACKET;
 
 //Assignment statement
-assignment_declaration[String dataType]: assignment[$dataType] | assignment_array;
-assignment_array: array ASSIGNMENT_OPERATOR OPEN_BRACE expression more_expressions CLOSE_BRACE;
+assignment_declaration[String dataType]: assignment[$dataType] #assignment_dec1| assignment_array[$dataType] #assignment_dec2;
+assignment_array[String dataType]: array ASSIGNMENT_OPERATOR OPEN_BRACE expression more_expressions CLOSE_BRACE;
 assignment[String dataType]: var ASSIGNMENT_OPERATOR expression;
-assignment_line: assignment["unknown type"] TERMINATOR_TOKEN
-				;
+assignment_line: assignment["unknown type"] TERMINATOR_TOKEN;
 
 //Function declaration
 function_declaration: return_type IDENTIFIER OPEN_PARENTHESIS function_declaration_parameters_type CLOSE_PARENTHESIS OPEN_BRACE code_block return_line[$return_type.returnType] CLOSE_BRACE;

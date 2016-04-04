@@ -1,12 +1,9 @@
 
 float Main(){
-	float I!
-	float A!
-	I:3!
-	A:5!
+	float I:1!
 	
-	scan('wew')!
-	scan(A)!
+	scan(I)!
+	
 	
 	thame(I:>6){
 		scan(I)!
@@ -14,7 +11,7 @@ float Main(){
 		I: I+1!
 	}
 	
-	scan('nyehey')!
+	scan(J)!
 	borrow I!
 	
 }

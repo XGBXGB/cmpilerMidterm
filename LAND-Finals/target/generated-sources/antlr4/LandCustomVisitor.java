@@ -1,6 +1,7 @@
 import java.util.HashMap;
 
 
+
 public class LandCustomVisitor extends LandBaseVisitor<Object>{
 	HashMap memory = new HashMap();
 	@Override
@@ -133,7 +134,9 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 	@Override
 	public Object visitVariableDeclarationWithAssignment(LandParser.VariableDeclarationWithAssignmentContext ctx) {
 		// TODO Auto-generated method stub
-		return super.visitVariableDeclarationWithAssignment(ctx);
+		ctx.assignment_declaration().dataType=((LandParser.Data_typeContext)this.visit(ctx.data_type())).s;
+		this.visit(ctx.assignment_declaration());
+		return ctx;
 	}
 
 	
@@ -182,17 +185,27 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 		return ctx;
 	}
 
-	/*@Override
-	public Object visitAssignment_declaration(LandParser.Assignment_declarationContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitAssignment_declaration(ctx);
-	}
-
+	
+/*
 	@Override
 	public Object visitAssignment_array(LandParser.Assignment_arrayContext ctx) {
 		// TODO Auto-generated method stub
 		return super.visitAssignment_array(ctx);
 	}*/
+
+	@Override
+	public Object visitAssignment_dec1(LandParser.Assignment_dec1Context ctx) {
+		// TODO Auto-generated method stub
+		ctx.assignment().dataType = ctx.dataType;
+		this.visit(ctx.assignment());
+		return ctx;
+	}
+
+	@Override
+	public Object visitAssignment_dec2(LandParser.Assignment_dec2Context ctx) {
+		// TODO Auto-generated method stub
+		return ctx;
+	}
 
 	@Override
 	public Object visitAssignment(LandParser.AssignmentContext ctx) {

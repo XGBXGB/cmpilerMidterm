@@ -158,11 +158,19 @@ public interface LandVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArray(LandParser.ArrayContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LandParser#assignment_declaration}.
+	 * Visit a parse tree produced by the {@code assignment_dec1}
+	 * labeled alternative in {@link LandParser#assignment_declaration}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAssignment_declaration(LandParser.Assignment_declarationContext ctx);
+	T visitAssignment_dec1(LandParser.Assignment_dec1Context ctx);
+	/**
+	 * Visit a parse tree produced by the {@code assignment_dec2}
+	 * labeled alternative in {@link LandParser#assignment_declaration}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignment_dec2(LandParser.Assignment_dec2Context ctx);
 	/**
 	 * Visit a parse tree produced by {@link LandParser#assignment_array}.
 	 * @param ctx the parse tree

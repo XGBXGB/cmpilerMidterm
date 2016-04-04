@@ -883,21 +883,38 @@ public class LandParser extends Parser {
 
 	public static class Assignment_declarationContext extends ParserRuleContext {
 		public String dataType;
-		public AssignmentContext assignment() {
-			return getRuleContext(AssignmentContext.class,0);
-		}
-		public Assignment_arrayContext assignment_array() {
-			return getRuleContext(Assignment_arrayContext.class,0);
-		}
 		public Assignment_declarationContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public Assignment_declarationContext(ParserRuleContext parent, int invokingState, String dataType) {
 			super(parent, invokingState);
 			this.dataType = dataType;
 		}
 		@Override public int getRuleIndex() { return RULE_assignment_declaration; }
+	 
+		public Assignment_declarationContext() { }
+		public void copyFrom(Assignment_declarationContext ctx) {
+			super.copyFrom(ctx);
+			this.dataType = ctx.dataType;
+		}
+	}
+	public static class Assignment_dec2Context extends Assignment_declarationContext {
+		public Assignment_arrayContext assignment_array() {
+			return getRuleContext(Assignment_arrayContext.class,0);
+		}
+		public Assignment_dec2Context(Assignment_declarationContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LandVisitor ) return ((LandVisitor<? extends T>)visitor).visitAssignment_declaration(this);
+			if ( visitor instanceof LandVisitor ) return ((LandVisitor<? extends T>)visitor).visitAssignment_dec2(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class Assignment_dec1Context extends Assignment_declarationContext {
+		public AssignmentContext assignment() {
+			return getRuleContext(AssignmentContext.class,0);
+		}
+		public Assignment_dec1Context(Assignment_declarationContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof LandVisitor ) return ((LandVisitor<? extends T>)visitor).visitAssignment_dec1(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -910,6 +927,7 @@ public class LandParser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
+				_localctx = new Assignment_dec1Context(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(141);
@@ -917,10 +935,11 @@ public class LandParser extends Parser {
 				}
 				break;
 			case 2:
+				_localctx = new Assignment_dec2Context(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(142);
-				assignment_array();
+				assignment_array(_localctx.dataType);
 				}
 				break;
 			}
@@ -937,6 +956,7 @@ public class LandParser extends Parser {
 	}
 
 	public static class Assignment_arrayContext extends ParserRuleContext {
+		public String dataType;
 		public ArrayContext array() {
 			return getRuleContext(ArrayContext.class,0);
 		}
@@ -949,8 +969,10 @@ public class LandParser extends Parser {
 			return getRuleContext(More_expressionsContext.class,0);
 		}
 		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
-		public Assignment_arrayContext(ParserRuleContext parent, int invokingState) {
+		public Assignment_arrayContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
+		public Assignment_arrayContext(ParserRuleContext parent, int invokingState, String dataType) {
 			super(parent, invokingState);
+			this.dataType = dataType;
 		}
 		@Override public int getRuleIndex() { return RULE_assignment_array; }
 		@Override
@@ -960,8 +982,8 @@ public class LandParser extends Parser {
 		}
 	}
 
-	public final Assignment_arrayContext assignment_array() throws RecognitionException {
-		Assignment_arrayContext _localctx = new Assignment_arrayContext(_ctx, getState());
+	public final Assignment_arrayContext assignment_array(String dataType) throws RecognitionException {
+		Assignment_arrayContext _localctx = new Assignment_arrayContext(_ctx, getState(), dataType);
 		enterRule(_localctx, 22, RULE_assignment_array);
 		try {
 			enterOuterAlt(_localctx, 1);
