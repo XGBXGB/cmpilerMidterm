@@ -114,6 +114,8 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 		String variable = ((LandParser.VarContext)this.visit(ctx.var())).s;
 		System.out.println("DATATYPE CHECK: "+dataType);
 		System.out.println(variable+" TRRRRYYYING");
+		ctx.more_variable_declaration().dataType=((LandParser.Data_typeContext)this.visit(ctx.data_type())).s;
+		this.visit(ctx.more_variable_declaration());
 		if(dataType.equals("float")){
 			return memory.put(variable, new Integer(0));
 		}
@@ -136,6 +138,8 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 		// TODO Auto-generated method stub
 		ctx.assignment_declaration().dataType=((LandParser.Data_typeContext)this.visit(ctx.data_type())).s;
 		this.visit(ctx.assignment_declaration());
+		ctx.more_variable_declaration().dataType=((LandParser.Data_typeContext)this.visit(ctx.data_type())).s;
+		this.visit(ctx.more_variable_declaration());
 		return ctx;
 	}
 
@@ -153,9 +157,9 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 		System.out.println("CRAP CRAP CRAP");
 		String dataType = ctx.dataType;
 		String var = ((LandParser.VarContext)this.visit(ctx.var())).s;
-		System.out.println("MORE VAR DEC:" +dataType+" - "+var);
-		
-		
+		System.out.println("MORE VAR DEC:" +dataType+" - "+var);	
+		ctx.more_variable_declaration().dataType=ctx.dataType;
+		this.visit(ctx.more_variable_declaration());
 		if(dataType.equals("float")){
 			return memory.put(var, new Integer(0));
 		}
@@ -175,6 +179,12 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 	public Object visitMoreVarableDec2(LandParser.MoreVarableDec2Context ctx) {
 		// TODO Auto-generated method stub
 		System.out.println("CRAP CRAP CRAP2");
+		String dataType = ctx.dataType;
+		ctx.more_variable_declaration().dataType=ctx.dataType;
+		ctx.assignment_declaration().dataType=dataType;
+		this.visit(ctx.assignment_declaration());
+		
+		this.visit(ctx.more_variable_declaration());
 		return ctx;
 	}
 

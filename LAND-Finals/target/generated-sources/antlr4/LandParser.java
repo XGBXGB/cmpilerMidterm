@@ -1,4 +1,4 @@
-// Generated from Land.g4 by ANTLR 4.5.2
+// Generated from Land.g4 by ANTLR 4.4
 
  	import java.util.HashMap;
  
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class LandParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -31,6 +31,14 @@ public class LandParser extends Parser {
 		CONSTANT_TOKEN=37, CONSTANT_DECLARATION=38, TERMINATOR_TOKEN=39, OPEN_PARENTHESIS=40, 
 		CLOSE_PARENTHESIS=41, OPEN_BRACE=42, CLOSE_BRACE=43, OPEN_BRACKET=44, 
 		CLOSE_BRACKET=45, COMMA_TOKEN=46, WHITESPACE=47;
+	public static final String[] tokenNames = {
+		"<INVALID>", "'scan'", "INT_LIT", "FLOAT_LIT", "STRING_LIT", "CHAR_LIT", 
+		"IDENTIFIER", "'float'", "'int'", "'char'", "'string'", "'full'", "'from'", 
+		"'thame'", "'dont'", "'then'", "'anne'", "'borrow'", "'*/'", "':'", "'-'", 
+		"'+'", "'/'", "'*'", "'%'", "'--'", "'++'", "'&&'", "'||'", "';'", "'::'", 
+		"';:'", "':<'", "':>'", "'<'", "'>'", "'something'", "'changing'", "CONSTANT_DECLARATION", 
+		"'!'", "'('", "')'", "'{'", "'}'", "'['", "']'", "','", "WHITESPACE"
+	};
 	public static final int
 		RULE_data_type = 0, RULE_literal = 1, RULE_digit_literal = 2, RULE_characters_literal = 3, 
 		RULE_return_type = 4, RULE_constant_declaration = 5, RULE_var = 6, RULE_variable_declaration = 7, 
@@ -58,62 +66,11 @@ public class LandParser extends Parser {
 		"printing", "return_line"
 	};
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'scan'", null, null, null, null, null, "'float'", "'int'", "'char'", 
-		"'string'", "'full'", "'from'", "'thame'", "'dont'", "'then'", "'anne'", 
-		"'borrow'", "'*/'", "':'", "'-'", "'+'", "'/'", "'*'", "'%'", "'--'", 
-		"'++'", "'&&'", "'||'", "';'", "'::'", "';:'", "':<'", "':>'", "'<'", 
-		"'>'", "'something'", "'changing'", null, "'!'", "'('", "')'", "'{'", 
-		"'}'", "'['", "']'", "','"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, "INT_LIT", "FLOAT_LIT", "STRING_LIT", "CHAR_LIT", "IDENTIFIER", 
-		"INT_DATA_TYPE", "FLOAT_DATA_TYPE", "STRING_DATA_TYPE", "CHAR_DATA_TYPE", 
-		"VOID_DATA_TYPE", "FOR_TOKEN", "WHILE_TOKEN", "DO_TOKEN", "IF_TOKEN", 
-		"ELSE_TOKEN", "RETURN_TOKEN", "SINGLE_LINE_COMMENT_TOKEN", "ASSIGNMENT_OPERATOR", 
-		"ADDITION_OPERATOR", "SUBTRACTION_OPERATOR", "MULTIPLICATION_OPERATOR", 
-		"DIVISION_OPERATOR", "MODULUS_OPERATOR", "INCREMENT_OPERATOR", "DECREMENT_OPERATOR", 
-		"AND_OPERATOR", "OR_OPERATOR", "NOT_OPERATOR", "NOT_EQUAL_TO_OPERATOR", 
-		"EQUAL_TO_OPERATOR", "GREATER_THAN_OPERATOR", "LESS_THAN_OPERATOR", "GREATER_THAN_EQUAL_TO_OPERATOR", 
-		"LESS_THAN_EQUAL_TO_OPERATOR", "NULL_TOKEN", "CONSTANT_TOKEN", "CONSTANT_DECLARATION", 
-		"TERMINATOR_TOKEN", "OPEN_PARENTHESIS", "CLOSE_PARENTHESIS", "OPEN_BRACE", 
-		"CLOSE_BRACE", "OPEN_BRACKET", "CLOSE_BRACKET", "COMMA_TOKEN", "WHITESPACE"
-	};
-	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
-
-	/**
-	 * @deprecated Use {@link #VOCABULARY} instead.
-	 */
-	@Deprecated
-	public static final String[] tokenNames;
-	static {
-		tokenNames = new String[_SYMBOLIC_NAMES.length];
-		for (int i = 0; i < tokenNames.length; i++) {
-			tokenNames[i] = VOCABULARY.getLiteralName(i);
-			if (tokenNames[i] == null) {
-				tokenNames[i] = VOCABULARY.getSymbolicName(i);
-			}
-
-			if (tokenNames[i] == null) {
-				tokenNames[i] = "<INVALID>";
-			}
-		}
-	}
-
-	@Override
-	@Deprecated
-	public String[] getTokenNames() {
-		return tokenNames;
-	}
-
-	@Override
-
-	public Vocabulary getVocabulary() {
-		return VOCABULARY;
-	}
-
 	@Override
 	public String getGrammarFileName() { return "Land.g4"; }
+
+	@Override
+	public String[] getTokenNames() { return tokenNames; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -192,32 +149,28 @@ public class LandParser extends Parser {
 				_localctx = new IntDatatypeContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(84);
-				match(INT_DATA_TYPE);
+				setState(84); match(INT_DATA_TYPE);
 				}
 				break;
 			case FLOAT_DATA_TYPE:
 				_localctx = new FloatDataTypeContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(85);
-				match(FLOAT_DATA_TYPE);
+				setState(85); match(FLOAT_DATA_TYPE);
 				}
 				break;
 			case STRING_DATA_TYPE:
 				_localctx = new StringDatatypeContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(86);
-				match(STRING_DATA_TYPE);
+				setState(86); match(STRING_DATA_TYPE);
 				}
 				break;
 			case CHAR_DATA_TYPE:
 				_localctx = new CharDataTypeContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(87);
-				match(CHAR_DATA_TYPE);
+				setState(87); match(CHAR_DATA_TYPE);
 				}
 				break;
 			default:
@@ -282,8 +235,7 @@ public class LandParser extends Parser {
 				_localctx = new DigitLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(90);
-				digit_literal();
+				setState(90); digit_literal();
 				}
 				break;
 			case STRING_LIT:
@@ -291,8 +243,7 @@ public class LandParser extends Parser {
 				_localctx = new CharactersLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(91);
-				characters_literal();
+				setState(91); characters_literal();
 				}
 				break;
 			default:
@@ -352,16 +303,14 @@ public class LandParser extends Parser {
 				_localctx = new IntLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(94);
-				match(INT_LIT);
+				setState(94); match(INT_LIT);
 				}
 				break;
 			case FLOAT_LIT:
 				_localctx = new FloatLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(95);
-				match(FLOAT_LIT);
+				setState(95); match(FLOAT_LIT);
 				}
 				break;
 			default:
@@ -421,16 +370,14 @@ public class LandParser extends Parser {
 				_localctx = new StringLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(98);
-				match(STRING_LIT);
+				setState(98); match(STRING_LIT);
 				}
 				break;
 			case CHAR_LIT:
 				_localctx = new CharLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(99);
-				match(CHAR_LIT);
+				setState(99); match(CHAR_LIT);
 				}
 				break;
 			default:
@@ -495,16 +442,14 @@ public class LandParser extends Parser {
 				_localctx = new DataTypeContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(102);
-				data_type();
+				setState(102); data_type();
 				}
 				break;
 			case VOID_DATA_TYPE:
 				_localctx = new VoidTypeContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(103);
-				match(VOID_DATA_TYPE);
+				setState(103); match(VOID_DATA_TYPE);
 				}
 				break;
 			default:
@@ -524,10 +469,10 @@ public class LandParser extends Parser {
 
 	public static class Constant_declarationContext extends ParserRuleContext {
 		public TerminalNode CONSTANT_TOKEN() { return getToken(LandParser.CONSTANT_TOKEN, 0); }
-		public TerminalNode IDENTIFIER() { return getToken(LandParser.IDENTIFIER, 0); }
 		public LiteralContext literal() {
 			return getRuleContext(LiteralContext.class,0);
 		}
+		public TerminalNode IDENTIFIER() { return getToken(LandParser.IDENTIFIER, 0); }
 		public TerminalNode TERMINATOR_TOKEN() { return getToken(LandParser.TERMINATOR_TOKEN, 0); }
 		public Constant_declarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -546,14 +491,10 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(106);
-			match(CONSTANT_TOKEN);
-			setState(107);
-			match(IDENTIFIER);
-			setState(108);
-			literal();
-			setState(109);
-			match(TERMINATOR_TOKEN);
+			setState(106); match(CONSTANT_TOKEN);
+			setState(107); match(IDENTIFIER);
+			setState(108); literal();
+			setState(109); match(TERMINATOR_TOKEN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -606,22 +547,19 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 12, RULE_var);
 		try {
 			setState(113);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				_localctx = new VarIdentifierContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(111);
-				match(IDENTIFIER);
+				setState(111); match(IDENTIFIER);
 				}
 				break;
 			case 2:
 				_localctx = new ArrayIdentifierContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(112);
-				array();
+				setState(112); array();
 				}
 				break;
 			}
@@ -668,11 +606,11 @@ public class LandParser extends Parser {
 	}
 	public static class VariableDeclarationWithAssignmentContext extends Variable_declarationContext {
 		public Data_typeContext data_type;
-		public Data_typeContext data_type() {
-			return getRuleContext(Data_typeContext.class,0);
-		}
 		public Assignment_declarationContext assignment_declaration() {
 			return getRuleContext(Assignment_declarationContext.class,0);
+		}
+		public Data_typeContext data_type() {
+			return getRuleContext(Data_typeContext.class,0);
 		}
 		public More_variable_declarationContext more_variable_declaration() {
 			return getRuleContext(More_variable_declarationContext.class,0);
@@ -690,30 +628,23 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 14, RULE_variable_declaration);
 		try {
 			setState(123);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
 				_localctx = new VariableDeclarationAloneContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(115);
-				((VariableDeclarationAloneContext)_localctx).data_type = data_type();
-				setState(116);
-				var();
-				setState(117);
-				more_variable_declaration(((VariableDeclarationAloneContext)_localctx).data_type.s);
+				setState(115); ((VariableDeclarationAloneContext)_localctx).data_type = data_type();
+				setState(116); var();
+				setState(117); more_variable_declaration(((VariableDeclarationAloneContext)_localctx).data_type.s);
 				}
 				break;
 			case 2:
 				_localctx = new VariableDeclarationWithAssignmentContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(119);
-				((VariableDeclarationWithAssignmentContext)_localctx).data_type = data_type();
-				setState(120);
-				assignment_declaration(((VariableDeclarationWithAssignmentContext)_localctx).data_type.s);
-				setState(121);
-				more_variable_declaration(((VariableDeclarationWithAssignmentContext)_localctx).data_type.s);
+				setState(119); ((VariableDeclarationWithAssignmentContext)_localctx).data_type = data_type();
+				setState(120); assignment_declaration(((VariableDeclarationWithAssignmentContext)_localctx).data_type.s);
+				setState(121); more_variable_declaration(((VariableDeclarationWithAssignmentContext)_localctx).data_type.s);
 				}
 				break;
 			}
@@ -754,10 +685,10 @@ public class LandParser extends Parser {
 		}
 	}
 	public static class MoreVarableDec2Context extends More_variable_declarationContext {
-		public TerminalNode COMMA_TOKEN() { return getToken(LandParser.COMMA_TOKEN, 0); }
 		public Assignment_declarationContext assignment_declaration() {
 			return getRuleContext(Assignment_declarationContext.class,0);
 		}
+		public TerminalNode COMMA_TOKEN() { return getToken(LandParser.COMMA_TOKEN, 0); }
 		public More_variable_declarationContext more_variable_declaration() {
 			return getRuleContext(More_variable_declarationContext.class,0);
 		}
@@ -769,10 +700,10 @@ public class LandParser extends Parser {
 		}
 	}
 	public static class MoreVarableDec1Context extends More_variable_declarationContext {
-		public TerminalNode COMMA_TOKEN() { return getToken(LandParser.COMMA_TOKEN, 0); }
 		public VarContext var() {
 			return getRuleContext(VarContext.class,0);
 		}
+		public TerminalNode COMMA_TOKEN() { return getToken(LandParser.COMMA_TOKEN, 0); }
 		public More_variable_declarationContext more_variable_declaration() {
 			return getRuleContext(More_variable_declarationContext.class,0);
 		}
@@ -789,38 +720,30 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 16, RULE_more_variable_declaration);
 		try {
 			setState(134);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				_localctx = new MoreVarableDec1Context(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(125);
-				match(COMMA_TOKEN);
-				setState(126);
-				var();
-				setState(127);
-				more_variable_declaration(_localctx.dataType);
+				setState(125); match(COMMA_TOKEN);
+				setState(126); var();
+				setState(127); more_variable_declaration(_localctx.dataType);
 				}
 				break;
 			case 2:
 				_localctx = new MoreVarableDec2Context(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(129);
-				match(COMMA_TOKEN);
-				setState(130);
-				assignment_declaration(_localctx.dataType);
-				setState(131);
-				more_variable_declaration(_localctx.dataType);
+				setState(129); match(COMMA_TOKEN);
+				setState(130); assignment_declaration(_localctx.dataType);
+				setState(131); more_variable_declaration(_localctx.dataType);
 				}
 				break;
 			case 3:
 				_localctx = new MoreVarableDec3Context(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(133);
-				match(TERMINATOR_TOKEN);
+				setState(133); match(TERMINATOR_TOKEN);
 				}
 				break;
 			}
@@ -837,8 +760,8 @@ public class LandParser extends Parser {
 	}
 
 	public static class ArrayContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(LandParser.IDENTIFIER, 0); }
 		public TerminalNode OPEN_BRACKET() { return getToken(LandParser.OPEN_BRACKET, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(LandParser.IDENTIFIER, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -860,14 +783,10 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(136);
-			match(IDENTIFIER);
-			setState(137);
-			match(OPEN_BRACKET);
-			setState(138);
-			expression();
-			setState(139);
-			match(CLOSE_BRACKET);
+			setState(136); match(IDENTIFIER);
+			setState(137); match(OPEN_BRACKET);
+			setState(138); expression();
+			setState(139); match(CLOSE_BRACKET);
 			}
 		}
 		catch (RecognitionException re) {
@@ -924,22 +843,19 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 20, RULE_assignment_declaration);
 		try {
 			setState(143);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
 				_localctx = new Assignment_dec1Context(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(141);
-				assignment(_localctx.dataType);
+				setState(141); assignment(_localctx.dataType);
 				}
 				break;
 			case 2:
 				_localctx = new Assignment_dec2Context(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(142);
-				assignment_array(_localctx.dataType);
+				setState(142); assignment_array(_localctx.dataType);
 				}
 				break;
 			}
@@ -957,18 +873,18 @@ public class LandParser extends Parser {
 
 	public static class Assignment_arrayContext extends ParserRuleContext {
 		public String dataType;
-		public ArrayContext array() {
-			return getRuleContext(ArrayContext.class,0);
-		}
 		public TerminalNode ASSIGNMENT_OPERATOR() { return getToken(LandParser.ASSIGNMENT_OPERATOR, 0); }
+		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
 		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
 		public More_expressionsContext more_expressions() {
 			return getRuleContext(More_expressionsContext.class,0);
 		}
-		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public ArrayContext array() {
+			return getRuleContext(ArrayContext.class,0);
+		}
 		public Assignment_arrayContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public Assignment_arrayContext(ParserRuleContext parent, int invokingState, String dataType) {
 			super(parent, invokingState);
@@ -988,18 +904,12 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(145);
-			array();
-			setState(146);
-			match(ASSIGNMENT_OPERATOR);
-			setState(147);
-			match(OPEN_BRACE);
-			setState(148);
-			expression();
-			setState(149);
-			more_expressions();
-			setState(150);
-			match(CLOSE_BRACE);
+			setState(145); array();
+			setState(146); match(ASSIGNMENT_OPERATOR);
+			setState(147); match(OPEN_BRACE);
+			setState(148); expression();
+			setState(149); more_expressions();
+			setState(150); match(CLOSE_BRACE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1015,10 +925,10 @@ public class LandParser extends Parser {
 
 	public static class AssignmentContext extends ParserRuleContext {
 		public String dataType;
+		public TerminalNode ASSIGNMENT_OPERATOR() { return getToken(LandParser.ASSIGNMENT_OPERATOR, 0); }
 		public VarContext var() {
 			return getRuleContext(VarContext.class,0);
 		}
-		public TerminalNode ASSIGNMENT_OPERATOR() { return getToken(LandParser.ASSIGNMENT_OPERATOR, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -1041,12 +951,9 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(152);
-			var();
-			setState(153);
-			match(ASSIGNMENT_OPERATOR);
-			setState(154);
-			expression();
+			setState(152); var();
+			setState(153); match(ASSIGNMENT_OPERATOR);
+			setState(154); expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1082,10 +989,8 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(156);
-			assignment("unknown type");
-			setState(157);
-			match(TERMINATOR_TOKEN);
+			setState(156); assignment("unknown type");
+			setState(157); match(TERMINATOR_TOKEN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1101,6 +1006,15 @@ public class LandParser extends Parser {
 
 	public static class Function_declarationContext extends ParserRuleContext {
 		public Return_typeContext return_type;
+		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
+		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
+		public Code_blockContext code_block() {
+			return getRuleContext(Code_blockContext.class,0);
+		}
+		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
+		public Return_lineContext return_line() {
+			return getRuleContext(Return_lineContext.class,0);
+		}
 		public Return_typeContext return_type() {
 			return getRuleContext(Return_typeContext.class,0);
 		}
@@ -1109,15 +1023,6 @@ public class LandParser extends Parser {
 		public Function_declaration_parameters_typeContext function_declaration_parameters_type() {
 			return getRuleContext(Function_declaration_parameters_typeContext.class,0);
 		}
-		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
-		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
-		public Code_blockContext code_block() {
-			return getRuleContext(Code_blockContext.class,0);
-		}
-		public Return_lineContext return_line() {
-			return getRuleContext(Return_lineContext.class,0);
-		}
-		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
 		public Function_declarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1135,24 +1040,15 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(159);
-			((Function_declarationContext)_localctx).return_type = return_type();
-			setState(160);
-			match(IDENTIFIER);
-			setState(161);
-			match(OPEN_PARENTHESIS);
-			setState(162);
-			function_declaration_parameters_type();
-			setState(163);
-			match(CLOSE_PARENTHESIS);
-			setState(164);
-			match(OPEN_BRACE);
-			setState(165);
-			code_block();
-			setState(166);
-			return_line(((Function_declarationContext)_localctx).return_type.returnType);
-			setState(167);
-			match(CLOSE_BRACE);
+			setState(159); ((Function_declarationContext)_localctx).return_type = return_type();
+			setState(160); match(IDENTIFIER);
+			setState(161); match(OPEN_PARENTHESIS);
+			setState(162); function_declaration_parameters_type();
+			setState(163); match(CLOSE_PARENTHESIS);
+			setState(164); match(OPEN_BRACE);
+			setState(165); code_block();
+			setState(166); return_line(((Function_declarationContext)_localctx).return_type.returnType);
+			setState(167); match(CLOSE_BRACE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1194,8 +1090,7 @@ public class LandParser extends Parser {
 			case VOID_DATA_TYPE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(169);
-				function_declaration_parameters();
+				setState(169); function_declaration_parameters();
 				}
 				break;
 			case CLOSE_PARENTHESIS:
@@ -1222,10 +1117,10 @@ public class LandParser extends Parser {
 		public Return_typeContext return_type() {
 			return getRuleContext(Return_typeContext.class,0);
 		}
-		public TerminalNode IDENTIFIER() { return getToken(LandParser.IDENTIFIER, 0); }
 		public Function_declaration_more_parametersContext function_declaration_more_parameters() {
 			return getRuleContext(Function_declaration_more_parametersContext.class,0);
 		}
+		public TerminalNode IDENTIFIER() { return getToken(LandParser.IDENTIFIER, 0); }
 		public Function_declaration_parametersContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1243,12 +1138,9 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(173);
-			return_type();
-			setState(174);
-			match(IDENTIFIER);
-			setState(175);
-			function_declaration_more_parameters();
+			setState(173); return_type();
+			setState(174); match(IDENTIFIER);
+			setState(175); function_declaration_more_parameters();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1263,10 +1155,10 @@ public class LandParser extends Parser {
 	}
 
 	public static class Function_declaration_more_parametersContext extends ParserRuleContext {
-		public TerminalNode COMMA_TOKEN() { return getToken(LandParser.COMMA_TOKEN, 0); }
 		public Function_declaration_parametersContext function_declaration_parameters() {
 			return getRuleContext(Function_declaration_parametersContext.class,0);
 		}
+		public TerminalNode COMMA_TOKEN() { return getToken(LandParser.COMMA_TOKEN, 0); }
 		public Function_declaration_more_parametersContext function_declaration_more_parameters() {
 			return getRuleContext(Function_declaration_more_parametersContext.class,0);
 		}
@@ -1286,17 +1178,13 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 34, RULE_function_declaration_more_parameters);
 		try {
 			setState(182);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(177);
-				match(COMMA_TOKEN);
-				setState(178);
-				function_declaration_parameters();
-				setState(179);
-				function_declaration_more_parameters();
+				setState(177); match(COMMA_TOKEN);
+				setState(178); function_declaration_parameters();
+				setState(179); function_declaration_more_parameters();
 				}
 				break;
 			case 2:
@@ -1318,12 +1206,12 @@ public class LandParser extends Parser {
 	}
 
 	public static class Function_callContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(LandParser.IDENTIFIER, 0); }
-		public TerminalNode OPEN_PARENTHESIS() { return getToken(LandParser.OPEN_PARENTHESIS, 0); }
+		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
 		public Function_call_parameters_typeContext function_call_parameters_type() {
 			return getRuleContext(Function_call_parameters_typeContext.class,0);
 		}
-		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(LandParser.IDENTIFIER, 0); }
+		public TerminalNode OPEN_PARENTHESIS() { return getToken(LandParser.OPEN_PARENTHESIS, 0); }
 		public Function_callContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1341,14 +1229,10 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(184);
-			match(IDENTIFIER);
-			setState(185);
-			match(OPEN_PARENTHESIS);
-			setState(186);
-			function_call_parameters_type();
-			setState(187);
-			match(CLOSE_PARENTHESIS);
+			setState(184); match(IDENTIFIER);
+			setState(185); match(OPEN_PARENTHESIS);
+			setState(186); function_call_parameters_type();
+			setState(187); match(CLOSE_PARENTHESIS);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1382,13 +1266,11 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 38, RULE_function_call_parameters_type);
 		try {
 			setState(191);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(189);
-				function_call_parameters();
+				setState(189); function_call_parameters();
 				}
 				break;
 			case 2:
@@ -1410,11 +1292,11 @@ public class LandParser extends Parser {
 	}
 
 	public static class Function_call_parametersContext extends ParserRuleContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
 		public More_expressionsContext more_expressions() {
 			return getRuleContext(More_expressionsContext.class,0);
+		}
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
 		public Function_call_parametersContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1433,10 +1315,8 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(193);
-			expression();
-			setState(194);
-			more_expressions();
+			setState(193); expression();
+			setState(194); more_expressions();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1472,10 +1352,8 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(196);
-			function_call();
-			setState(197);
-			match(TERMINATOR_TOKEN);
+			setState(196); function_call();
+			setState(197); match(TERMINATOR_TOKEN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1490,20 +1368,20 @@ public class LandParser extends Parser {
 	}
 
 	public static class ConditionalContext extends ParserRuleContext {
-		public TerminalNode IF_TOKEN() { return getToken(LandParser.IF_TOKEN, 0); }
+		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
+		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
+		public Code_blockContext code_block() {
+			return getRuleContext(Code_blockContext.class,0);
+		}
+		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
+		public Conditional_continueContext conditional_continue() {
+			return getRuleContext(Conditional_continueContext.class,0);
+		}
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(LandParser.OPEN_PARENTHESIS, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
-		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
-		public Code_blockContext code_block() {
-			return getRuleContext(Code_blockContext.class,0);
-		}
-		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
-		public Conditional_continueContext conditional_continue() {
-			return getRuleContext(Conditional_continueContext.class,0);
-		}
+		public TerminalNode IF_TOKEN() { return getToken(LandParser.IF_TOKEN, 0); }
 		public ConditionalContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1521,22 +1399,14 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(199);
-			match(IF_TOKEN);
-			setState(200);
-			match(OPEN_PARENTHESIS);
-			setState(201);
-			expression();
-			setState(202);
-			match(CLOSE_PARENTHESIS);
-			setState(203);
-			match(OPEN_BRACE);
-			setState(204);
-			code_block();
-			setState(205);
-			match(CLOSE_BRACE);
-			setState(206);
-			conditional_continue();
+			setState(199); match(IF_TOKEN);
+			setState(200); match(OPEN_PARENTHESIS);
+			setState(201); expression();
+			setState(202); match(CLOSE_PARENTHESIS);
+			setState(203); match(OPEN_BRACE);
+			setState(204); code_block();
+			setState(205); match(CLOSE_BRACE);
+			setState(206); conditional_continue();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1575,11 +1445,11 @@ public class LandParser extends Parser {
 	}
 	public static class ContinueElseContext extends Conditional_continueContext {
 		public TerminalNode ELSE_TOKEN() { return getToken(LandParser.ELSE_TOKEN, 0); }
-		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
+		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
 		public Code_blockContext code_block() {
 			return getRuleContext(Code_blockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
+		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
 		public ContinueElseContext(Conditional_continueContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
@@ -1601,30 +1471,23 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 46, RULE_conditional_continue);
 		try {
 			setState(216);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
 			case 1:
 				_localctx = new ContinueElseIfContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(208);
-				match(ELSE_TOKEN);
-				setState(209);
-				conditional();
+				setState(208); match(ELSE_TOKEN);
+				setState(209); conditional();
 				}
 				break;
 			case 2:
 				_localctx = new ContinueElseContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(210);
-				match(ELSE_TOKEN);
-				setState(211);
-				match(OPEN_BRACE);
-				setState(212);
-				code_block();
-				setState(213);
-				match(CLOSE_BRACE);
+				setState(210); match(ELSE_TOKEN);
+				setState(211); match(OPEN_BRACE);
+				setState(212); code_block();
+				setState(213); match(CLOSE_BRACE);
 				}
 				break;
 			case 3:
@@ -1648,14 +1511,14 @@ public class LandParser extends Parser {
 
 	public static class WloopContext extends ParserRuleContext {
 		public ExpressionContext e1;
-		public TerminalNode WHILE_TOKEN() { return getToken(LandParser.WHILE_TOKEN, 0); }
-		public TerminalNode OPEN_PARENTHESIS() { return getToken(LandParser.OPEN_PARENTHESIS, 0); }
 		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
-		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
+		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
 		public Code_blockContext code_block() {
 			return getRuleContext(Code_blockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
+		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
+		public TerminalNode WHILE_TOKEN() { return getToken(LandParser.WHILE_TOKEN, 0); }
+		public TerminalNode OPEN_PARENTHESIS() { return getToken(LandParser.OPEN_PARENTHESIS, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -1676,20 +1539,13 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(218);
-			match(WHILE_TOKEN);
-			setState(219);
-			match(OPEN_PARENTHESIS);
-			setState(220);
-			((WloopContext)_localctx).e1 = expression();
-			setState(221);
-			match(CLOSE_PARENTHESIS);
-			setState(222);
-			match(OPEN_BRACE);
-			setState(223);
-			code_block();
-			setState(224);
-			match(CLOSE_BRACE);
+			setState(218); match(WHILE_TOKEN);
+			setState(219); match(OPEN_PARENTHESIS);
+			setState(220); ((WloopContext)_localctx).e1 = expression();
+			setState(221); match(CLOSE_PARENTHESIS);
+			setState(222); match(OPEN_BRACE);
+			setState(223); code_block();
+			setState(224); match(CLOSE_BRACE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1704,18 +1560,18 @@ public class LandParser extends Parser {
 	}
 
 	public static class DloopContext extends ParserRuleContext {
-		public TerminalNode DO_TOKEN() { return getToken(LandParser.DO_TOKEN, 0); }
-		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
+		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
+		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
 		public Code_blockContext code_block() {
 			return getRuleContext(Code_blockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
+		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
 		public TerminalNode WHILE_TOKEN() { return getToken(LandParser.WHILE_TOKEN, 0); }
+		public TerminalNode DO_TOKEN() { return getToken(LandParser.DO_TOKEN, 0); }
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(LandParser.OPEN_PARENTHESIS, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
 		public TerminalNode TERMINATOR_TOKEN() { return getToken(LandParser.TERMINATOR_TOKEN, 0); }
 		public DloopContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1734,24 +1590,15 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(226);
-			match(DO_TOKEN);
-			setState(227);
-			match(OPEN_BRACE);
-			setState(228);
-			code_block();
-			setState(229);
-			match(CLOSE_BRACE);
-			setState(230);
-			match(WHILE_TOKEN);
-			setState(231);
-			match(OPEN_PARENTHESIS);
-			setState(232);
-			expression();
-			setState(233);
-			match(CLOSE_PARENTHESIS);
-			setState(234);
-			match(TERMINATOR_TOKEN);
+			setState(226); match(DO_TOKEN);
+			setState(227); match(OPEN_BRACE);
+			setState(228); code_block();
+			setState(229); match(CLOSE_BRACE);
+			setState(230); match(WHILE_TOKEN);
+			setState(231); match(OPEN_PARENTHESIS);
+			setState(232); expression();
+			setState(233); match(CLOSE_PARENTHESIS);
+			setState(234); match(TERMINATOR_TOKEN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1768,24 +1615,24 @@ public class LandParser extends Parser {
 	public static class FloopContext extends ParserRuleContext {
 		public ExpressionContext n1;
 		public ExpressionContext e1;
-		public TerminalNode FOR_TOKEN() { return getToken(LandParser.FOR_TOKEN, 0); }
-		public TerminalNode OPEN_PARENTHESIS() { return getToken(LandParser.OPEN_PARENTHESIS, 0); }
-		public List<TerminalNode> TERMINATOR_TOKEN() { return getTokens(LandParser.TERMINATOR_TOKEN); }
-		public TerminalNode TERMINATOR_TOKEN(int i) {
-			return getToken(LandParser.TERMINATOR_TOKEN, i);
-		}
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
 		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
-		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
+		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
 		public Code_blockContext code_block() {
 			return getRuleContext(Code_blockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
+		public TerminalNode OPEN_BRACE() { return getToken(LandParser.OPEN_BRACE, 0); }
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode TERMINATOR_TOKEN(int i) {
+			return getToken(LandParser.TERMINATOR_TOKEN, i);
+		}
+		public TerminalNode FOR_TOKEN() { return getToken(LandParser.FOR_TOKEN, 0); }
+		public TerminalNode OPEN_PARENTHESIS() { return getToken(LandParser.OPEN_PARENTHESIS, 0); }
+		public List<TerminalNode> TERMINATOR_TOKEN() { return getTokens(LandParser.TERMINATOR_TOKEN); }
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
 		public FloopContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1803,28 +1650,17 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(236);
-			match(FOR_TOKEN);
-			setState(237);
-			match(OPEN_PARENTHESIS);
-			setState(238);
-			((FloopContext)_localctx).n1 = expression();
-			setState(239);
-			match(TERMINATOR_TOKEN);
-			setState(240);
-			((FloopContext)_localctx).e1 = expression();
-			setState(241);
-			match(TERMINATOR_TOKEN);
-			setState(242);
-			expression();
-			setState(243);
-			match(CLOSE_PARENTHESIS);
-			setState(244);
-			match(OPEN_BRACE);
-			setState(245);
-			code_block();
-			setState(246);
-			match(CLOSE_BRACE);
+			setState(236); match(FOR_TOKEN);
+			setState(237); match(OPEN_PARENTHESIS);
+			setState(238); ((FloopContext)_localctx).n1 = expression();
+			setState(239); match(TERMINATOR_TOKEN);
+			setState(240); ((FloopContext)_localctx).e1 = expression();
+			setState(241); match(TERMINATOR_TOKEN);
+			setState(242); expression();
+			setState(243); match(CLOSE_PARENTHESIS);
+			setState(244); match(OPEN_BRACE);
+			setState(245); code_block();
+			setState(246); match(CLOSE_BRACE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1852,10 +1688,10 @@ public class LandParser extends Parser {
 		}
 	}
 	public static class PerformOp_1Context extends Perform_opContext {
+		public TerminalNode OR_OPERATOR() { return getToken(LandParser.OR_OPERATOR, 0); }
 		public Perform_opContext perform_op() {
 			return getRuleContext(Perform_opContext.class,0);
 		}
-		public TerminalNode OR_OPERATOR() { return getToken(LandParser.OR_OPERATOR, 0); }
 		public Perform_op2Context perform_op2() {
 			return getRuleContext(Perform_op2Context.class,0);
 		}
@@ -1899,8 +1735,7 @@ public class LandParser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(249);
-			((PerformOp_2Context)_localctx).n3 = perform_op2(0);
+			setState(249); ((PerformOp_2Context)_localctx).n3 = perform_op2(0);
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(256);
@@ -1916,10 +1751,8 @@ public class LandParser extends Parser {
 					pushNewRecursionContext(_localctx, _startState, RULE_perform_op);
 					setState(251);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(252);
-					match(OR_OPERATOR);
-					setState(253);
-					perform_op2(0);
+					setState(252); match(OR_OPERATOR);
+					setState(253); perform_op2(0);
 					}
 					} 
 				}
@@ -1966,10 +1799,10 @@ public class LandParser extends Parser {
 		}
 	}
 	public static class PerformOp2_1Context extends Perform_op2Context {
+		public TerminalNode AND_OPERATOR() { return getToken(LandParser.AND_OPERATOR, 0); }
 		public Perform_op2Context perform_op2() {
 			return getRuleContext(Perform_op2Context.class,0);
 		}
-		public TerminalNode AND_OPERATOR() { return getToken(LandParser.AND_OPERATOR, 0); }
 		public Perform_op3Context perform_op3() {
 			return getRuleContext(Perform_op3Context.class,0);
 		}
@@ -2001,8 +1834,7 @@ public class LandParser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(260);
-			((PerformOp2_2Context)_localctx).n3 = perform_op3();
+			setState(260); ((PerformOp2_2Context)_localctx).n3 = perform_op3();
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(267);
@@ -2018,10 +1850,8 @@ public class LandParser extends Parser {
 					pushNewRecursionContext(_localctx, _startState, RULE_perform_op2);
 					setState(262);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(263);
-					match(AND_OPERATOR);
-					setState(264);
-					perform_op3();
+					setState(263); match(AND_OPERATOR);
+					setState(264); perform_op3();
 					}
 					} 
 				}
@@ -2090,10 +1920,8 @@ public class LandParser extends Parser {
 				_localctx = new PerformOp3_1Context(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(270);
-				match(NOT_OPERATOR);
-				setState(271);
-				perform_op3();
+				setState(270); match(NOT_OPERATOR);
+				setState(271); perform_op3();
 				}
 				break;
 			case INT_LIT:
@@ -2103,8 +1931,7 @@ public class LandParser extends Parser {
 				_localctx = new PerformOp3_2Context(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(272);
-				((PerformOp3_2Context)_localctx).n3 = perform_op4(0);
+				setState(272); ((PerformOp3_2Context)_localctx).n3 = perform_op4(0);
 				}
 				break;
 			default:
@@ -2150,11 +1977,11 @@ public class LandParser extends Parser {
 	public static class PerformOp4_1Context extends Perform_op4Context {
 		public Perform_op4Context n1;
 		public Perform_op5Context n2;
-		public Cond_opContext cond_op() {
-			return getRuleContext(Cond_opContext.class,0);
-		}
 		public Perform_op4Context perform_op4() {
 			return getRuleContext(Perform_op4Context.class,0);
+		}
+		public Cond_opContext cond_op() {
+			return getRuleContext(Cond_opContext.class,0);
 		}
 		public Perform_op5Context perform_op5() {
 			return getRuleContext(Perform_op5Context.class,0);
@@ -2187,8 +2014,7 @@ public class LandParser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(276);
-			((PerformOp4_2Context)_localctx).n3 = perform_op5(0);
+			setState(276); ((PerformOp4_2Context)_localctx).n3 = perform_op5(0);
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(284);
@@ -2205,10 +2031,8 @@ public class LandParser extends Parser {
 					pushNewRecursionContext(_localctx, _startState, RULE_perform_op4);
 					setState(278);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(279);
-					cond_op();
-					setState(280);
-					((PerformOp4_1Context)_localctx).n2 = perform_op5(0);
+					setState(279); cond_op();
+					setState(280); ((PerformOp4_1Context)_localctx).n2 = perform_op5(0);
 					}
 					} 
 				}
@@ -2245,11 +2069,11 @@ public class LandParser extends Parser {
 	public static class PerformOp5_1Context extends Perform_op5Context {
 		public Perform_op5Context n1;
 		public Perform_op6Context n2;
-		public Perform_op5Context perform_op5() {
-			return getRuleContext(Perform_op5Context.class,0);
-		}
 		public Perform_op6Context perform_op6() {
 			return getRuleContext(Perform_op6Context.class,0);
+		}
+		public Perform_op5Context perform_op5() {
+			return getRuleContext(Perform_op5Context.class,0);
 		}
 		public PerformOp5_1Context(Perform_op5Context ctx) { copyFrom(ctx); }
 		@Override
@@ -2274,14 +2098,14 @@ public class LandParser extends Parser {
 		public Perform_op5Context n1;
 		public Add_subContext op;
 		public Perform_op6Context n2;
-		public Perform_op5Context perform_op5() {
-			return getRuleContext(Perform_op5Context.class,0);
-		}
 		public Add_subContext add_sub() {
 			return getRuleContext(Add_subContext.class,0);
 		}
 		public Perform_op6Context perform_op6() {
 			return getRuleContext(Perform_op6Context.class,0);
+		}
+		public Perform_op5Context perform_op5() {
+			return getRuleContext(Perform_op5Context.class,0);
 		}
 		public PerformOp5_2Context(Perform_op5Context ctx) { copyFrom(ctx); }
 		@Override
@@ -2311,8 +2135,7 @@ public class LandParser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(288);
-			((PerformOp5_3Context)_localctx).n3 = perform_op6(0);
+			setState(288); ((PerformOp5_3Context)_localctx).n3 = perform_op6(0);
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(298);
@@ -2324,7 +2147,6 @@ public class LandParser extends Parser {
 					_prevctx = _localctx;
 					{
 					setState(296);
-					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
 					case 1:
 						{
@@ -2333,8 +2155,7 @@ public class LandParser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_perform_op5);
 						setState(290);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(291);
-						((PerformOp5_1Context)_localctx).n2 = perform_op6(0);
+						setState(291); ((PerformOp5_1Context)_localctx).n2 = perform_op6(0);
 						}
 						break;
 					case 2:
@@ -2344,10 +2165,8 @@ public class LandParser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_perform_op5);
 						setState(292);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(293);
-						((PerformOp5_2Context)_localctx).op = add_sub();
-						setState(294);
-						((PerformOp5_2Context)_localctx).n2 = perform_op6(0);
+						setState(293); ((PerformOp5_2Context)_localctx).op = add_sub();
+						setState(294); ((PerformOp5_2Context)_localctx).n2 = perform_op6(0);
 						}
 						break;
 					}
@@ -2399,11 +2218,11 @@ public class LandParser extends Parser {
 		public Perform_op6Context n1;
 		public Mul_divContext op;
 		public Perform_op7Context n2;
-		public Perform_op6Context perform_op6() {
-			return getRuleContext(Perform_op6Context.class,0);
-		}
 		public Mul_divContext mul_div() {
 			return getRuleContext(Mul_divContext.class,0);
+		}
+		public Perform_op6Context perform_op6() {
+			return getRuleContext(Perform_op6Context.class,0);
 		}
 		public Perform_op7Context perform_op7() {
 			return getRuleContext(Perform_op7Context.class,0);
@@ -2436,8 +2255,7 @@ public class LandParser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(302);
-			((PerformOp6_2Context)_localctx).n3 = perform_op7();
+			setState(302); ((PerformOp6_2Context)_localctx).n3 = perform_op7();
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(310);
@@ -2454,10 +2272,8 @@ public class LandParser extends Parser {
 					pushNewRecursionContext(_localctx, _startState, RULE_perform_op6);
 					setState(304);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(305);
-					((PerformOp6_1Context)_localctx).op = mul_div();
-					setState(306);
-					((PerformOp6_1Context)_localctx).n2 = perform_op7();
+					setState(305); ((PerformOp6_1Context)_localctx).op = mul_div();
+					setState(306); ((PerformOp6_1Context)_localctx).n2 = perform_op7();
 					}
 					} 
 				}
@@ -2551,50 +2367,42 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 66, RULE_perform_op7);
 		try {
 			setState(321);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
 			case 1:
 				_localctx = new PerformOp7_parContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(313);
-				match(OPEN_PARENTHESIS);
-				setState(314);
-				((PerformOp7_parContext)_localctx).c = perform_op(0);
-				setState(315);
-				match(CLOSE_PARENTHESIS);
+				setState(313); match(OPEN_PARENTHESIS);
+				setState(314); ((PerformOp7_parContext)_localctx).c = perform_op(0);
+				setState(315); match(CLOSE_PARENTHESIS);
 				}
 				break;
 			case 2:
 				_localctx = new PerformOp7_funcCallContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(317);
-				((PerformOp7_funcCallContext)_localctx).n5 = function_call();
+				setState(317); ((PerformOp7_funcCallContext)_localctx).n5 = function_call();
 				}
 				break;
 			case 3:
 				_localctx = new PerformOp7_floatContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(318);
-				((PerformOp7_floatContext)_localctx).n1 = match(FLOAT_LIT);
+				setState(318); ((PerformOp7_floatContext)_localctx).n1 = match(FLOAT_LIT);
 				}
 				break;
 			case 4:
 				_localctx = new PerformOp7_intContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(319);
-				((PerformOp7_intContext)_localctx).n2 = match(INT_LIT);
+				setState(319); ((PerformOp7_intContext)_localctx).n2 = match(INT_LIT);
 				}
 				break;
 			case 5:
 				_localctx = new PerformOp7_identifierContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(320);
-				((PerformOp7_identifierContext)_localctx).n4 = match(IDENTIFIER);
+				setState(320); ((PerformOp7_identifierContext)_localctx).n4 = match(IDENTIFIER);
 				}
 				break;
 			}
@@ -2611,8 +2419,8 @@ public class LandParser extends Parser {
 	}
 
 	public static class Add_subContext extends ParserRuleContext {
-		public TerminalNode ADDITION_OPERATOR() { return getToken(LandParser.ADDITION_OPERATOR, 0); }
 		public TerminalNode SUBTRACTION_OPERATOR() { return getToken(LandParser.SUBTRACTION_OPERATOR, 0); }
+		public TerminalNode ADDITION_OPERATOR() { return getToken(LandParser.ADDITION_OPERATOR, 0); }
 		public Add_subContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2635,9 +2443,8 @@ public class LandParser extends Parser {
 			_la = _input.LA(1);
 			if ( !(_la==ADDITION_OPERATOR || _la==SUBTRACTION_OPERATOR) ) {
 			_errHandler.recoverInline(this);
-			} else {
-				consume();
 			}
+			consume();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2652,9 +2459,9 @@ public class LandParser extends Parser {
 	}
 
 	public static class Mul_divContext extends ParserRuleContext {
-		public TerminalNode MULTIPLICATION_OPERATOR() { return getToken(LandParser.MULTIPLICATION_OPERATOR, 0); }
 		public TerminalNode DIVISION_OPERATOR() { return getToken(LandParser.DIVISION_OPERATOR, 0); }
 		public TerminalNode MODULUS_OPERATOR() { return getToken(LandParser.MODULUS_OPERATOR, 0); }
+		public TerminalNode MULTIPLICATION_OPERATOR() { return getToken(LandParser.MULTIPLICATION_OPERATOR, 0); }
 		public Mul_divContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2677,9 +2484,8 @@ public class LandParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MULTIPLICATION_OPERATOR) | (1L << DIVISION_OPERATOR) | (1L << MODULUS_OPERATOR))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
-				consume();
 			}
+			consume();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2694,12 +2500,12 @@ public class LandParser extends Parser {
 	}
 
 	public static class Cond_opContext extends ParserRuleContext {
-		public TerminalNode NOT_EQUAL_TO_OPERATOR() { return getToken(LandParser.NOT_EQUAL_TO_OPERATOR, 0); }
-		public TerminalNode EQUAL_TO_OPERATOR() { return getToken(LandParser.EQUAL_TO_OPERATOR, 0); }
-		public TerminalNode GREATER_THAN_OPERATOR() { return getToken(LandParser.GREATER_THAN_OPERATOR, 0); }
-		public TerminalNode LESS_THAN_OPERATOR() { return getToken(LandParser.LESS_THAN_OPERATOR, 0); }
 		public TerminalNode GREATER_THAN_EQUAL_TO_OPERATOR() { return getToken(LandParser.GREATER_THAN_EQUAL_TO_OPERATOR, 0); }
+		public TerminalNode LESS_THAN_OPERATOR() { return getToken(LandParser.LESS_THAN_OPERATOR, 0); }
+		public TerminalNode GREATER_THAN_OPERATOR() { return getToken(LandParser.GREATER_THAN_OPERATOR, 0); }
+		public TerminalNode NOT_EQUAL_TO_OPERATOR() { return getToken(LandParser.NOT_EQUAL_TO_OPERATOR, 0); }
 		public TerminalNode LESS_THAN_EQUAL_TO_OPERATOR() { return getToken(LandParser.LESS_THAN_EQUAL_TO_OPERATOR, 0); }
+		public TerminalNode EQUAL_TO_OPERATOR() { return getToken(LandParser.EQUAL_TO_OPERATOR, 0); }
 		public Cond_opContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2722,9 +2528,8 @@ public class LandParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << NOT_EQUAL_TO_OPERATOR) | (1L << EQUAL_TO_OPERATOR) | (1L << GREATER_THAN_OPERATOR) | (1L << LESS_THAN_OPERATOR) | (1L << GREATER_THAN_EQUAL_TO_OPERATOR) | (1L << LESS_THAN_EQUAL_TO_OPERATOR))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
-				consume();
 			}
+			consume();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2822,46 +2627,40 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 74, RULE_expression);
 		try {
 			setState(335);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,21,_ctx) ) {
 			case 1:
 				_localctx = new Expression_performOpContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(329);
-				perform_op(0);
+				setState(329); perform_op(0);
 				}
 				break;
 			case 2:
 				_localctx = new Expression_literalContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(330);
-				literal();
+				setState(330); literal();
 				}
 				break;
 			case 3:
 				_localctx = new Expression_funcCallContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(331);
-				function_call();
+				setState(331); function_call();
 				}
 				break;
 			case 4:
 				_localctx = new Expression_varContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(332);
-				var();
+				setState(332); var();
 				}
 				break;
 			case 5:
 				_localctx = new Expression_assignmentContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(333);
-				assignment("unknown type");
+				setState(333); assignment("unknown type");
 				}
 				break;
 			case 6:
@@ -2885,11 +2684,11 @@ public class LandParser extends Parser {
 
 	public static class More_expressionsContext extends ParserRuleContext {
 		public TerminalNode COMMA_TOKEN() { return getToken(LandParser.COMMA_TOKEN, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
 		public More_expressionsContext more_expressions() {
 			return getRuleContext(More_expressionsContext.class,0);
+		}
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
 		public More_expressionsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2911,12 +2710,9 @@ public class LandParser extends Parser {
 			case COMMA_TOKEN:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(337);
-				match(COMMA_TOKEN);
-				setState(338);
-				expression();
-				setState(339);
-				more_expressions();
+				setState(337); match(COMMA_TOKEN);
+				setState(338); expression();
+				setState(339); more_expressions();
 				}
 				break;
 			case CLOSE_PARENTHESIS:
@@ -2941,35 +2737,35 @@ public class LandParser extends Parser {
 	}
 
 	public static class Code_blockContext extends ParserRuleContext {
-		public Variable_declarationContext variable_declaration() {
-			return getRuleContext(Variable_declarationContext.class,0);
-		}
-		public Code_blockContext code_block() {
-			return getRuleContext(Code_blockContext.class,0);
+		public DloopContext dloop() {
+			return getRuleContext(DloopContext.class,0);
 		}
 		public Function_declarationContext function_declaration() {
 			return getRuleContext(Function_declarationContext.class,0);
 		}
+		public WloopContext wloop() {
+			return getRuleContext(WloopContext.class,0);
+		}
+		public PrintingContext printing() {
+			return getRuleContext(PrintingContext.class,0);
+		}
+		public Code_blockContext code_block() {
+			return getRuleContext(Code_blockContext.class,0);
+		}
 		public Assignment_lineContext assignment_line() {
 			return getRuleContext(Assignment_lineContext.class,0);
+		}
+		public FloopContext floop() {
+			return getRuleContext(FloopContext.class,0);
+		}
+		public Variable_declarationContext variable_declaration() {
+			return getRuleContext(Variable_declarationContext.class,0);
 		}
 		public Function_call_lineContext function_call_line() {
 			return getRuleContext(Function_call_lineContext.class,0);
 		}
 		public ConditionalContext conditional() {
 			return getRuleContext(ConditionalContext.class,0);
-		}
-		public WloopContext wloop() {
-			return getRuleContext(WloopContext.class,0);
-		}
-		public FloopContext floop() {
-			return getRuleContext(FloopContext.class,0);
-		}
-		public DloopContext dloop() {
-			return getRuleContext(DloopContext.class,0);
-		}
-		public PrintingContext printing() {
-			return getRuleContext(PrintingContext.class,0);
 		}
 		public Code_blockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2987,87 +2783,68 @@ public class LandParser extends Parser {
 		enterRule(_localctx, 78, RULE_code_block);
 		try {
 			setState(372);
-			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(344);
-				variable_declaration();
-				setState(345);
-				code_block();
+				setState(344); variable_declaration();
+				setState(345); code_block();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(347);
-				function_declaration();
-				setState(348);
-				code_block();
+				setState(347); function_declaration();
+				setState(348); code_block();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(350);
-				assignment_line();
-				setState(351);
-				code_block();
+				setState(350); assignment_line();
+				setState(351); code_block();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(353);
-				function_call_line();
-				setState(354);
-				code_block();
+				setState(353); function_call_line();
+				setState(354); code_block();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(356);
-				conditional();
-				setState(357);
-				code_block();
+				setState(356); conditional();
+				setState(357); code_block();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(359);
-				wloop();
-				setState(360);
-				code_block();
+				setState(359); wloop();
+				setState(360); code_block();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(362);
-				floop();
-				setState(363);
-				code_block();
+				setState(362); floop();
+				setState(363); code_block();
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(365);
-				dloop();
-				setState(366);
-				code_block();
+				setState(365); dloop();
+				setState(366); code_block();
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(368);
-				printing();
-				setState(369);
-				code_block();
+				setState(368); printing();
+				setState(369); code_block();
 				}
 				break;
 			case 10:
@@ -3089,11 +2866,11 @@ public class LandParser extends Parser {
 	}
 
 	public static class PrintingContext extends ParserRuleContext {
+		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(LandParser.OPEN_PARENTHESIS, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
 		public TerminalNode TERMINATOR_TOKEN() { return getToken(LandParser.TERMINATOR_TOKEN, 0); }
 		public PrintingContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3112,16 +2889,11 @@ public class LandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(374);
-			match(T__0);
-			setState(375);
-			match(OPEN_PARENTHESIS);
-			setState(376);
-			expression();
-			setState(377);
-			match(CLOSE_PARENTHESIS);
-			setState(378);
-			match(TERMINATOR_TOKEN);
+			setState(374); match(T__0);
+			setState(375); match(OPEN_PARENTHESIS);
+			setState(376); expression();
+			setState(377); match(CLOSE_PARENTHESIS);
+			setState(378); match(TERMINATOR_TOKEN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3159,11 +2931,11 @@ public class LandParser extends Parser {
 		}
 	}
 	public static class ReturnLine_1Context extends Return_lineContext {
-		public TerminalNode RETURN_TOKEN() { return getToken(LandParser.RETURN_TOKEN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode TERMINATOR_TOKEN() { return getToken(LandParser.TERMINATOR_TOKEN, 0); }
+		public TerminalNode RETURN_TOKEN() { return getToken(LandParser.RETURN_TOKEN, 0); }
 		public ReturnLine_1Context(Return_lineContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
@@ -3182,12 +2954,9 @@ public class LandParser extends Parser {
 				_localctx = new ReturnLine_1Context(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(380);
-				match(RETURN_TOKEN);
-				setState(381);
-				expression();
-				setState(382);
-				match(TERMINATOR_TOKEN);
+				setState(380); match(RETURN_TOKEN);
+				setState(381); expression();
+				setState(382); match(TERMINATOR_TOKEN);
 				}
 				break;
 			case CLOSE_BRACE:
@@ -3213,53 +2982,42 @@ public class LandParser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 27:
-			return perform_op_sempred((Perform_opContext)_localctx, predIndex);
-		case 28:
-			return perform_op2_sempred((Perform_op2Context)_localctx, predIndex);
-		case 30:
-			return perform_op4_sempred((Perform_op4Context)_localctx, predIndex);
-		case 31:
-			return perform_op5_sempred((Perform_op5Context)_localctx, predIndex);
-		case 32:
-			return perform_op6_sempred((Perform_op6Context)_localctx, predIndex);
-		}
-		return true;
-	}
-	private boolean perform_op_sempred(Perform_opContext _localctx, int predIndex) {
-		switch (predIndex) {
-		case 0:
-			return precpred(_ctx, 2);
+		case 27: return perform_op_sempred((Perform_opContext)_localctx, predIndex);
+		case 28: return perform_op2_sempred((Perform_op2Context)_localctx, predIndex);
+		case 30: return perform_op4_sempred((Perform_op4Context)_localctx, predIndex);
+		case 31: return perform_op5_sempred((Perform_op5Context)_localctx, predIndex);
+		case 32: return perform_op6_sempred((Perform_op6Context)_localctx, predIndex);
 		}
 		return true;
 	}
 	private boolean perform_op2_sempred(Perform_op2Context _localctx, int predIndex) {
 		switch (predIndex) {
-		case 1:
-			return precpred(_ctx, 2);
-		}
-		return true;
-	}
-	private boolean perform_op4_sempred(Perform_op4Context _localctx, int predIndex) {
-		switch (predIndex) {
-		case 2:
-			return precpred(_ctx, 2);
+		case 1: return precpred(_ctx, 2);
 		}
 		return true;
 	}
 	private boolean perform_op5_sempred(Perform_op5Context _localctx, int predIndex) {
 		switch (predIndex) {
-		case 3:
-			return precpred(_ctx, 3);
-		case 4:
-			return precpred(_ctx, 2);
+		case 3: return precpred(_ctx, 3);
+		case 4: return precpred(_ctx, 2);
 		}
 		return true;
 	}
 	private boolean perform_op6_sempred(Perform_op6Context _localctx, int predIndex) {
 		switch (predIndex) {
-		case 5:
-			return precpred(_ctx, 2);
+		case 5: return precpred(_ctx, 2);
+		}
+		return true;
+	}
+	private boolean perform_op4_sempred(Perform_op4Context _localctx, int predIndex) {
+		switch (predIndex) {
+		case 2: return precpred(_ctx, 2);
+		}
+		return true;
+	}
+	private boolean perform_op_sempred(Perform_opContext _localctx, int predIndex) {
+		switch (predIndex) {
+		case 0: return precpred(_ctx, 2);
 		}
 		return true;
 	}
