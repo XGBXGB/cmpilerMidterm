@@ -1,9 +1,11 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
 
 
 public class LandCustomVisitor extends LandBaseVisitor<Object>{
 	HashMap memory = new HashMap();
+	HashMap memoryConst = new HashMap();
 	@Override
 	public Object visitIntDatatype(LandParser.IntDatatypeContext ctx) {
 		// TODO Auto-generated method stub
@@ -85,6 +87,22 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 	public Object visitVoidType(LandParser.VoidTypeContext ctx) {
 		// TODO Auto-generated method stub
 		ctx.returnType = "full";
+		return ctx;
+	}
+	
+	@Override
+	public Object visitConst_dec(LandParser.Const_decContext ctx) {
+		System.out.println("CONSTANT OVER HERE");
+		String constant = ctx.IDENTIFIER().getText();
+		Object literal = ctx.literal();
+		try{
+			memory.get(constant);
+		}
+		catch(Exception e){
+			memoryConst.get(constant);
+		}finally{
+			memoryConst.put(constant, literal);
+		}
 		return ctx;
 	}
 
@@ -300,83 +318,7 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 		return new Object();
 		
 	}
-	/*@Override
-	public Object visitAssignment_line(LandParser.Assignment_lineContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitAssignment_line(ctx);
-	}*/
 
-	/*@Override
-	public Object visitFunction_declaration(LandParser.Function_declarationContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitFunction_declaration(ctx);
-	}
-
-	@Override
-	public Object visitFunction_declaration_parameters_type(LandParser.Function_declaration_parameters_typeContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitFunction_declaration_parameters_type(ctx);
-	}
-
-	@Override
-	public Object visitFunction_declaration_parameters(LandParser.Function_declaration_parametersContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitFunction_declaration_parameters(ctx);
-	}
-
-	@Override
-	public Object visitFunction_declaration_more_parameters(LandParser.Function_declaration_more_parametersContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitFunction_declaration_more_parameters(ctx);
-	}
-
-	@Override
-	public Object visitFunction_call(LandParser.Function_callContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitFunction_call(ctx);
-	}
-
-	@Override
-	public Object visitFunction_call_parameters_type(LandParser.Function_call_parameters_typeContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitFunction_call_parameters_type(ctx);
-	}
-
-	@Override
-	public Object visitFunction_call_parameters(LandParser.Function_call_parametersContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitFunction_call_parameters(ctx);
-	}
-
-	@Override
-	public Object visitFunction_call_line(LandParser.Function_call_lineContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitFunction_call_line(ctx);
-	}
-
-	@Override
-	public Object visitConditional(LandParser.ConditionalContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitConditional(ctx);
-	}
-
-	@Override
-	public Object visitContinueElseIf(LandParser.ContinueElseIfContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitContinueElseIf(ctx);
-	}
-
-	@Override
-	public Object visitContinueElse(LandParser.ContinueElseContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitContinueElse(ctx);
-	}
-
-	@Override
-	public Object visitContinueEpsilon(LandParser.ContinueEpsilonContext ctx) {
-		// TODO Auto-generated method stub
-		return super.visitContinueEpsilon(ctx);
-	}*/
 	@Override
 	public Object visitCond(LandParser.CondContext ctx) {
 		// TODO Auto-generated method stub
@@ -791,6 +733,14 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 		else{
 			System.out.println("PRINTTEST: "+expression);
 		}
+		return ctx;
+	}
+	
+	@Override
+	public Object visitScan(LandParser.ScanContext ctx) {
+		Scanner sc = new Scanner(System.in);
+		String next = sc.next();
+		
 		return ctx;
 	}
 

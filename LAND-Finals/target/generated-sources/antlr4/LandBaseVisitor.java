@@ -20,13 +20,6 @@ public class LandBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitConstant_declaration(@NotNull LandParser.Constant_declarationContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitPerformOp7_int(@NotNull LandParser.PerformOp7_intContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -230,6 +223,13 @@ public class LandBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitComment_block(@NotNull LandParser.Comment_blockContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitDigitLiteral(@NotNull LandParser.DigitLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -265,6 +265,13 @@ public class LandBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitMain_function(@NotNull LandParser.Main_functionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitFunction_call_line(@NotNull LandParser.Function_call_lineContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -287,6 +294,13 @@ public class LandBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitContinueEpsilon(@NotNull LandParser.ContinueEpsilonContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitScan(@NotNull LandParser.ScanContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -525,4 +539,11 @@ public class LandBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitMoreVarableDec3(@NotNull LandParser.MoreVarableDec3Context ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitConst_dec(@NotNull LandParser.Const_decContext ctx) { return visitChildren(ctx); }
 }

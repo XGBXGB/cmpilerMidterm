@@ -14,12 +14,6 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface LandVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link LandParser#constant_declaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConstant_declaration(@NotNull LandParser.Constant_declarationContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code performOp7_int}
 	 * labeled alternative in {@link LandParser#perform_op7}.
 	 * @param ctx the parse tree
@@ -214,6 +208,12 @@ public interface LandVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPerformOp7_par(@NotNull LandParser.PerformOp7_parContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link LandParser#comment_block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComment_block(@NotNull LandParser.Comment_blockContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code digitLiteral}
 	 * labeled alternative in {@link LandParser#literal}.
 	 * @param ctx the parse tree
@@ -249,6 +249,12 @@ public interface LandVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpression_epsilon(@NotNull LandParser.Expression_epsilonContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link LandParser#main_function}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMain_function(@NotNull LandParser.Main_functionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link LandParser#function_call_line}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -274,6 +280,13 @@ public interface LandVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitContinueEpsilon(@NotNull LandParser.ContinueEpsilonContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code scan}
+	 * labeled alternative in {@link LandParser#scanning}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitScan(@NotNull LandParser.ScanContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code expression_literal}
 	 * labeled alternative in {@link LandParser#expression}.
@@ -502,4 +515,11 @@ public interface LandVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMoreVarableDec3(@NotNull LandParser.MoreVarableDec3Context ctx);
+	/**
+	 * Visit a parse tree produced by the {@code const_dec}
+	 * labeled alternative in {@link LandParser#constant_declaration}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConst_dec(@NotNull LandParser.Const_decContext ctx);
 }

@@ -44,7 +44,7 @@ characters_literal returns [Object o]: STRING_LIT #stringLiteral
 return_type returns [String returnType]: data_type #dataType | VOID_DATA_TYPE #voidType;
  	
 //Constant declaration
-constant_declaration: CONSTANT_TOKEN IDENTIFIER literal TERMINATOR_TOKEN;
+constant_declaration: CONSTANT_TOKEN IDENTIFIER literal TERMINATOR_TOKEN#const_dec;
 
 //Variable declaration/initialization
 var returns [String s]: IDENTIFIER #varIdentifier | array #arrayIdentifier;
@@ -89,6 +89,8 @@ dloop: DO_TOKEN OPEN_BRACE code_block CLOSE_BRACE WHILE_TOKEN OPEN_PARENTHESIS e
 
 floop: FOR_TOKEN OPEN_PARENTHESIS n1=expression TERMINATOR_TOKEN e1=expression TERMINATOR_TOKEN expression CLOSE_PARENTHESIS OPEN_BRACE code_block CLOSE_BRACE;
 
+//Main Function
+main_function: return_type 'Main' OPEN_PARENTHESIS CLOSE_PARENTHESIS OPEN_BRACE code_block CLOSE_BRACE;
 
 //Perform operation	rules	
 
@@ -136,10 +138,14 @@ expression returns[Object o, int type]:  perform_op #expression_performOp
 										| #expression_epsilon/*epsilon*/;
 more_expressions: COMMA_TOKEN expression more_expressions | /*epsilon*/;
 
+//Comments
+comment_block: SINGLE_LINE_COMMENT_TOKEN ;
+
 //Code
-code_block: variable_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block | printing code_block|  {};
+code_block: variable_declaration code_block | main_function code_block | constant_declaration code_block | function_declaration code_block | assignment_line code_block | function_call_line code_block | conditional code_block | wloop code_block | floop code_block | dloop code_block | printing code_block|  {};
 
 printing: 'scan' OPEN_PARENTHESIS expression CLOSE_PARENTHESIS TERMINATOR_TOKEN; 
+scanning: 'print' OPEN_PARENTHESIS CLOSE_PARENTHESIS TERMINATOR_TOKEN#scan;
 return_line[String s]: RETURN_TOKEN expression TERMINATOR_TOKEN #returnLine_1
 					 | #returnLine_2 /*epsilon*/;
 /*
@@ -169,6 +175,7 @@ FLOAT_LIT: (('+'|'-')?('0'..'9')*'.'?('0'..'9')+){};
 STRING_LIT: '\''(('A'..'Z')|('a'..'z')|('0'..'9')|'\n')*'\''{};
 CHAR_LIT: '"'(('A'..'Z')|('a'..'z')|('0'..'9'))'"';
 IDENTIFIER: ('A'..'Z')(('A'..'Z')|('a'..'z')|('0'..'9'))*;
+
 
 //Data types
 INT_DATA_TYPE: 'float';
