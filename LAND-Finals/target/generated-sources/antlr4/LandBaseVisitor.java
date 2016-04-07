@@ -1,7 +1,8 @@
-// Generated from Land.g4 by ANTLR 4.5.2
+// Generated from Land.g4 by ANTLR 4.4
 
  	import java.util.HashMap;
  
+import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -19,509 +20,509 @@ public class LandBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitIntDatatype(LandParser.IntDatatypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitConstant_declaration(@NotNull LandParser.Constant_declarationContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFloatDataType(LandParser.FloatDataTypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp7_int(@NotNull LandParser.PerformOp7_intContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitStringDatatype(LandParser.StringDatatypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction_call(@NotNull LandParser.Function_callContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCharDataType(LandParser.CharDataTypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction_call_parameters_type(@NotNull LandParser.Function_call_parameters_typeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitDigitLiteral(LandParser.DigitLiteralContext ctx) { return visitChildren(ctx); }
+	@Override public T visitContinueElseIf(@NotNull LandParser.ContinueElseIfContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCharactersLiteral(LandParser.CharactersLiteralContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCond(@NotNull LandParser.CondContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitIntLiteral(LandParser.IntLiteralContext ctx) { return visitChildren(ctx); }
+	@Override public T visitContinueElse(@NotNull LandParser.ContinueElseContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFloatLiteral(LandParser.FloatLiteralContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAssignment_array(@NotNull LandParser.Assignment_arrayContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitStringLiteral(LandParser.StringLiteralContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIntDatatype(@NotNull LandParser.IntDatatypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCharLiteral(LandParser.CharLiteralContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStringDatatype(@NotNull LandParser.StringDatatypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitDataType(LandParser.DataTypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFloatLiteral(@NotNull LandParser.FloatLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVoidType(LandParser.VoidTypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVoidType(@NotNull LandParser.VoidTypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitConstant_declaration(LandParser.Constant_declarationContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCharDataType(@NotNull LandParser.CharDataTypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVarIdentifier(LandParser.VarIdentifierContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp2_2(@NotNull LandParser.PerformOp2_2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitArrayIdentifier(LandParser.ArrayIdentifierContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFloatDataType(@NotNull LandParser.FloatDataTypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVariableDeclarationAlone(LandParser.VariableDeclarationAloneContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp2_1(@NotNull LandParser.PerformOp2_1Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVariableDeclarationWithAssignment(LandParser.VariableDeclarationWithAssignmentContext ctx) { return visitChildren(ctx); }
+	@Override public T visitWloop(@NotNull LandParser.WloopContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMoreVarableDec1(LandParser.MoreVarableDec1Context ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp4_2(@NotNull LandParser.PerformOp4_2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMoreVarableDec2(LandParser.MoreVarableDec2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction_declaration_parameters(@NotNull LandParser.Function_declaration_parametersContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMoreVarableDec3(LandParser.MoreVarableDec3Context ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction_declaration_more_parameters(@NotNull LandParser.Function_declaration_more_parametersContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitArray(LandParser.ArrayContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp4_1(@NotNull LandParser.PerformOp4_1Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssignment_dec1(LandParser.Assignment_dec1Context ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp6_2(@NotNull LandParser.PerformOp6_2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssignment_dec2(LandParser.Assignment_dec2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitDataType(@NotNull LandParser.DataTypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssignment_array(LandParser.Assignment_arrayContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp6_1(@NotNull LandParser.PerformOp6_1Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssignment(LandParser.AssignmentContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCode_block(@NotNull LandParser.Code_blockContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssignment_line(LandParser.Assignment_lineContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExpression_funcCall(@NotNull LandParser.Expression_funcCallContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction_declaration(LandParser.Function_declarationContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAdd_sub(@NotNull LandParser.Add_subContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction_declaration_parameters_type(LandParser.Function_declaration_parameters_typeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExpression_assignment(@NotNull LandParser.Expression_assignmentContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction_declaration_parameters(LandParser.Function_declaration_parametersContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCond_op(@NotNull LandParser.Cond_opContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction_declaration_more_parameters(LandParser.Function_declaration_more_parametersContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp7_par(@NotNull LandParser.PerformOp7_parContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction_call(LandParser.Function_callContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDigitLiteral(@NotNull LandParser.DigitLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction_call_parameters_type(LandParser.Function_call_parameters_typeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitReturnLine_2(@NotNull LandParser.ReturnLine_2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction_call_parameters(LandParser.Function_call_parametersContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStringLiteral(@NotNull LandParser.StringLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction_call_line(LandParser.Function_call_lineContext ctx) { return visitChildren(ctx); }
+	@Override public T visitReturnLine_1(@NotNull LandParser.ReturnLine_1Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitConditional(LandParser.ConditionalContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExpression_epsilon(@NotNull LandParser.Expression_epsilonContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitContinueElseIf(LandParser.ContinueElseIfContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction_call_line(@NotNull LandParser.Function_call_lineContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitContinueElse(LandParser.ContinueElseContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDloop(@NotNull LandParser.DloopContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitContinueEpsilon(LandParser.ContinueEpsilonContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp7_funcCall(@NotNull LandParser.PerformOp7_funcCallContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitWloop(LandParser.WloopContext ctx) { return visitChildren(ctx); }
+	@Override public T visitContinueEpsilon(@NotNull LandParser.ContinueEpsilonContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitDloop(LandParser.DloopContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExpression_literal(@NotNull LandParser.Expression_literalContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFloop(LandParser.FloopContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction_call_parameters(@NotNull LandParser.Function_call_parametersContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp_1(LandParser.PerformOp_1Context ctx) { return visitChildren(ctx); }
+	@Override public T visitArray(@NotNull LandParser.ArrayContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp_2(LandParser.PerformOp_2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitVarIdentifier(@NotNull LandParser.VarIdentifierContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp2_2(LandParser.PerformOp2_2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitFloop(@NotNull LandParser.FloopContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp2_1(LandParser.PerformOp2_1Context ctx) { return visitChildren(ctx); }
+	@Override public T visitMul_div(@NotNull LandParser.Mul_divContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp3_1(LandParser.PerformOp3_1Context ctx) { return visitChildren(ctx); }
+	@Override public T visitExpression_performOp(@NotNull LandParser.Expression_performOpContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp3_2(LandParser.PerformOp3_2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction_declaration(@NotNull LandParser.Function_declarationContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp4_2(LandParser.PerformOp4_2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitArrayIdentifier(@NotNull LandParser.ArrayIdentifierContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp4_1(LandParser.PerformOp4_1Context ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp3_1(@NotNull LandParser.PerformOp3_1Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp5_1(LandParser.PerformOp5_1Context ctx) { return visitChildren(ctx); }
+	@Override public T visitCharactersLiteral(@NotNull LandParser.CharactersLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp5_3(LandParser.PerformOp5_3Context ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp5_1(@NotNull LandParser.PerformOp5_1Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp5_2(LandParser.PerformOp5_2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp3_2(@NotNull LandParser.PerformOp3_2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp6_2(LandParser.PerformOp6_2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitAssignment(@NotNull LandParser.AssignmentContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp6_1(LandParser.PerformOp6_1Context ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp5_3(@NotNull LandParser.PerformOp5_3Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp7_par(LandParser.PerformOp7_parContext ctx) { return visitChildren(ctx); }
+	@Override public T visitMore_expressions(@NotNull LandParser.More_expressionsContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp7_funcCall(LandParser.PerformOp7_funcCallContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp5_2(@NotNull LandParser.PerformOp5_2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp7_float(LandParser.PerformOp7_floatContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIntLiteral(@NotNull LandParser.IntLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp7_int(LandParser.PerformOp7_intContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction_declaration_parameters_type(@NotNull LandParser.Function_declaration_parameters_typeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPerformOp7_identifier(LandParser.PerformOp7_identifierContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCharLiteral(@NotNull LandParser.CharLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAdd_sub(LandParser.Add_subContext ctx) { return visitChildren(ctx); }
+	@Override public T visitMoreVarableDec2(@NotNull LandParser.MoreVarableDec2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMul_div(LandParser.Mul_divContext ctx) { return visitChildren(ctx); }
+	@Override public T visitMoreVarableDec1(@NotNull LandParser.MoreVarableDec1Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCond_op(LandParser.Cond_opContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExpression_var(@NotNull LandParser.Expression_varContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpression_performOp(LandParser.Expression_performOpContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVariableDeclarationWithAssignment(@NotNull LandParser.VariableDeclarationWithAssignmentContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpression_literal(LandParser.Expression_literalContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp_1(@NotNull LandParser.PerformOp_1Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpression_funcCall(LandParser.Expression_funcCallContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPrinting(@NotNull LandParser.PrintingContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpression_var(LandParser.Expression_varContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp_2(@NotNull LandParser.PerformOp_2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpression_assignment(LandParser.Expression_assignmentContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp7_float(@NotNull LandParser.PerformOp7_floatContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpression_epsilon(LandParser.Expression_epsilonContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVariableDeclarationAlone(@NotNull LandParser.VariableDeclarationAloneContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMore_expressions(LandParser.More_expressionsContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAssignment_dec2(@NotNull LandParser.Assignment_dec2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCode_block(LandParser.Code_blockContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAssignment_line(@NotNull LandParser.Assignment_lineContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrinting(LandParser.PrintingContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPerformOp7_identifier(@NotNull LandParser.PerformOp7_identifierContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitReturnLine_1(LandParser.ReturnLine_1Context ctx) { return visitChildren(ctx); }
+	@Override public T visitAssignment_dec1(@NotNull LandParser.Assignment_dec1Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitReturnLine_2(LandParser.ReturnLine_2Context ctx) { return visitChildren(ctx); }
+	@Override public T visitMoreVarableDec3(@NotNull LandParser.MoreVarableDec3Context ctx) { return visitChildren(ctx); }
 }

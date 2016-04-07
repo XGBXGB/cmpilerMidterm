@@ -1368,6 +1368,17 @@ public class LandParser extends Parser {
 	}
 
 	public static class ConditionalContext extends ParserRuleContext {
+		public ConditionalContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_conditional; }
+	 
+		public ConditionalContext() { }
+		public void copyFrom(ConditionalContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class CondContext extends ConditionalContext {
 		public TerminalNode CLOSE_PARENTHESIS() { return getToken(LandParser.CLOSE_PARENTHESIS, 0); }
 		public TerminalNode CLOSE_BRACE() { return getToken(LandParser.CLOSE_BRACE, 0); }
 		public Code_blockContext code_block() {
@@ -1382,13 +1393,10 @@ public class LandParser extends Parser {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode IF_TOKEN() { return getToken(LandParser.IF_TOKEN, 0); }
-		public ConditionalContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_conditional; }
+		public CondContext(ConditionalContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LandVisitor ) return ((LandVisitor<? extends T>)visitor).visitConditional(this);
+			if ( visitor instanceof LandVisitor ) return ((LandVisitor<? extends T>)visitor).visitCond(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1397,6 +1405,7 @@ public class LandParser extends Parser {
 		ConditionalContext _localctx = new ConditionalContext(_ctx, getState());
 		enterRule(_localctx, 44, RULE_conditional);
 		try {
+			_localctx = new CondContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(199); match(IF_TOKEN);

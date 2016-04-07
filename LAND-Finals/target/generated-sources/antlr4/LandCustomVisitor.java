@@ -110,27 +110,57 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 
 	@Override
 	public Object visitVariableDeclarationAlone(LandParser.VariableDeclarationAloneContext ctx) {
+		
 		String dataType = ((LandParser.IntDatatypeContext)this.visit(ctx.data_type())).s;
+		LandParser.VarContext varContext = ((LandParser.VarContext)this.visit(ctx.var()));
 		String variable = ((LandParser.VarContext)this.visit(ctx.var())).s;
+		System.out.println("VARIABLE: "+variable);
 		System.out.println("DATATYPE CHECK: "+dataType);
 		System.out.println(variable+" TRRRRYYYING");
 		ctx.more_variable_declaration().dataType=((LandParser.Data_typeContext)this.visit(ctx.data_type())).s;
 		this.visit(ctx.more_variable_declaration());
-		if(dataType.equals("float")){
-			return memory.put(variable, new Integer(0));
+		
+		
+		if(varContext instanceof LandParser.ArrayIdentifierContext){
+			//int number = (int)((LandParser.ExpressionContext)((LandParser.ArrayContext)this.visit(((LandParser.ArrayIdentifierContext)this.visit(ctx.var())))).array()).expression()).o;
+			int number = (int) ((LandParser.ExpressionContext)this.visit(((LandParser.ArrayContext)this.visit(((LandParser.ArrayIdentifierContext)this.visit(ctx.var())).array())).expression())).o;
+			System.out.println("DANAMBAH: "+number);
+			String arrayName = "";
+			for(int i=0; i<number; i++){
+				arrayName = variable+"["+i+"]";
+				System.out.println("ARRAYNAME: "+arrayName);
+				if(dataType.equals("float")){
+					System.out.println("INITIALIZED: "+arrayName);
+					 memory.put(arrayName, new Integer(0));
+				}
+				else if(dataType.equals("int")){
+					 memory.put(arrayName, new Float(0));
+				}
+				else if(dataType.equals("char")){
+					 memory.put(arrayName, new String(""));
+					
+				}else if(dataType.equals("string")){
+					 memory.put(arrayName, new Character('\0'));
+				}
+			}
 		}
-		else if(dataType.equals("int")){
-			return memory.put(variable, new Float(0));
-		}
-		else if(dataType.equals("char")){
-			return memory.put(variable, new String(""));
-			
-		}else if(dataType.equals("string")){
-			return memory.put(variable, new Character('\0'));
+		else{
+			if(dataType.equals("float")){
+				return memory.put(variable, new Integer(0));
+			}
+			else if(dataType.equals("int")){
+				return memory.put(variable, new Float(0));
+			}
+			else if(dataType.equals("char")){
+				return memory.put(variable, new String(""));
+				
+			}else if(dataType.equals("string")){
+				return memory.put(variable, new Character('\0'));
+			}
 		}
 		return ctx;
 	}
-	
+
 	
 
 	@Override
@@ -221,29 +251,55 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 	public Object visitAssignment(LandParser.AssignmentContext ctx) {
 		// TODO Auto-generated method stub
 		System.out.println("Assignment-datatype: "+ctx.dataType);
+		LandParser.VarContext varCtx =  (LandParser.VarContext)this.visit(ctx.var());
 		String variable = ((LandParser.VarContext)this.visit(ctx.var())).s;
 		Object expression = ((LandParser.ExpressionContext)this.visit(ctx.expression())).o;
-		if(ctx.dataType.equals("float")){
-			//todo if expression instanceof int else throw
-			return memory.put(variable, new Integer((int)expression));
-		}else if(ctx.dataType.equals("int")){
-			return memory.put(variable, new Float((float)expression));
-		}else if(ctx.dataType.equals("char")){
-			return memory.put(variable, new String((String)expression));
-		}else if(ctx.dataType.equals("unknown type")){
-			if(memory.get(variable)==null){
-			}else{
-				if(memory.get(ctx.var().s) instanceof Integer){
-					return memory.put(variable, new Integer((int)expression));
+		
+		if(varCtx instanceof LandParser.ArrayIdentifierContext){
+			int i = (int)((LandParser.ExpressionContext)this.visit((((LandParser.ArrayContext)this.visit(((LandParser.ArrayIdentifierContext)this.visit(ctx.var())).array()))).expression())).o;
+			variable = variable+"["+i+"]";
+			if(ctx.dataType.equals("float")){
+				//todo if expression instanceof int else throw
+				return memory.put(variable, new Integer((int)expression));
+			}else if(ctx.dataType.equals("int")){
+				return memory.put(variable, new Float((float)expression));
+			}else if(ctx.dataType.equals("char")){
+				return memory.put(variable, new String((String)expression));
+			}else if(ctx.dataType.equals("unknown type")){
+				if(memory.get(variable)==null){
 				}else{
-					return memory.put(variable, new Float((float)expression));
-				} 
+					if(memory.get(variable) instanceof Integer){
+						System.out.println("PUTEEEEEEK "+variable+":"+(int)expression);
+						return memory.put(variable, new Integer((int)expression));
+					}else{
+						return memory.put(variable, new Float((float)expression));
+					} 
+				}
+			}
+		}
+		else{
+			if(ctx.dataType.equals("float")){
+				//todo if expression instanceof int else throw
+				return memory.put(variable, new Integer((int)expression));
+			}else if(ctx.dataType.equals("int")){
+				return memory.put(variable, new Float((float)expression));
+			}else if(ctx.dataType.equals("char")){
+				return memory.put(variable, new String((String)expression));
+			}else if(ctx.dataType.equals("unknown type")){
+				if(memory.get(variable)==null){
+				}else{
+					if(memory.get(variable) instanceof Integer){
+						System.out.println(variable+": "+expression);
+						return memory.put(variable, new Integer((int)expression));
+					}else{
+						return memory.put(variable, new Float((float)expression));
+					} 
+				}
 			}
 		}
 		return new Object();
 		
 	}
-
 	/*@Override
 	public Object visitAssignment_line(LandParser.Assignment_lineContext ctx) {
 		// TODO Auto-generated method stub
@@ -321,6 +377,37 @@ public class LandCustomVisitor extends LandBaseVisitor<Object>{
 		// TODO Auto-generated method stub
 		return super.visitContinueEpsilon(ctx);
 	}*/
+	@Override
+	public Object visitCond(LandParser.CondContext ctx) {
+		// TODO Auto-generated method stub
+		System.out.println("CONDITIONAL");
+		if((boolean)(((LandParser.ExpressionContext)this.visit(ctx.expression())).o)){
+			this.visit(ctx.code_block());
+		}else{
+			this.visit(ctx.conditional_continue());
+		}
+		return ctx;
+	}	
+
+	@Override
+	public Object visitContinueElseIf(LandParser.ContinueElseIfContext ctx) {
+		// TODO Auto-generated method stub
+		this.visit(ctx.conditional());
+		return ctx;
+	}
+
+	@Override
+	public Object visitContinueElse(LandParser.ContinueElseContext ctx) {
+		// TODO Auto-generated method stub
+		this.visit(ctx.code_block());
+		return ctx;
+	}
+
+	@Override
+	public Object visitContinueEpsilon(LandParser.ContinueEpsilonContext ctx) {
+		// TODO Auto-generated method stub
+		return new Object();
+	}
 
 	@Override
 	public Object visitWloop(LandParser.WloopContext ctx) {
